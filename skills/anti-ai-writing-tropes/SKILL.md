@@ -323,11 +323,12 @@ services") restated as the closer of captions and section intros, or a caution
 repeated from page to page. By the second appearance it reads as boilerplate.
 State it once, in the design doc, and link to it.
 
-**An announcer.** A sentence that names the shape of what follows: "Two
-constraints shape the design", "Here's the thing", "Here's where it gets
-interesting", "Let's break this down", "Think of it as". Counting belongs to
-the same habit: "for two reasons", "three things to know". Delete the announcer;
-the next sentence stands on its own.
+**An announcer.** A sentence that promises content instead of giving it:
+"Here's the thing", "Here's where it gets interesting", "Let's break this
+down", "Think of it as". Delete the announcer; the next sentence stands on its
+own. This isn't a ban on previewing structure — "two constraints shape the
+design: it must run offline and fit under 50MB" names its parts in the same
+breath and earns its place.
 
 **The claim after its evidence.** A paragraph of premises before the claim they
 support, an opening that argues for the page's importance, or a wrong inference

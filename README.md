@@ -83,8 +83,7 @@ hit has no antecedent for "it", "this" or "that limit", so a paragraph that
 opens on a pronoun loses them at the first word. Open every paragraph on its
 subject by name, even when the paragraph before named the same subject. The
 same reader gets nothing from an aphorism that sounds like a conclusion but
-carries no fact, or from an announcer such as "two constraints shape the
-design" that describes the paragraph before it begins. A sentence that names an
+carries no fact. A sentence that names an
 outcome ("the build stops") where the mechanism belongs, or an adverb such as
 "silently" standing in for what happens, leaves the reader without the fact
 they came for. Say what the machine does, name the actor, and end the section
@@ -96,7 +95,6 @@ at its last fact.
 | A conclusion standing in for the mechanism | A marker that does not parse stops the build. | The generator exits with an error on a marker it cannot parse, so the build fails. |
 | Silently, quietly, invisibly | The second bug is the same class of wrong, quieter. | The second bug writes the wrong value and raises no error. |
 | A pronoun opening a paragraph | It runs the app's own engine. | The renderer runs the app's own engine. |
-| An announcer | Two constraints shape the design. First, ... | The design has to run offline. |
 
 ### Paragraph transitions
 
