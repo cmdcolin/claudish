@@ -6,10 +6,7 @@ description: Checklist of prose habits that make technical writing read as gener
 # Anti-AI writing tropes
 
 Write plain technical English in ordinary declarative sentences. Each habit
-below is one that model-written prose falls into, paired with a rewrite, so the
-fix is a pattern to copy. The habits compound: one of them reads as a choice,
-and a page of them reads as generated, because the sentences stop connecting
-and the reader supplies the joins.
+below is paired with a rewrite, so the fix is a pattern to copy.
 
 ## How to use this
 
@@ -24,14 +21,10 @@ and the reader supplies the joins.
   [What not to flatten](#what-not-to-flatten).
 - Reviewing for someone else: report every instance, then triage. A "report
   only the worst" instruction makes a reviewer drop real findings.
-- Instruction files: fix `CLAUDE.md`, `AGENTS.md` and similar files first.
-  Agents read them every session and copy their prose as house voice, so a
-  trope there spreads into every document written afterwards. A style rule is
-  read as prose before it is read as a rule, and the prose is the part that
-  gets imitated: a "no em-dashes" rule written in a sentence containing one
-  ships the em-dash. Write each rule in the style it asks for, and include the
-  rewrite along with the ban, because a model copies a positive example more
-  reliably than it obeys a prohibition.
+- Instruction files: fix `CLAUDE.md`, `AGENTS.md` and similar files first,
+  because agents copy their prose into everything they write. Write each style
+  rule in the style it asks for, and include the rewrite along with the ban: a
+  model copies a positive example more reliably than it obeys a prohibition.
 
 ## Contrastive framing
 
@@ -40,7 +33,7 @@ is or does. Leave out what it is not, what it replaces, and what someone might
 have assumed.
 
 The pattern defines a thing against an alternative the reader never raised.
-It shows up in every register and in several forms:
+Its forms:
 
 - "X, not Y": "Staleness is stamped, not compared."
 - "rather than" and "instead of": "so it is tested rather than remembered"
@@ -87,12 +80,10 @@ passes the test.
 ## Stance and agency
 
 **A value given knowledge or a stance.** A component may act: the parser
-rejects a file, the CLI warns, the server refuses the request. A value, a
-column, a file, a figure or a sign is a thing being described, so it knows
-nothing, says nothing, disagrees with nothing and earns nothing. The test: could
-the subject perform the verb if you ran the program? A parser can reject; a
-column cannot know. When it could not, find the actor that does the thing, or
-use a verb of description (marks, contains, shows, is).
+rejects a file, the CLI warns. A value, a column, a file or a figure knows
+nothing, says nothing and earns nothing. The test: could the subject perform
+the verb if you ran the program? When it could not, name the actor that does
+the thing, or use a verb of description (marks, contains, shows, is).
 
 > ClinVar adds a layer the alignment cannot know. → The ClinVar track marks
 > pathogenic variants per residue.
@@ -114,16 +105,11 @@ the sentence around it.
 > `useEffect` is eager to re-run → `useEffect` re-runs whenever a dependency
 > changes
 
-**A figure of speech where a literal word exists.** Metaphors like "a dial worth
-turning" for "a parameter worth varying", or "earns its keep" for "is useful",
-make the reader translate back to the literal claim. They also bring
-connotations the writer did not choose: "rot" implies decay nobody measured,
-and "a one-way door" implies a door. The test is mechanical. For each verb or
-noun that is not literally true of its subject, ask what literal word it stands
-for, and write that word. Keep a figure only when no literal phrase exists or
-the field has adopted it as a term ("memory leak", "race condition"). An image
-that survives the test still appears once: "doors", "walls" or "layers of the
-onion" repeated through a page is a dead metaphor.
+**A figure of speech where a literal word exists.** For each verb or noun that
+is not literally true of its subject, ask what literal word it stands for, and
+write that word. Keep a figure only when no literal phrase exists or the field
+has adopted it as a term ("memory leak", "race condition"), and use it once: an
+image repeated through a page ("doors", "walls") is a dead metaphor.
 
 > each bar rises to the height its frequency earns → each bar's height is
 > proportional to its frequency
@@ -223,9 +209,9 @@ scale between the ends. List the items, or name the one that matters.
 with a beat: "it rebuilds on every keystroke, every time."
 
 **Density.** Long sentences packed with qualifications, and paragraphs that run
-for a screen without a break. A rewrite that removes the tropes above often
-makes this worse, because the fix adds a clause for the mechanism. Give each
-fact its own sentence, and break the paragraph where the subject changes.
+for a screen without a break. Fixing the tropes above adds clauses, so after a
+pass give each fact its own sentence and break the paragraph where the subject
+changes.
 
 **Em-dash asides.** One in a paragraph is punctuation; three is a writer avoiding
 sentence boundaries. A ` -- ` in a code comment is the same habit. Promote one
@@ -235,8 +221,7 @@ parenthetical.
 ## Openings and closings
 
 **An aphorism closing (or opening) a section.** A short balanced sentence that
-sounds like a conclusion and carries no fact. It survives a first edit because
-it reads as style.
+sounds like a conclusion and carries no fact.
 
 > A phone GPU is still a phone GPU. → A phone GPU has much less headroom.
 >
@@ -372,8 +357,7 @@ it.
 label stands for.
 
 **Synonym cycling.** One referent called a track, then a lane, then a layer.
-In technical prose the reader assumes three words mean three things. Pick the
-noun and repeat it.
+The reader assumes three words mean three things. Pick the noun and repeat it.
 
 **Self-echo.** A distinctive word from earlier in the page reused as if paying it
 off, such as "quietly" in two sections. Write the plain word each time. A
