@@ -12,45 +12,97 @@ A checklist for technical writing: docs, READMEs, tutorials, code comments,
 figure captions, commit messages, PR descriptions and agent instruction files.
 Each entry pairs a problem with the fix that keeps the same facts.
 
-- **Contrastive framing.** The sentence defines a thing by what it is not:
-  "X, not Y", "rather than", "not just X but Y", "It's not X. It's Y." Delete
-  the negative half; the sentence almost always still says everything. Keep it
-  only when a reader who never saw it would pick the wrong option or hold a
-  wrong belief.
-- **Stance and agency.** A value, file or figure knows, says or earns
-  something; a drawn thing owns what it shows ("each lane draws its own
-  genes"); a figure of speech stands where a literal word exists. Name the
-  actor that does the thing, or use a verb of description. Say what the
-  possessive stands for. Replace the figure with the literal word from the
-  lookup table.
-- **Sentence shapes.** The sentence bends to land a beat: a cleft ("X is what
-  does Y"), a significance announcement, dramatic negation, a which-ladder, a
-  colon lead-in, a comma-hung appositive ("a browser without X, one that can
-  Y"), a fragment, a rule-of-three list, an em-dash aside. Write the plain verb
-  and its subject. Give each fact its own sentence.
-- **Openings and closings.** A section opens on an aphorism or a pronoun,
-  states an outcome where the mechanism belongs, hides a failure behind
-  "silently", announces its own shape, repeats a refrain, or closes by
-  restating. Open on the subject by name and the first observation. Write what
-  the machine does. Stop at the last fact.
-- **Paragraph transitions.** The turn from prior state to response is missing
-  or overloaded: a description where a limitation belongs, a narrative bridge
-  with no evidence, a problem sized to the solution's features, a colon or
-  comma carrying the turn. Name the limitation as a limitation, in one
-  sentence. Give the response its own sentence. Cut any motivating claim that
-  has no citation.
-- **Headings and labels.** A teaser, phrase or negative heading; Title Case; a
-  joke in a reference table; a bold-first bullet. Name the subject in the
-  heading, in sentence case. Give a flag table plain labels.
-- **Comments and history.** A comment carries bug history or a rationale
-  essay; a doc reads as a changelog; ALL-CAPS for emphasis. Comment the
-  current behavior only. Put history in git and rationale in a design doc.
-- **Register.** An intensifier with no number, a promotional word, borrowed
-  authority, a sentence adverb ("Additionally", "Ultimately"), the
-  leverage/utilize/ensure verb cluster, present-participle synthesis (",
-  reducing data transfer"), an invented label, synonym cycling. Give the
-  number. Delete the adjective. Make the participle its own sentence. Use one
-  term per thing.
+**Contrastive framing.** The sentence defines a thing by what it is not.
+Delete the negative half; the sentence almost always still says everything.
+Keep it only when a reader who never saw it would pick the wrong option.
+
+| Before | After |
+|---|---|
+| Staleness is stamped, not compared. | Staleness is stamped. |
+| It's not a cache. It's a log. | It is an append-only log. |
+| The CLI doesn't just fetch domains, it caches them. | The CLI fetches domains and caches them on disk. |
+| CI runs the install command from the README, so it is tested rather than remembered. | CI runs the install command from the README, so a broken one fails the build. |
+
+**Stance and agency.** A value, file or figure knows, says and earns nothing,
+and a drawn thing owns nothing. Name the actor that does the thing, or use a
+verb of description. Replace a figure of speech with the literal word.
+
+| Before | After |
+|---|---|
+| ClinVar adds a layer the alignment cannot know. | The ClinVar track marks pathogenic variants per residue. |
+| each lane draws its own cluster genes | each lane draws the cluster genes annotated in that genome |
+| each bar rises to the height its frequency earns | each bar's height is proportional to its frequency |
+| The config file is load-bearing. | Every command reads the config file. |
+
+**Sentence shapes.** The sentence bends to land a beat: a cleft, a
+significance announcement, a which-ladder, a colon lead-in, a comma-hung
+appositive, a fragment, a rule-of-three list. Write the plain verb and its
+subject, and give each fact its own sentence.
+
+| Before | After |
+|---|---|
+| Rounding is what buys the room. | Rounding saves two characters per value. |
+| The model scores the variant benign, which is the honest answer to the question it was asked. | The model scores the variant benign, because it predicts whether a substitution breaks the fold, and this one does not. |
+| Each scale resolves where updating it costs least: a categorical color resolves in the shader. | A categorical color resolves in the shader. |
+| JBrowse 1 displays a single chromosome, a design that cannot show synteny. | JBrowse 1 is limited to a single chromosome at a time, so it cannot show synteny. |
+| A file in, a look applied, ProRes out. | The command reads the file, applies the look and writes ProRes 4444. |
+
+**Openings and closings.** A section opens on an aphorism or a pronoun,
+states an outcome where the mechanism belongs, hides a failure behind
+"silently", announces its own shape, or closes by restating. Open on the
+subject by name. Write what the machine does. Stop at the last fact.
+
+| Before | After |
+|---|---|
+| A phone GPU is still a phone GPU. | A phone GPU has much less headroom. |
+| A marker that does not parse stops the build. | The generator exits with an error on a marker it cannot parse, so the build fails. |
+| The second bug is the same class of wrong, quieter. | The second bug highlights the wrong residue and raises no error. |
+| It runs the app's own engine. | The renderer runs the app's own engine. |
+| Two constraints shape the design. First, ... | The design has to run offline. |
+
+**Paragraph transitions.** The turn from prior state to response is missing
+or overloaded: a description where a limitation belongs, a narrative bridge
+with no evidence, a problem sized to the solution's features. Name the
+limitation as a limitation, in one sentence, then give the response its own.
+
+| Before | After |
+|---|---|
+| JBrowse 1 shows a single chromosome of a single species at a time. We built JBrowse 2 to lift that limit. | JBrowse 1 is limited to visualizing a single chromosome of a single species at a time. We built JBrowse 2 as a general-purpose genome browser that removes this restriction. |
+| Build tools have since moved toward incremental compilation. Our build recompiles every file on each change, so we added a dependency graph. | Our build recompiles every file on each change, so we added a dependency graph. |
+
+**Headings and labels.** A teaser, phrase or negative heading; Title Case; a
+joke in a reference table; a bold-first bullet. Name the subject in the
+heading, in sentence case, and give a flag table plain labels.
+
+| Before | After |
+|---|---|
+| The four columns nobody else has | PRRA insert |
+| Where the file goes | Output |
+| What it does not do | Limitations |
+| `--seed=<n>` \| the dice | `--seed=<n>` \| random seed; the same seed gives the same output |
+
+**Comments and history.** A comment carries bug history or a rationale essay;
+a doc reads as a changelog; ALL-CAPS for emphasis. Comment the current
+behavior only. Put history in git and rationale in a design doc.
+
+| Before | After |
+|---|---|
+| reset() used to leave the Cancel button showing | reset() also hides the Cancel button |
+| We considered leaving the keys in fetch order, but the diff output has to be stable across runs and fetch order is not, so we sort them first. | Keys are sorted so the diff output is stable across runs. |
+| the ONLY difference | the only difference |
+
+**Register.** An intensifier with no number, a promotional word, borrowed
+authority, a sentence adverb, the leverage/utilize/ensure verb cluster,
+present-participle synthesis, an invented label, synonym cycling. Give the
+number. Delete the adjective. Use one term per thing.
+
+| Before | After |
+|---|---|
+| The new parser is dramatically faster. | The new parser takes 0.4 s on the 2 GB test file, down from 3.1 s. |
+| The tool leverages a comprehensive set of heuristics to ensure correctness. | The tool applies twelve heuristics, listed below, and rejects a file that fails any of them. |
+| Scores drop after the tokenizer change, highlighting how the two stages interact. | Scores drop after the tokenizer change, because the tagger was trained on the old token boundaries. |
+| Ultimately, the index is the bottleneck. | Profiling shows the index takes 80% of query time. |
+| The cache serves as the source of truth. | The cache is the source of truth. |
 
 The skill also lists what a fix must preserve, and ships `scan.sh`, which greps
 a file or directory for the markers and labels each hit by section.
