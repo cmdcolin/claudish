@@ -99,6 +99,19 @@ the thing, or use a verb of description (marks, contains, shows, is).
 > which is the tree saying it cannot resolve them → the support values are too
 > low to resolve them
 
+**An inanimate subject given ownership.** "its own", "their own", "the
+haplotype's walk", "the track's genes". A lane, a file or a column owns
+nothing, and "own" adds a claim of possession the reader has to discount.
+Name the relation the possessive stands for: which input the thing came from,
+what it is annotated on, how many there are per what. "its own X" nearly
+always means one X per Y.
+
+> each lane draws its own cluster genes → each lane draws the cluster genes
+> annotated in that genome
+>
+> each haplotype on its own contig with its own gene models → one contig per
+> haplotype, with the gene models annotated on that contig
+
 **A technical term given a personality.** Keep the term the tools use and fix
 the sentence around it.
 

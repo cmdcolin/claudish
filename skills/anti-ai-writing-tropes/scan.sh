@@ -16,7 +16,7 @@ find "${targets[@]}" -type f \( -name '*.md' -o -name '*.tex' -o -name '*.txt' \
   while read -r f; do coldstart "$f"; done
 scan contrast   ''  ' — | -- |is what |which is what|rather than|, not |not just|instead of|isn.t (the|about)|not because'
 scan announce   ''  'the (whole )?point|honest|payoff|worth (naming|noting|being)|exists to|key insight'
-scan agency     ''  '\b(cannot|doesn.t|does not) know|says |silently|quietly|invisibly|earns|buys |load-bearing|one-way door|footgun|moves the needle|surfaces '
+scan agency     ''  '\b(cannot|doesn.t|does not) know|says |silently|quietly|invisibly|earns|buys |load-bearing|one-way door|footgun|moves the needle|surfaces |\b(its|their) own\b'
 scan colon      ''  '[a-z]: [a-z]'
 scan apposition ''  ', (one|ones|a|an) (that|which|whose|where) |, (a|an) [a-z-]+ (that|which|whose) '
 scan negation   ''  '^(Nothing|No one|None) |not (the|its|our) job|^(So|And|Hence) |used to '

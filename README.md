@@ -15,7 +15,7 @@ a habit with a rewrite that keeps the same facts.
 | Section | Catches |
 |---|---|
 | Contrastive framing | "X, not Y", "rather than", "not just X but Y", "It's not X. It's Y." Banned by default; three narrow exceptions, each with a test. |
-| Stance and agency | Values, files and figures that know, say or earn things; figures of speech where a literal word exists, with a lookup table. |
+| Stance and agency | Values, files and figures that know, say, earn or own things; figures of speech where a literal word exists, with a lookup table. |
 | Sentence shapes | Clefts, significance announcements, dramatic negation, which-ladders, fragments, rule-of-three lists, em-dash asides, density. |
 | Openings and closings | Aphorisms, a conclusion in place of the mechanism, "silently", refrains, announcers, restating closers, padding, paragraphs opening on "It". |
 | Paragraph transitions | The problem-then-response turn: a description where a limitation belongs, a narrative bridge with no evidence, a problem sized to the solution, a colon or comma doing the turn. |
