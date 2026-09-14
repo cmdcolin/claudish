@@ -16,82 +16,83 @@ Each entry pairs a problem with the fix that keeps the same facts.
 Delete the negative half; the sentence almost always still says everything.
 Keep it only when a reader who never saw it would pick the wrong option.
 
-| Before | After |
-|---|---|
-| Staleness is stamped, not compared. | Staleness is stamped. |
-| It's not a cache. It's a log. | It is a log. |
-| The CLI doesn't just fetch domains, it caches them. | The CLI fetches domains and caches them on disk. |
-| CI runs the install command from the README, so it is tested rather than remembered. | CI runs the install command from the README, so a broken one fails the build. |
+| Pattern | Before | After |
+|---|---|---|
+| Contrastive framing | Staleness is stamped, not compared. | Staleness is stamped. |
+| Contrastive framing | It's not a cache. It's a log. | It is a log. |
+| Contrastive framing | The CLI doesn't just fetch domains, it caches them. | The CLI fetches domains and caches them on disk. |
+| Contrastive framing | CI runs the install command from the README, so it is tested rather than remembered. | CI runs the install command from the README, so a broken one fails the build. |
 
 **Stance and agency.** A value, file or figure knows, says and earns nothing,
 and a drawn thing owns nothing. Name the actor that does the thing, or use a
-verb of description. Replace a figure of speech with the literal word.
+verb of description. Replace a figure of speech with the literal word. Use the
+active voice where you know the actor.
 
-| Before | After |
-|---|---|
-| ClinVar adds a layer the alignment cannot know. | The ClinVar track marks pathogenic variants per residue. |
-| each lane draws its own cluster genes | each lane draws the cluster genes annotated in that genome |
-| each bar rises to the height its frequency earns | each bar's height is proportional to its frequency |
-| The config file is load-bearing. | Every command reads the config file. |
+| Pattern | Before | After |
+|---|---|---|
+| A value given knowledge | The lockfile knows which versions to install. | The lockfile lists the exact version of each package. |
+| An inanimate subject given ownership | each tab renders its own settings | each tab renders the settings stored for that window |
+| An artifact given a will | each bar rises to the height its frequency earns | each bar's height is proportional to its frequency |
+| A figure of speech | The config file is load-bearing. | Every command reads the config file. |
+| The passive voice hiding the actor | The field is left unset. | The parser leaves the field unset. |
 
 **Sentence shapes.** The sentence bends to land a beat: a cleft, a
 significance announcement, a which-ladder, a colon lead-in, a comma-hung
 appositive, a fragment, a rule-of-three list. Write the plain verb and its
 subject, and give each fact its own sentence.
 
-| Before | After |
-|---|---|
-| Rounding is what buys the room. | Rounding saves two characters per value. |
-| The model scores the variant benign, which is the honest answer to the question it was asked. | The model scores the variant benign, because it predicts whether a substitution breaks the fold, and this one does not. |
-| Each scale resolves where updating it costs least: a categorical color resolves in the shader. | A categorical color resolves in the shader. |
-| Version 1 displays a single chromosome, a design that cannot show synteny. | Version 1 is limited to a single chromosome at a time, so it cannot show synteny. |
-| A file in, a look applied, ProRes out. | The command reads the file, applies the look and writes ProRes 4444. |
+| Pattern | Before | After |
+|---|---|---|
+| The cleft | Rounding is what buys the room. | Rounding saves two characters per value. |
+| The significance announcement | The linter accepts the file, which is the honest answer to the question it was asked. | The linter accepts the file, because it checks only syntax, and the syntax is valid. |
+| A colon lead-in | Each scale resolves where updating it costs least: a categorical color resolves in the shader. | A categorical color resolves in the shader. |
+| A comma-hung appositive | Version 1 opens one file, a design that cannot compare two. | Version 1 opens only one file at a time, so it cannot compare two. |
+| A rule-of-three list | A file in, a look applied, ProRes out. | The command reads the file, applies the look and writes ProRes 4444. |
 
 **Openings and closings.** A section opens on an aphorism or a pronoun,
 states an outcome where the mechanism belongs, hides a failure behind
 "silently", announces its own shape, or closes by restating. Open on the
 subject by name. Write what the machine does. Stop at the last fact.
 
-| Before | After |
-|---|---|
-| A phone GPU is still a phone GPU. | A phone GPU has much less headroom. |
-| A marker that does not parse stops the build. | The generator exits with an error on a marker it cannot parse, so the build fails. |
-| The second bug is the same class of wrong, quieter. | The second bug highlights the wrong residue and raises no error. |
-| It runs the app's own engine. | The renderer runs the app's own engine. |
-| Two constraints shape the design. First, ... | The design has to run offline. |
+| Pattern | Before | After |
+|---|---|---|
+| An aphorism opening a section | A phone GPU is still a phone GPU. | A phone GPU has much less headroom. |
+| A conclusion standing in for the mechanism | A marker that does not parse stops the build. | The generator exits with an error on a marker it cannot parse, so the build fails. |
+| Silently, quietly, invisibly | The second bug is the same class of wrong, quieter. | The second bug writes the wrong value and raises no error. |
+| A pronoun opening a paragraph | It runs the app's own engine. | The renderer runs the app's own engine. |
+| An announcer | Two constraints shape the design. First, ... | The design has to run offline. |
 
 **Paragraph transitions.** The turn from prior state to response is missing
 or overloaded: a description where a limitation belongs, a narrative bridge
 with no evidence, a problem sized to the solution's features. Name the
 limitation as a limitation, in one sentence, then give the response its own.
 
-| Before | After |
-|---|---|
-| Version 1 shows a single chromosome of a single species at a time. We built version 2 to lift that limit. | Version 1 is limited to visualizing a single chromosome of a single species at a time. We built version 2 as a general-purpose genome browser that removes this restriction by displaying multiple assemblies and regions together, which allows it to visualize cross-species synteny and complex structural variation. |
-| Version 1 cannot show a syntenic alignment between two genomes. We built version 2 to visualize synteny. | Version 1 is limited to visualizing a single chromosome of a single species at a time. We built version 2 ... displaying multiple assemblies and regions together, which allows it to visualize cross-species synteny. |
-| We built version 2 as a genome browser without that restriction, one that can display multiple assemblies together. | We built version 2 as a genome browser that removes this restriction by displaying multiple assemblies together. |
-| Build tools have since moved toward incremental compilation. Our build recompiles every file on each change, so we added a dependency graph. | Our build recompiles every file on each change, so we added a dependency graph. |
+| Pattern | Before | After |
+|---|---|---|
+| A description where a limitation belongs | Version 1 opens one file at a time. Version 2 opens several. | Version 1 is limited to one open file at a time. Version 2 removes that limit by opening files in tabs, so you can compare two files side by side. |
+| A problem sized to the solution | Version 1 cannot show a diff between two files. Version 2 shows diffs. | Version 1 is limited to one open file at a time. Version 2 opens files in tabs, so it can show a diff between two. |
+| A narrative bridge | Build tools have since moved toward incremental compilation. Our build recompiled every file on each change. We added a dependency graph, so it now recompiles only the files a change affects. | Our build recompiled every file on each change. We added a dependency graph, so it now recompiles only the files a change affects. |
 
 **Headings and labels.** A teaser, phrase or negative heading; Title Case; a
 joke in a reference table; a bold-first bullet. Name the subject in the
 heading, in sentence case, and give a flag table plain labels.
 
-| Before | After |
-|---|---|
-| The one setting nobody else has | Offline mode |
-| Where the file goes | Output |
-| What it does not do | Limitations |
-| `--seed=<n>` \| the dice | `--seed=<n>` \| random seed; the same seed gives the same output |
+| Pattern | Before | After |
+|---|---|---|
+| A teaser heading | The one setting nobody else has | Offline mode |
+| A phrase where a noun would do | Where the file goes | Output |
+| A heading that says what a thing is not | What it does not do | Limitations |
+| Cute naming in a reference table | `--seed=<n>` \| the dice | `--seed=<n>` \| random seed; the same seed gives the same output |
 
 **Comments and history.** A comment carries bug history or a rationale essay;
 a doc reads as a changelog; ALL-CAPS for emphasis. Comment the current
 behavior only. Put history in git and rationale in a design doc.
 
-| Before | After |
-|---|---|
-| reset() used to leave the Cancel button showing | reset() also hides the Cancel button |
-| We considered leaving the keys in fetch order, but the diff output has to be stable across runs and fetch order is not, so we sort them first. | Keys are sorted so the diff output is stable across runs. |
-| the ONLY difference | the only difference |
+| Pattern | Before | After |
+|---|---|---|
+| Bug history in a comment | reset() used to leave the Cancel button showing | reset() also hides the Cancel button |
+| An essay where a clause would do | We considered leaving the keys in fetch order, but the diff output has to be stable across runs and fetch order is not, so we sort them first. | Sort the keys so the diff output is stable across runs. |
+| ALL-CAPS emphasis | the ONLY difference | the only difference |
 
 **Register.** An intensifier with no number, a promotional word, borrowed
 authority, a sentence adverb, the leverage/utilize/ensure verb cluster,
@@ -99,12 +100,12 @@ present-participle synthesis, an invented label, synonym cycling. Use the plain
 verb, delete the promotional adjective, and use one term per thing. An
 unqualified "faster" is fine; don't invent a measurement to replace it.
 
-| Before | After |
-|---|---|
-| The tool leverages a comprehensive set of heuristics to ensure correctness. | The tool checks each file against a set of heuristics. |
-| Scores drop after the tokenizer change, highlighting how the two stages interact. | Scores drop after the tokenizer change, because the tagger was trained on the old token boundaries. |
-| Ultimately, the index is the bottleneck. | The index is the bottleneck. |
-| The cache serves as the source of truth. | The cache is the source of truth. |
+| Pattern | Before | After |
+|---|---|---|
+| The verb cluster | The tool leverages a comprehensive set of heuristics to ensure correctness. | The tool checks each file against a set of heuristics. |
+| Present-participle synthesis | Scores drop after the tokenizer change, highlighting how the two stages interact. | Scores drop after the tokenizer change, because the tagger was trained on the old token boundaries. |
+| A sentence adverb | Ultimately, the index is the bottleneck. | The index is the bottleneck. |
+| Small tics | The cache serves as the source of truth. | The cache is the source of truth. |
 
 The skill also lists what a fix must preserve, and ships `scan.sh`, which greps
 a file or directory for the markers and labels each hit by section.

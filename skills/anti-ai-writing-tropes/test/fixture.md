@@ -13,3 +13,7 @@ Furthermore, the ONLY difference is a bug, one that nobody sees.
 reset() used to leave the button showing.
 
 Each scale resolves where updating it costs least: a color resolves in the shader.
+
+The field is left unset when the flag is missing.
+
+We measured it, and the option was measured and rejected.

@@ -90,6 +90,9 @@ nothing, says nothing and earns nothing. The test: could the subject perform
 the verb if you ran the program? When it could not, name the actor that does
 the thing, or use a verb of description (marks, contains, shows, is).
 
+> The lockfile knows which versions to install. → The lockfile lists the exact
+> version of each package.
+>
 > ClinVar adds a layer the alignment cannot know. → The ClinVar track marks
 > pathogenic variants per residue.
 >
@@ -111,6 +114,9 @@ Name the relation the possessive stands for: which input the thing came from,
 what it is annotated on, how many there are per what. "its own X" nearly
 always means one X per Y.
 
+> each tab renders its own settings → each tab renders the settings stored for
+> that window
+>
 > each lane draws its own cluster genes → each lane draws the cluster genes
 > annotated in that genome
 >
@@ -158,6 +164,16 @@ image repeated through a page ("doors", "walls") is a dead metaphor.
 | a footgun, a trap | an error-prone API; name the error |
 | moves the needle | changes the measured result by N |
 
+**The passive voice hiding the actor.** "The field is left unset", "the
+constant is exported", "it was measured and rejected". Use the active voice
+where you know the actor, and name it. Keep an idiomatic passive ("is
+required", "is deprecated") and a passive whose actor genuinely does not
+matter.
+
+> The field is left unset → The parser leaves the field unset
+>
+> It was measured and rejected → We measured it and rejected it
+
 ## Sentence shapes
 
 **The cleft: "X is what does Y".** It turns a plain verb into a verdict.
@@ -171,6 +187,10 @@ image repeated through a page ("doors", "walls") is a dead metaphor.
 answer", "the payoff", "the key insight", "worth naming". Delete the
 announcement and state the fact.
 
+> The linter accepts the file, which is the honest answer to the question it
+> was asked. → The linter accepts the file, because it checks only syntax, and
+> the syntax is valid.
+>
 > The model scores the variant benign, which is the honest answer to the
 > question it was asked. → The model scores the variant benign, because it
 > predicts whether a substitution breaks the fold, and this one does not.
@@ -245,14 +265,11 @@ does a semicolon's work and the reader has to hold the first half open across
 it. Fold the appositive into a relative clause on the noun, or split the
 sentence.
 
-> We built version 2 as a general-purpose genome browser without that
-> restriction, one that can display multiple assemblies together → We built
-> version 2 as a general-purpose genome browser that removes this restriction
-> by displaying multiple assemblies together
+> Version 2 is an editor without that limit, one that opens files in tabs →
+> Version 2 is an editor that removes that limit by opening files in tabs
 >
-> Version 1 displays a single chromosome, a design that cannot show synteny →
-> Version 1 is limited to a single chromosome at a time, so it cannot show
-> synteny
+> Version 1 opens one file, a design that cannot compare two → Version 1 opens
+> only one file at a time, so it cannot compare two
 
 **A comma-clipped tail.** A short phrase hung off a comma to close a sentence
 with a beat: "it rebuilds on every keystroke, every time."
@@ -287,7 +304,7 @@ belongs. Write what the machine does and name the actor.
 failure. Name what the reader observes, or drop it.
 
 > The second bug is the same class of wrong, quieter. → The second bug
-> highlights the wrong residue and raises no error.
+> writes the wrong value and raises no error.
 
 **A refrain.** A project rule ("the viewer computes nothing", "no external
 services") restated as the closer of captions and section intros, or a caution
@@ -334,12 +351,12 @@ lose that turn.
 old tool does and then what the new one does, and leaves the reader to work out
 that the first was a problem. Say it is a limitation.
 
-> Version 1 shows a single chromosome of a single species at a time. We built
-> version 2 to lift that limit → Version 1 is limited to visualizing a single
-> chromosome of a single species at a time. We built version 2 as a
-> general-purpose genome browser that removes this restriction by displaying
-> multiple assemblies and regions together, which allows it to visualize
-> cross-species synteny and complex structural variation
+The pattern: *A is limited to X. B removes that limit by doing Y, so it can
+Z.*
+
+> Version 1 opens one file at a time. Version 2 opens several → Version 1 is
+> limited to one open file at a time. Version 2 removes that limit by opening
+> files in tabs, so you can compare two files side by side
 
 **A narrative bridge with nothing behind it.** A sentence about how the field
 moved ("teams have since shifted to monorepos", "that design fit its era")
@@ -348,32 +365,29 @@ claim, and the reader will test it. Cut it and let the limitation carry the
 turn.
 
 > Build tools have since moved toward incremental compilation. Our build
-> recompiles every file on each change, so we added a dependency graph. → Our
-> build recompiles every file on each change, so we added a dependency graph.
+> recompiled every file on each change. We added a dependency graph, so it now
+> recompiles only the files a change affects. → Our build recompiled every
+> file on each change. We added a dependency graph, so it now recompiles only
+> the files a change affects.
 
 **A problem sized to the solution.** The limitation is stated in exactly the
 terms of the new tool's headline features, so the paragraph reads as
 back-formed. State the general limitation; the features follow from it in the
 next sentence.
 
-> Version 1 cannot show a syntenic alignment between two genomes or a
-> structural variant with breakpoints on different chromosomes. We built
-> version 2 to visualize synteny and structural variation → Version 1 is
-> limited to visualizing a single chromosome of a single species at a time. We
-> built version 2 ... displaying multiple assemblies and regions together, which
-> allows it to visualize cross-species synteny and complex structural variation
+> Version 1 cannot show a diff between two files. Version 2 shows diffs →
+> Version 1 is limited to one open file at a time. Version 2 opens files in
+> tabs, so it can show a diff between two
 
 **A colon or a comma doing the turn.** "That adoption came with a fixed frame:
-version 1 shows ..." and "a browser without that restriction, one that can ..."
+version 1 opens ..." and "an editor without that limit, one that opens ..."
 both make the reader stop mid-sentence to reattach the halves. See
-[A colon lead-in](#sentence-shapes) and [A comma-hung
-appositive](#sentence-shapes). Two plain sentences, problem then response, read faster
-than one joined sentence.
+[A colon lead-in](#sentence-shapes) and
+[A comma-hung appositive](#sentence-shapes). Two plain sentences, problem then
+response, read faster than one joined sentence.
 
-> We built version 2 as a general-purpose genome browser without that
-> restriction, one that can display multiple assemblies and regions together →
-> We built version 2 as a general-purpose genome browser that removes this
-> restriction by displaying multiple assemblies and regions together
+> Version 2 is an editor without that limit, one that opens files in tabs →
+> Version 2 is an editor that removes that limit by opening files in tabs
 
 A turn that opens on "that limit" or "this approach" only works for a reader
 who has the previous paragraph in mind. See [A pronoun opening a
@@ -433,7 +447,7 @@ place with pointers to it.
 
 > // We considered leaving the keys in fetch order, but the diff output has to
 > // be stable across runs and fetch order is not, so we sort them first. →
-> // Keys are sorted so the diff output is stable across runs.
+> // Sort the keys so the diff output is stable across runs.
 
 **ALL-CAPS emphasis.** "the ONLY difference", "DON'T MEASURE". Emphasis is the
 sentence's job.
@@ -458,8 +472,8 @@ configuration." Say what the thing does.
 sentence. Each says the sentence relates to the last one without saying how.
 Delete it, or write the relation as a clause.
 
-> Additionally, the cache is cleared on restart. → The cache is cleared on
-> restart.
+> Additionally, the server clears the cache on restart. → The server clears
+> the cache on restart.
 >
 > Ultimately, the index is the bottleneck. → The index is the bottleneck.
 
@@ -520,7 +534,7 @@ an alignment").
 `scan.sh` beside this file greps the Markdown, LaTeX, reStructuredText and
 plain-text files under a path for the markers above, labelled by the section
 they belong to: `contrast`, `shape`, `agency`, `colon`, `apposition`,
-`opening`, `history`, `register` and `coldstart`. Read each hit in context. The
+`opening`, `passive`, `history`, `register` and `coldstart`. Read each hit in context. The
 `coldstart` label marks a paragraph whose first line opens on a pronoun, a
 demonstrative or a sentence-initial "So"/"And"/"Hence"; `colon` and
 `apposition` mark the two sentence shapes that split a sentence at its
