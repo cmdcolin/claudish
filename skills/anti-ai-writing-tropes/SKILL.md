@@ -20,6 +20,18 @@ below is paired with a rewrite, so the fix is a pattern to copy.
 - Fixing: keep every fact. A rewrite that drops a number or changes what a
   sentence claims is worse however plain it reads. See
   [What not to flatten](#what-not-to-flatten).
+- Rewording a paragraph: rewrite the whole paragraph and reflow it. Splicing a
+  clause into the old line breaks to keep the diff small yields an optimal diff
+  and tangled prose, where two ideas that depend on each other sit in one
+  sentence without the word that connects them. A small edit means a narrow
+  scope, not few changed lines.
+
+  > The WebGL context cap limits the linear genome view, where JBrowse 2
+  > renders each track in a separate canvas because each track is an
+  > independent React component → Each track is an independent React
+  > component, so JBrowse 2 renders each track in its own canvas. Browsers cap
+  > a page at 16 WebGL contexts, one per canvas, so a WebGL view with more
+  > tracks than that would exceed the cap
 - Reviewing for someone else: report every instance, then triage. A "report
   only the worst" instruction makes a reviewer drop real findings. One line
   per finding: `file:line`, the trope name, the quoted phrase, the rewrite.
