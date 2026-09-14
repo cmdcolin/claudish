@@ -1,0 +1,19 @@
+{
+  "name": "claudish",
+  "owner": {
+    "name": "Colin Diesh"
+  },
+  "metadata": {
+    "description": "Claude Code skills by cmdcolin"
+  },
+  "plugins": [
+    {
+      "name": "claudish",
+      "source": "./",
+      "description": "Skills for Claude Code, starting with a checklist of AI writing tropes and their rewrites",
+      "version": "0.1.0",
+      "strict": false,
+      "skills": ["./skills/anti-ai-writing-tropes"]
+    }
+  ]
+}
