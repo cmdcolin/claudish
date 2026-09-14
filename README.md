@@ -15,8 +15,8 @@ a habit with a rewrite that keeps the same facts.
 | Section | Catches |
 |---|---|
 | Contrastive framing | "X, not Y", "rather than", "not just X but Y", "It's not X. It's Y." Banned by default; three narrow exceptions, each with a test. |
-| Stance and agency | Values, files and figures that know, say, earn or own things; figures of speech where a literal word exists, with a lookup table. |
-| Sentence shapes | Clefts, significance announcements, dramatic negation, which-ladders, fragments, rule-of-three lists, em-dash asides, density. |
+| Stance and agency | Values, files and figures that know, say or earn things; a drawn thing given ownership ("each lane draws its own genes", "takes its own row"); figures of speech where a literal word exists, with a lookup table. |
+| Sentence shapes | Clefts, significance announcements, dramatic negation, which-ladders, colon lead-ins, comma-hung appositives ("a browser without X, one that can Y"), fragments, rule-of-three lists, em-dash asides, density. |
 | Openings and closings | Aphorisms, a conclusion in place of the mechanism, "silently", refrains, announcers, restating closers, padding, paragraphs opening on "It". |
 | Paragraph transitions | The problem-then-response turn: a description where a limitation belongs, a narrative bridge with no evidence, a problem sized to the solution, a colon or comma doing the turn. |
 | Headings and labels | Teaser, phrase and negative headings, Title Case, jokes in reference tables, bold-first bullets. |
@@ -29,11 +29,9 @@ a file or directory for the markers and labels each hit by group.
 Compared with the [tropes.fyi directory](https://tropes.fyi/directory), the
 [Writing Whip](https://tropes.fyi/whip) and
 [Wikipedia's Signs of AI writing](https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing),
-which catalog essays and blog posts, the skill bans contrastive framing
+this repo bans contrastive framing
 outright, gives every pattern a rewrite, and adds the patterns of technical
-prose: stance and agency, clefts, mechanism, headings and comments. Most of
-those came from rewriting the docs of two real codebases, videoskillet and
-react-msaview.
+prose: stance and agency, clefts, mechanism, headings and comments. 
 
 ## Install
 
