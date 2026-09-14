@@ -18,6 +18,7 @@ a habit with a rewrite that keeps the same facts.
 | Stance and agency | Values, files and figures that know, say or earn things; figures of speech where a literal word exists, with a lookup table. |
 | Sentence shapes | Clefts, significance announcements, dramatic negation, which-ladders, fragments, rule-of-three lists, em-dash asides, density. |
 | Openings and closings | Aphorisms, a conclusion in place of the mechanism, "silently", refrains, announcers, restating closers, padding, paragraphs opening on "It". |
+| Paragraph transitions | The problem-then-response turn: a description where a limitation belongs, a narrative bridge with no evidence, a problem sized to the solution, a colon or comma doing the turn. |
 | Headings and labels | Teaser, phrase and negative headings, Title Case, jokes in reference tables, bold-first bullets. |
 | Comments and history | Bug history in comments, docs written as changelogs, rationale essays, ALL-CAPS. |
 | Register | Intensifiers with no number, promotional words, borrowed authority, present-participle synthesis, invented labels, synonym cycling. |

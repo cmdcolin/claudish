@@ -205,6 +205,30 @@ the verbs dropped.
 **A false range.** "from parsing to rendering to export" where nothing sits on a
 scale between the ends. List the items, or name the one that matters.
 
+**A colon lead-in.** A generalizing clause, a colon, then the facts it
+summarizes. The reader has to match the abstract half against the concrete
+half. Delete the lead-in and start on the facts. A colon that introduces a list
+or an example ("four sets of measurements: ...") is fine; the tell is a
+generalization first, specifics second.
+
+> Each scale resolves where updating it costs least: a categorical color
+> resolves in the shader → A categorical color resolves in the shader
+
+**A comma-hung appositive.** A noun phrase, a comma, then "one that" or "a
+design that" restating the subject before the sentence carries on. The comma
+does a semicolon's work and the reader has to hold the first half open across
+it. Fold the appositive into a relative clause on the noun, or split the
+sentence.
+
+> We built JBrowse 2 as a general-purpose genome browser without that
+> restriction, one that can display multiple assemblies together → We built
+> JBrowse 2 as a general-purpose genome browser that removes this restriction
+> by displaying multiple assemblies together
+>
+> JBrowse 1 displays a single chromosome, a design that cannot show synteny →
+> JBrowse 1 is limited to a single chromosome at a time, so it cannot show
+> synteny
+
 **A comma-clipped tail.** A short phrase hung off a comma to close a sentence
 with a beat: "it rebuilds on every keystroke, every time."
 
@@ -270,6 +294,51 @@ or what was found, and puts supporting detail after it.
 has no antecedent for "It", "This" or "That". Name the subject.
 
 > It runs the app's own engine. → The renderer runs the app's own engine.
+
+## Paragraph transitions
+
+A paragraph that introduces a design or a project turns on one sentence: the
+prior state named as a problem, then the response to it. The shapes below all
+lose that turn.
+
+**A description where a limitation belongs.** The paragraph states what the
+old tool does and then what the new one does, and leaves the reader to work out
+that the first was a problem. Say it is a limitation.
+
+> JBrowse 1 shows a single chromosome of a single species at a time. We built
+> JBrowse 2 to lift that limit → JBrowse 1 is limited to visualizing a single
+> chromosome of a single species at a time. We built JBrowse 2 as a
+> general-purpose genome browser that removes this restriction by displaying
+> multiple assemblies and regions together
+
+**A narrative bridge with nothing behind it.** A sentence about how the field
+moved ("projects have since shifted toward comparing assemblies", "that design
+fit its era") written to motivate the turn, with no citation and no measurement.
+It is a claim, and the reader will test it. Cut it and let the limitation carry
+the turn.
+
+**A problem sized to the solution.** The limitation is stated in exactly the
+terms of the new tool's headline features, so the paragraph reads as
+back-formed. State the general limitation; the features follow from it in the
+next sentence.
+
+> JBrowse 1 cannot show a syntenic alignment between two genomes or a
+> structural variant with breakpoints on different chromosomes. We built
+> JBrowse 2 to visualize synteny and structural variation → JBrowse 1 is
+> limited to visualizing a single chromosome of a single species at a time. We
+> built JBrowse 2 ... displaying multiple assemblies and regions together, which
+> allows it to visualize cross-species synteny and complex structural variation
+
+**A colon or a comma doing the turn.** "That adoption came with a fixed frame:
+JBrowse 1 shows ..." and "a browser without that restriction, one that can ..."
+both make the reader stop mid-sentence to reattach the halves. See
+[A colon lead-in](#sentence-shapes) and [A comma-hung
+appositive](#sentence-shapes). Two plain sentences, problem then response, read faster
+than one joined sentence.
+
+**A cold-start failure.** The turn only works for a reader who has the previous
+paragraph in mind ("that limit", "this approach"). Restate the subject by name
+in the first sentence.
 
 ## Headings and labels
 
@@ -390,7 +459,11 @@ an alignment").
 ## Quick scan
 
 `scan.sh` in this directory greps a file or directory for the markers above,
-labelled by group. Read each hit in context.
+labelled by group. Read each hit in context. The `coldstart` label marks a
+paragraph whose first line opens on a pronoun, a demonstrative or a
+sentence-initial "So"/"And"/"Hence"; `colon` and `apposition` mark the two
+sentence shapes that split a sentence at its punctuation. A paragraph that
+follows a list and opens on "These" is usually fine.
 
 ```sh
 bash ~/.claude/skills/anti-ai-writing-tropes/scan.sh docs/
