@@ -9,29 +9,58 @@ Skills for Claude Code.
 ## anti-ai-writing-tropes
 
 A checklist for technical writing: docs, READMEs, tutorials, code comments,
-figure captions, commit messages and agent instruction files. Each entry pairs
-a problem with the fix that keeps the same facts.
+figure captions, commit messages, PR descriptions and agent instruction files.
+Each entry pairs a problem with the fix that keeps the same facts.
 
-| Section | Problem | Fix |
-|---|---|---|
-| Contrastive framing | The sentence defines a thing by what it is not: "X, not Y", "rather than", "not just X but Y", "It's not X. It's Y." | Delete the negative half; the sentence almost always still says everything. Keep it only when a reader who never saw it would pick the wrong option or hold a wrong belief. |
-| Stance and agency | A value, file or figure knows, says or earns something; a drawn thing owns what it shows ("each lane draws its own genes", "takes its own row"); a figure of speech stands where a literal word exists. | Name the actor that does the thing (the parser, the display) or use a verb of description. Say what the possessive stands for: one per genome, annotated on that contig. Replace the figure with the literal word from the lookup table. |
-| Sentence shapes | The sentence bends to land a beat: a cleft ("X is what does Y"), a significance announcement, dramatic negation, a which-ladder, a colon lead-in, a comma-hung appositive ("a browser without X, one that can Y"), a fragment, a rule-of-three list, an em-dash aside. | Write the plain verb and its subject. Delete the lead-in and start on the facts. Fold the appositive into a relative clause on the noun. Give each fact its own sentence. |
-| Openings and closings | A section opens on an aphorism or a pronoun, states an outcome where the mechanism belongs, hides a failure behind "silently", announces its own shape, repeats a refrain, or closes by restating. | Open on the subject by name and the first observation. Write what the machine does. Stop at the last fact. |
-| Paragraph transitions | The turn from prior state to response is missing or overloaded: a description where a limitation belongs, a narrative bridge with no evidence, a problem sized to the solution's features, a colon or comma carrying the turn. | Name the limitation as a limitation, in general terms, in one sentence. Give the response its own sentence. Cut any motivating claim that has no citation. |
-| Headings and labels | A teaser, phrase or negative heading; Title Case; a joke in a reference table; a bold-first bullet. | Name the subject in the heading, in sentence case. Give a flag table plain labels and a list plain bullets. |
-| Comments and history | A comment carries bug history or a rationale essay; a doc reads as a changelog; ALL-CAPS for emphasis. | Comment the current behavior only. Put history in git and rationale in a design doc. |
-| Register | An intensifier with no number, a promotional word, borrowed authority, present-participle synthesis (", reducing data transfer"), an invented label, synonym cycling. | Give the number. Delete the adjective. Make the participle its own sentence with its own subject. Use one term per thing. |
+- **Contrastive framing.** The sentence defines a thing by what it is not:
+  "X, not Y", "rather than", "not just X but Y", "It's not X. It's Y." Delete
+  the negative half; the sentence almost always still says everything. Keep it
+  only when a reader who never saw it would pick the wrong option or hold a
+  wrong belief.
+- **Stance and agency.** A value, file or figure knows, says or earns
+  something; a drawn thing owns what it shows ("each lane draws its own
+  genes"); a figure of speech stands where a literal word exists. Name the
+  actor that does the thing, or use a verb of description. Say what the
+  possessive stands for. Replace the figure with the literal word from the
+  lookup table.
+- **Sentence shapes.** The sentence bends to land a beat: a cleft ("X is what
+  does Y"), a significance announcement, dramatic negation, a which-ladder, a
+  colon lead-in, a comma-hung appositive ("a browser without X, one that can
+  Y"), a fragment, a rule-of-three list, an em-dash aside. Write the plain verb
+  and its subject. Give each fact its own sentence.
+- **Openings and closings.** A section opens on an aphorism or a pronoun,
+  states an outcome where the mechanism belongs, hides a failure behind
+  "silently", announces its own shape, repeats a refrain, or closes by
+  restating. Open on the subject by name and the first observation. Write what
+  the machine does. Stop at the last fact.
+- **Paragraph transitions.** The turn from prior state to response is missing
+  or overloaded: a description where a limitation belongs, a narrative bridge
+  with no evidence, a problem sized to the solution's features, a colon or
+  comma carrying the turn. Name the limitation as a limitation, in one
+  sentence. Give the response its own sentence. Cut any motivating claim that
+  has no citation.
+- **Headings and labels.** A teaser, phrase or negative heading; Title Case; a
+  joke in a reference table; a bold-first bullet. Name the subject in the
+  heading, in sentence case. Give a flag table plain labels.
+- **Comments and history.** A comment carries bug history or a rationale
+  essay; a doc reads as a changelog; ALL-CAPS for emphasis. Comment the
+  current behavior only. Put history in git and rationale in a design doc.
+- **Register.** An intensifier with no number, a promotional word, borrowed
+  authority, a sentence adverb ("Additionally", "Ultimately"), the
+  leverage/utilize/ensure verb cluster, present-participle synthesis (",
+  reducing data transfer"), an invented label, synonym cycling. Give the
+  number. Delete the adjective. Make the participle its own sentence. Use one
+  term per thing.
 
 The skill also lists what a fix must preserve, and ships `scan.sh`, which greps
-a file or directory for the markers and labels each hit by group.
+a file or directory for the markers and labels each hit by section.
 
 Compared with the [tropes.fyi directory](https://tropes.fyi/directory), the
 [Writing Whip](https://tropes.fyi/whip) and
 [Wikipedia's Signs of AI writing](https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing),
-this repo bans contrastive framing
-outright, gives every pattern a rewrite, and adds the patterns of technical
-prose: stance and agency, clefts, mechanism, headings and comments. 
+this repo deletes contrastive framing by default, gives every pattern a
+rewrite, and adds the patterns of technical prose: stance and agency, clefts,
+mechanism, headings and comments.
 
 ## Install
 

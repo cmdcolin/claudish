@@ -1,6 +1,7 @@
 ---
 name: anti-ai-writing-tropes
-description: Checklist of prose habits that make technical writing read as generated, each with a before/after rewrite. Use when writing or editing docs, READMEs, tutorials, code comments, commit messages, figure captions or agent instruction files (CLAUDE.md), and when asked to review or clean up writing for AI tropes.
+description: Checklist of prose habits that make technical writing read as generated, each with a before/after rewrite. Use when writing or editing docs, READMEs, tutorials, code comments, commit messages, PR descriptions, release notes, manuscripts, figure captions or agent instruction files (CLAUDE.md), and when asked to review or clean up writing for AI tropes.
+allowed-tools: Bash(bash *scan.sh*)
 ---
 
 # Anti-AI writing tropes
@@ -13,14 +14,18 @@ below is paired with a rewrite, so the fix is a pattern to copy.
 - Writing: draft normally, then reread against the checklist before finishing.
   Fix the sentence around a trope. A synonym in the same sentence pattern is
   the same trope.
-- Reviewing a file or repo: run `scan.sh` from this directory on the target to
+- Reviewing a file or repo: run the `scan.sh` beside this file on the target to
   find hotspots, then read those passages in context. Treat a hit as a lead to
   read; some em-dashes are fine.
 - Fixing: keep every fact. A rewrite that drops a number or changes what a
   sentence claims is worse however plain it reads. See
   [What not to flatten](#what-not-to-flatten).
 - Reviewing for someone else: report every instance, then triage. A "report
-  only the worst" instruction makes a reviewer drop real findings.
+  only the worst" instruction makes a reviewer drop real findings. One line
+  per finding: `file:line`, the trope name, the quoted phrase, the rewrite.
+  Group the lines by file and put the tropes that recur across the document at
+  the top of the report, because one habit fixed at the source clears many
+  lines.
 - Instruction files: fix `CLAUDE.md`, `AGENTS.md` and similar files first,
   because agents copy their prose into everything they write. Write each style
   rule in the style it asks for, and include the rewrite along with the ban: a
@@ -311,9 +316,13 @@ to the facts. A report or a PR description leads with the outcome, what changed
 or what was found, and puts supporting detail after it.
 
 **A pronoun opening a paragraph.** A reader arriving by search hit or deep link
-has no antecedent for "It", "This" or "That". Name the subject.
+has no antecedent for "It", "This", "That" or "that limit". Name the subject,
+even when the previous paragraph named it.
 
 > It runs the app's own engine. → The renderer runs the app's own engine.
+>
+> That limit is why we wrote a second parser. → The 2 GB file limit is why we
+> wrote a second parser.
 
 ## Paragraph transitions
 
@@ -332,10 +341,14 @@ that the first was a problem. Say it is a limitation.
 > multiple assemblies and regions together
 
 **A narrative bridge with nothing behind it.** A sentence about how the field
-moved ("projects have since shifted toward comparing assemblies", "that design
-fit its era") written to motivate the turn, with no citation and no measurement.
-It is a claim, and the reader will test it. Cut it and let the limitation carry
-the turn.
+moved ("teams have since shifted to monorepos", "that design fit its era")
+written to motivate the turn, with no citation and no measurement. It is a
+claim, and the reader will test it. Cut it and let the limitation carry the
+turn.
+
+> Build tools have since moved toward incremental compilation. Our build
+> recompiles every file on each change, so we added a dependency graph. → Our
+> build recompiles every file on each change, so we added a dependency graph.
 
 **A problem sized to the solution.** The limitation is stated in exactly the
 terms of the new tool's headline features, so the paragraph reads as
@@ -356,9 +369,9 @@ both make the reader stop mid-sentence to reattach the halves. See
 appositive](#sentence-shapes). Two plain sentences, problem then response, read faster
 than one joined sentence.
 
-**A cold-start failure.** The turn only works for a reader who has the previous
-paragraph in mind ("that limit", "this approach"). Restate the subject by name
-in the first sentence.
+A turn that opens on "that limit" or "this approach" only works for a reader
+who has the previous paragraph in mind. See [A pronoun opening a
+paragraph](#openings-and-closings).
 
 ## Headings and labels
 
@@ -433,6 +446,26 @@ configuration." Say what the thing does, with the number if there is one.
 **Borrowed authority.** `industry reports`, `surveys show`, "a classic",
 "famously", "the well-known". Cite it or drop the adjective.
 
+**A sentence adverb carrying the transition.** "Additionally", "Furthermore",
+"Moreover", "Notably", "Importantly", "Ultimately", "Overall" at the head of a
+sentence. Each says the sentence relates to the last one without saying how.
+Delete it, or write the relation as a clause.
+
+> Additionally, the cache is cleared on restart. → The cache is cleared on
+> restart.
+>
+> Ultimately, the index is the bottleneck. → Profiling shows the index takes
+> 80% of query time.
+
+**The verb cluster.** `leverage`, `utilize`, `streamline`, `empower`, `unlock`,
+`ensure`, `enable` where a plain verb exists: use, simplify, let, check, make.
+The same for the filler adjectives `comprehensive`, `crucial`, `essential`,
+`key` and the quantifiers "a variety of", "a range of". Say which, or how many.
+
+> The tool leverages a comprehensive set of heuristics to ensure correctness.
+> → The tool applies twelve heuristics, listed below, and rejects a file that
+> fails any of them.
+
 **Present-participle synthesis.** `…, highlighting how the two stages interact`
 is a claim with nobody making it. Write the claim as its own sentence or drop
 it.
@@ -478,13 +511,21 @@ an alignment").
 
 ## Quick scan
 
-`scan.sh` in this directory greps a file or directory for the markers above,
-labelled by group. Read each hit in context. The `coldstart` label marks a
-paragraph whose first line opens on a pronoun, a demonstrative or a
-sentence-initial "So"/"And"/"Hence"; `colon` and `apposition` mark the two
-sentence shapes that split a sentence at its punctuation. A paragraph that
-follows a list and opens on "These" is usually fine.
+`scan.sh` beside this file greps the Markdown, LaTeX, reStructuredText and
+plain-text files under a path for the markers above, labelled by the section
+they belong to: `contrast`, `shape`, `agency`, `colon`, `apposition`,
+`opening`, `history`, `register` and `coldstart`. Read each hit in context. The
+`coldstart` label marks a paragraph whose first line opens on a pronoun, a
+demonstrative or a sentence-initial "So"/"And"/"Hence"; `colon` and
+`apposition` mark the two sentence shapes that split a sentence at its
+punctuation. A paragraph that follows a list and opens on "These" is usually
+fine.
 
 ```sh
+# installed as a plugin
+bash "$CLAUDE_PLUGIN_ROOT"/skills/anti-ai-writing-tropes/scan.sh docs/
+# copied into ~/.claude/skills
 bash ~/.claude/skills/anti-ai-writing-tropes/scan.sh docs/
 ```
+
+`test/run.sh` checks the patterns against a fixture after an edit.

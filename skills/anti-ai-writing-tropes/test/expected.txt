@@ -1,0 +1,11 @@
+[agency] 7:Rounding is what buys the room — every time.
+[apposition] 11:Furthermore, the ONLY difference is a bug, one that nobody sees.
+[coldstart] 5:It runs the engine.
+[colon] 15:Each scale resolves where updating it costs least: a color resolves in the shader.
+[contrast] 3:Staleness is stamped, not compared.
+[contrast] 7:Rounding is what buys the room — every time.
+[history] 11:Furthermore, the ONLY difference is a bug, one that nobody sees.
+[history] 13:reset() used to leave the button showing.
+[register] 11:Furthermore, the ONLY difference is a bug, one that nobody sees.
+[register] 9:The parser is robust and leverages a comprehensive cache.
+[shape] 7:Rounding is what buys the room — every time.
