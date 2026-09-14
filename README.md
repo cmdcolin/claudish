@@ -10,18 +10,18 @@ Skills for Claude Code.
 
 A checklist for technical writing: docs, READMEs, tutorials, code comments,
 figure captions, commit messages and agent instruction files. Each entry pairs
-a habit with a rewrite that keeps the same facts.
+a problem with the fix that keeps the same facts.
 
-| Section | Catches |
-|---|---|
-| Contrastive framing | "X, not Y", "rather than", "not just X but Y", "It's not X. It's Y." Banned by default; three narrow exceptions, each with a test. |
-| Stance and agency | Values, files and figures that know, say or earn things; a drawn thing given ownership ("each lane draws its own genes", "takes its own row"); figures of speech where a literal word exists, with a lookup table. |
-| Sentence shapes | Clefts, significance announcements, dramatic negation, which-ladders, colon lead-ins, comma-hung appositives ("a browser without X, one that can Y"), fragments, rule-of-three lists, em-dash asides, density. |
-| Openings and closings | Aphorisms, a conclusion in place of the mechanism, "silently", refrains, announcers, restating closers, padding, paragraphs opening on "It". |
-| Paragraph transitions | The problem-then-response turn: a description where a limitation belongs, a narrative bridge with no evidence, a problem sized to the solution, a colon or comma doing the turn. |
-| Headings and labels | Teaser, phrase and negative headings, Title Case, jokes in reference tables, bold-first bullets. |
-| Comments and history | Bug history in comments, docs written as changelogs, rationale essays, ALL-CAPS. |
-| Register | Intensifiers with no number, promotional words, borrowed authority, present-participle synthesis, invented labels, synonym cycling. |
+| Section | Problem | Fix |
+|---|---|---|
+| Contrastive framing | The sentence defines a thing by what it is not: "X, not Y", "rather than", "not just X but Y", "It's not X. It's Y." | Delete the negative half; the sentence almost always still says everything. Keep it only when a reader who never saw it would pick the wrong option or hold a wrong belief. |
+| Stance and agency | A value, file or figure knows, says or earns something; a drawn thing owns what it shows ("each lane draws its own genes", "takes its own row"); a figure of speech stands where a literal word exists. | Name the actor that does the thing (the parser, the display) or use a verb of description. Say what the possessive stands for: one per genome, annotated on that contig. Replace the figure with the literal word from the lookup table. |
+| Sentence shapes | The sentence bends to land a beat: a cleft ("X is what does Y"), a significance announcement, dramatic negation, a which-ladder, a colon lead-in, a comma-hung appositive ("a browser without X, one that can Y"), a fragment, a rule-of-three list, an em-dash aside. | Write the plain verb and its subject. Delete the lead-in and start on the facts. Fold the appositive into a relative clause on the noun. Give each fact its own sentence. |
+| Openings and closings | A section opens on an aphorism or a pronoun, states an outcome where the mechanism belongs, hides a failure behind "silently", announces its own shape, repeats a refrain, or closes by restating. | Open on the subject by name and the first observation. Write what the machine does. Stop at the last fact. |
+| Paragraph transitions | The turn from prior state to response is missing or overloaded: a description where a limitation belongs, a narrative bridge with no evidence, a problem sized to the solution's features, a colon or comma carrying the turn. | Name the limitation as a limitation, in general terms, in one sentence. Give the response its own sentence. Cut any motivating claim that has no citation. |
+| Headings and labels | A teaser, phrase or negative heading; Title Case; a joke in a reference table; a bold-first bullet. | Name the subject in the heading, in sentence case. Give a flag table plain labels and a list plain bullets. |
+| Comments and history | A comment carries bug history or a rationale essay; a doc reads as a changelog; ALL-CAPS for emphasis. | Comment the current behavior only. Put history in git and rationale in a design doc. |
+| Register | An intensifier with no number, a promotional word, borrowed authority, present-participle synthesis (", reducing data transfer"), an invented label, synonym cycling. | Give the number. Delete the adjective. Make the participle its own sentence with its own subject. Use one term per thing. |
 
 The skill also lists what a fix must preserve, and ships `scan.sh`, which greps
 a file or directory for the markers and labels each hit by group.
