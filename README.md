@@ -67,7 +67,9 @@ limitation as a limitation, in one sentence, then give the response its own.
 
 | Before | After |
 |---|---|
-| Version 1 shows a single chromosome of a single species at a time. We built version 2 to lift that limit. | Version 1 is limited to visualizing a single chromosome of a single species at a time. We built version 2 as a general-purpose genome browser that removes this restriction. |
+| Version 1 shows a single chromosome of a single species at a time. We built version 2 to lift that limit. | Version 1 is limited to visualizing a single chromosome of a single species at a time. We built version 2 as a general-purpose genome browser that removes this restriction by displaying multiple assemblies and regions together, which allows it to visualize cross-species synteny and complex structural variation. |
+| Version 1 cannot show a syntenic alignment between two genomes. We built version 2 to visualize synteny. | Version 1 is limited to visualizing a single chromosome of a single species at a time. We built version 2 ... displaying multiple assemblies and regions together, which allows it to visualize cross-species synteny. |
+| We built version 2 as a genome browser without that restriction, one that can display multiple assemblies together. | We built version 2 as a genome browser that removes this restriction by displaying multiple assemblies together. |
 | Build tools have since moved toward incremental compilation. Our build recompiles every file on each change, so we added a dependency graph. | Our build recompiles every file on each change, so we added a dependency graph. |
 
 **Headings and labels.** A teaser, phrase or negative heading; Title Case; a
@@ -76,7 +78,7 @@ heading, in sentence case, and give a flag table plain labels.
 
 | Before | After |
 |---|---|
-| The four columns nobody else has | PRRA insert |
+| The one setting nobody else has | Offline mode |
 | Where the file goes | Output |
 | What it does not do | Limitations |
 | `--seed=<n>` \| the dice | `--seed=<n>` \| random seed; the same seed gives the same output |
@@ -93,15 +95,15 @@ behavior only. Put history in git and rationale in a design doc.
 
 **Register.** An intensifier with no number, a promotional word, borrowed
 authority, a sentence adverb, the leverage/utilize/ensure verb cluster,
-present-participle synthesis, an invented label, synonym cycling. Give the
-number. Delete the adjective. Use one term per thing.
+present-participle synthesis, an invented label, synonym cycling. Use the plain
+verb, delete the promotional adjective, and use one term per thing. An
+unqualified "faster" is fine; don't invent a measurement to replace it.
 
 | Before | After |
 |---|---|
-| The new parser is dramatically faster. | The new parser takes 0.4 s on the 2 GB test file, down from 3.1 s. |
-| The tool leverages a comprehensive set of heuristics to ensure correctness. | The tool applies twelve heuristics, listed below, and rejects a file that fails any of them. |
+| The tool leverages a comprehensive set of heuristics to ensure correctness. | The tool checks each file against a set of heuristics. |
 | Scores drop after the tokenizer change, highlighting how the two stages interact. | Scores drop after the tokenizer change, because the tagger was trained on the old token boundaries. |
-| Ultimately, the index is the bottleneck. | Profiling shows the index takes 80% of query time. |
+| Ultimately, the index is the bottleneck. | The index is the bottleneck. |
 | The cache serves as the source of truth. | The cache is the source of truth. |
 
 The skill also lists what a fix must preserve, and ships `scan.sh`, which greps

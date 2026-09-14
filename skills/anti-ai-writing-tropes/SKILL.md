@@ -338,7 +338,8 @@ that the first was a problem. Say it is a limitation.
 > version 2 to lift that limit → Version 1 is limited to visualizing a single
 > chromosome of a single species at a time. We built version 2 as a
 > general-purpose genome browser that removes this restriction by displaying
-> multiple assemblies and regions together
+> multiple assemblies and regions together, which allows it to visualize
+> cross-species synteny and complex structural variation
 
 **A narrative bridge with nothing behind it.** A sentence about how the field
 moved ("teams have since shifted to monorepos", "that design fit its era")
@@ -369,6 +370,11 @@ both make the reader stop mid-sentence to reattach the halves. See
 appositive](#sentence-shapes). Two plain sentences, problem then response, read faster
 than one joined sentence.
 
+> We built version 2 as a general-purpose genome browser without that
+> restriction, one that can display multiple assemblies and regions together →
+> We built version 2 as a general-purpose genome browser that removes this
+> restriction by displaying multiple assemblies and regions together
+
 A turn that opens on "that limit" or "this approach" only works for a reader
 who has the previous paragraph in mind. See [A pronoun opening a
 paragraph](#openings-and-closings).
@@ -378,7 +384,7 @@ paragraph](#openings-and-closings).
 **A teaser heading.** A heading or title that withholds its subject to create
 interest. Name the subject.
 
-> The four columns nobody else has → PRRA insert
+> The one setting nobody else has → Offline mode
 
 **A phrase where a noun would do.** Keep a phrase only where the section answers
 a question the reader asks in those words, such as an FAQ entry or a `Why ...`
@@ -435,13 +441,14 @@ sentence's job.
 ## Register
 
 **An informalism in a formal register.** Judge a word by the document it
-appears in. An intensifier with no number behind it is the same slip in a document
-that quantifies everything else: `dramatically simpler`, `greatly reduced`.
+appears in. A plain unqualified comparative ("faster", "much smaller") is fine;
+don't invent a measurement to replace it. A made-up or overly precise number
+reads worse than the word it replaced.
 
 **Promotional words and grandiose stakes.** `vibrant`, `groundbreaking`,
 `boasts`, `flagship`, `crisp`, `seamless`, `robust`; the `delve` / `tapestry` /
 `testament` / `showcase` / `pivotal` cluster; "This changes how we think about
-configuration." Say what the thing does, with the number if there is one.
+configuration." Say what the thing does.
 
 **Borrowed authority.** `industry reports`, `surveys show`, "a classic",
 "famously", "the well-known". Cite it or drop the adjective.
@@ -454,17 +461,16 @@ Delete it, or write the relation as a clause.
 > Additionally, the cache is cleared on restart. → The cache is cleared on
 > restart.
 >
-> Ultimately, the index is the bottleneck. → Profiling shows the index takes
-> 80% of query time.
+> Ultimately, the index is the bottleneck. → The index is the bottleneck.
 
 **The verb cluster.** `leverage`, `utilize`, `streamline`, `empower`, `unlock`,
 `ensure`, `enable` where a plain verb exists: use, simplify, let, check, make.
 The same for the filler adjectives `comprehensive`, `crucial`, `essential`,
-`key` and the quantifiers "a variety of", "a range of". Say which, or how many.
+`key` and the quantifiers "a variety of", "a range of". Use the plain verb and
+drop the filler; don't add a count or a list the original didn't have.
 
 > The tool leverages a comprehensive set of heuristics to ensure correctness.
-> → The tool applies twelve heuristics, listed below, and rejects a file that
-> fails any of them.
+> → The tool checks each file against a set of heuristics.
 
 **Present-participle synthesis.** `…, highlighting how the two stages interact`
 is a claim with nobody making it. Write the claim as its own sentence or drop
