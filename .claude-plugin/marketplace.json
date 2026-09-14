@@ -11,7 +11,7 @@
       "name": "claudish",
       "source": "./",
       "description": "Skills for Claude Code, starting with a checklist of AI writing tropes and their rewrites",
-      "version": "0.1.0",
+      "version": "0.2.0",
       "strict": false,
       "skills": ["./skills/anti-ai-writing-tropes"]
     }

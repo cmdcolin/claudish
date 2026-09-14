@@ -90,13 +90,13 @@ a thing being described, so it knows, says and earns nothing.
 | Present-participle synthesis | Scores drop after the tokenizer change, highlighting how the two stages interact. | Scores drop after the tokenizer change, because the tagger was trained on the old token boundaries. |
 | Synonym cycling | a track, then a lane, then a layer | one noun, repeated |
 
-**From tropes.fyi.** The skill also carries the essay-prose tropes that turn up
-in docs: the self-answered question, "serves as", suspense and teacher
-transitions, false ranges, invented concept labels, signposted summaries,
-bold-first bullets, dead metaphors, announcers and counts, premise stacking,
-the tie-back, documentation as a changelog, appended corrections, appeals to
-familiarity, comma-clipped tails, reasoning leaks, belaboring the unnecessary,
-never-ending conclusions, self-echo, grandiose stakes and Title Case Headings.
+**From tropes.fyi.** The skill folds the essay-prose tropes that turn up in
+docs into the sections above: the self-answered question, "serves as", false
+ranges, comma-clipped tails, announcers and counts, premise stacking, closings
+that restate, invented concept labels, bold-first bullets, dead metaphors,
+synonym cycling, self-echo, documentation as a changelog, appended
+corrections, appeals to familiarity, narrated deliberation, grandiose stakes
+and Title Case Headings.
 
 ### What it offers over other trope lists
 
@@ -132,8 +132,9 @@ skill folds in the ones that also appear in technical prose, credited under
 - Instruction files first. Agents copy the prose of `CLAUDE.md` and `AGENTS.md`
   into everything they write, so the skill says to fix those files before any
   other and to write every style rule in the style it asks for.
-- A review workflow: grep commands for finding hotspots, each hit read in
-  context, and every instance reported before deciding which to fix.
+- A review workflow: a scan script that greps for hotspots and labels each
+  hit by group, each hit read in context, and every instance reported before
+  deciding which to fix.
 - Most patterns and examples came from rewriting the docs and comments of two
   real codebases, videoskillet and react-msaview.
 

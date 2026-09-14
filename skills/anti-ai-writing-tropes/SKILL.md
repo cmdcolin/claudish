@@ -16,9 +16,9 @@ and the reader supplies the joins.
 - Writing: draft normally, then reread against the checklist before finishing.
   Fix the sentence around a trope. A synonym in the same sentence pattern is
   the same trope.
-- Reviewing a file or repo: grep for the markers in [Quick scan](#quick-scan)
-  to find hotspots, then read those passages in context. Treat a grep hit as a
-  lead to read; some em-dashes are fine.
+- Reviewing a file or repo: run `scan.sh` from this directory on the target to
+  find hotspots, then read those passages in context. Treat a hit as a lead to
+  read; some em-dashes are fine.
 - Fixing: keep every fact. A rewrite that drops a number or changes what a
   sentence claims is worse however plain it reads. See
   [What not to flatten](#what-not-to-flatten).
@@ -26,9 +26,12 @@ and the reader supplies the joins.
   only the worst" instruction makes a reviewer drop real findings.
 - Instruction files: fix `CLAUDE.md`, `AGENTS.md` and similar files first.
   Agents read them every session and copy their prose as house voice, so a
-  trope there spreads into every document written afterwards. When you add a
-  style rule to one, include the rewrite along with the ban: a model copies a
-  positive example more reliably than it obeys a prohibition.
+  trope there spreads into every document written afterwards. A style rule is
+  read as prose before it is read as a rule, and the prose is the part that
+  gets imitated: a "no em-dashes" rule written in a sentence containing one
+  ships the em-dash. Write each rule in the style it asks for, and include the
+  rewrite along with the ban, because a model copies a positive example more
+  reliably than it obeys a prohibition.
 
 ## Contrastive framing
 
@@ -118,7 +121,9 @@ connotations the writer did not choose: "rot" implies decay nobody measured,
 and "a one-way door" implies a door. The test is mechanical. For each verb or
 noun that is not literally true of its subject, ask what literal word it stands
 for, and write that word. Keep a figure only when no literal phrase exists or
-the field has adopted it as a term ("memory leak", "race condition").
+the field has adopted it as a term ("memory leak", "race condition"). An image
+that survives the test still appears once: "doors", "walls" or "layers of the
+onion" repeated through a page is a dead metaphor.
 
 > each bar rises to the height its frequency earns → each bar's height is
 > proportional to its frequency
@@ -158,6 +163,17 @@ announcement and state the fact.
 > The model scores the variant benign, which is the honest answer to the
 > question it was asked. → The model scores the variant benign, because it
 > predicts whether a substitution breaks the fold, and this one does not.
+
+**Narrated deliberation.** The text describes its own thinking ("What that
+changes in the design is worth being precise about") or defends a minor point
+against an objection nobody raised ("We spell this out rather than changing it
+silently, because the failure mode is why it matters"). Write the change or the
+point, and move on.
+
+> what it changes is worth being precise about → The change moves validation
+> from the client to the server.
+
+**The self-answered question.** "The result? A 3x speedup." State the result.
 
 **Dramatic negation.** A sentence whose subject is "nothing", "no one" or
 "none", or a "not X's job", reads as a pronouncement. Say what does happen.
@@ -200,6 +216,12 @@ the verbs dropped.
 > A file in, a look applied, ProRes out. → The command reads the file, applies
 > the look and writes ProRes 4444.
 
+**A false range.** "from parsing to rendering to export" where nothing sits on a
+scale between the ends. List the items, or name the one that matters.
+
+**A comma-clipped tail.** A short phrase hung off a comma to close a sentence
+with a beat: "it rebuilds on every keystroke, every time."
+
 **Density.** Long sentences packed with qualifications, and paragraphs that run
 for a screen without a break. A rewrite that removes the tropes above often
 makes this worse, because the fix adds a clause for the mechanism. Give each
@@ -233,13 +255,26 @@ failure. Name what the reader observes, or drop it.
 > The second bug is the same class of wrong, quieter. → The second bug
 > highlights the wrong residue and raises no error.
 
-**The policy refrain.** A project rule ("the viewer computes nothing", "no
-external services") restated as the closer of captions and section intros. State
-the rule once, in the design doc.
+**A refrain.** A project rule ("the viewer computes nothing", "no external
+services") restated as the closer of captions and section intros, or a caution
+repeated from page to page. By the second appearance it reads as boilerplate.
+State it once, in the design doc, and link to it.
 
-**A thesis paragraph.** An opening that argues for the page's importance, or a
-wrong inference named only to refute it. Start at the first observation; stop a
-section at the last one.
+**An announcer.** A sentence that names the shape of what follows: "Two
+constraints shape the design", "Here's the thing", "Here's where it gets
+interesting", "Let's break this down", "Think of it as". Counting belongs to
+the same habit: "for two reasons", "three things to know". Delete the announcer;
+the next sentence stands on its own.
+
+**The claim after its evidence.** A paragraph of premises before the claim they
+support, an opening that argues for the page's importance, or a wrong inference
+named only to refute it. Put the claim first. Start at the first observation;
+stop a section at the last one.
+
+**A closing that restates.** "In summary", "As we've seen", a paragraph
+restating each section, a tie-back to the opening question ("So, to answer the
+original question: yes"), or a last sentence that stacks clause after clause.
+A reference page ends when its last fact does.
 
 **Padding.** A document longer than its substance: an overview that repeats the
 headings, a summary per section, a boilerplate "Future work". Match the length
@@ -271,13 +306,20 @@ a negative, unless the distinction is the whole finding of the section.
 
 > What it does not do → Limitations
 
+**Title Case Headings.** Capitalize the first word and proper nouns only.
+
 **Cute naming in a reference table.** A flag table or column header is read by
 someone looking one thing up.
 
 > `--seed=<n>` | the dice → `--seed=<n>` | random seed; the same seed gives the
 > same output
 
-## Comments
+**Bold-first bullets.** A bold lead on every item of an ordinary list is
+decoration. Keep bold for a term being defined, as in a glossary. Don't
+overcorrect into no formatting: a list, table or heading belongs wherever the
+content has several parallel parts a reader will scan or look up.
+
+## Comments and history
 
 **Bug history in a comment.** "used to", "the previous version", "found while
 debugging" describe how the code got here, and that belongs in the commit
@@ -286,6 +328,11 @@ measurement if there is one.
 
 > reset() used to leave the Cancel button showing → reset() also hides the
 > Cancel button
+
+**Documentation as a changelog.** The same habit at page scale: "we switched to
+X after Y broke". A doc describes the current behavior, and the history goes in
+commits and release notes. When a passage is wrong, rewrite or delete it; a new
+paragraph that corrects the one above leaves both for the reader to reconcile.
 
 **An essay where a clause would do.** Keep the measurement and the non-obvious
 constraint; cut the argument around them. Repeated rationale belongs in one
@@ -300,17 +347,17 @@ sentence's job.
 
 ## Register
 
-**Stock sentences.** A caution or framing sentence repeated from page to page
-reads as boilerplate by the second page. Say it once and link to it.
-
 **An informalism in a formal register.** Judge a word by the document it
 appears in. An intensifier with no number behind it is the same slip in a document
 that quantifies everything else: `dramatically simpler`, `greatly reduced`.
 
-**Promotional and vague-attribution words.** `vibrant`, `groundbreaking`,
-`boasts`, `flagship`, `crisp`, `seamless`, `robust`; `industry reports`,
-`surveys show`; the `delve` / `tapestry` / `testament` / `showcase` / `pivotal`
-cluster.
+**Promotional words and grandiose stakes.** `vibrant`, `groundbreaking`,
+`boasts`, `flagship`, `crisp`, `seamless`, `robust`; the `delve` / `tapestry` /
+`testament` / `showcase` / `pivotal` cluster; "This changes how we think about
+configuration." Say what the thing does, with the number if there is one.
+
+**Borrowed authority.** `industry reports`, `surveys show`, "a classic",
+"famously", "the well-known". Cite it or drop the adjective.
 
 **Present-participle synthesis.** `…, highlighting how the two stages interact`
 is a claim with nobody making it. Write the claim as its own sentence or drop
@@ -320,102 +367,24 @@ it.
 > interact. → Scores drop after the tokenizer change, because the tagger was
 > trained on the old token boundaries.
 
-**Small tics.** "reads straight off", "tells a story", "shape" as an all-purpose
-noun, "counterpoint", "actually", "genuinely", circular sentences ("an alignment
-is an alignment").
-
-## Also in technical prose
-
-[tropes.fyi](https://tropes.fyi) catalogs the tropes of essay and blog prose.
-These, from its directory, turn up in docs and READMEs too.
-
-**The self-answered question.** "The result? A 3x speedup." State the result.
-
-**"Serves as", "stands as", "represents"** where "is" is meant.
-
-> The cache serves as the source of truth → The cache is the source of truth
-
-**Suspense and teacher transitions.** "Here's the thing", "Here's where it gets
-interesting", "Let's break this down", "Think of it as". Delete them; the next
-sentence stands on its own.
-
-**A false range.** "from parsing to rendering to export" where nothing sits on a
-scale between the ends. List the items, or name the one that matters.
-
 **An invented concept label.** "the staleness trap", "the dangerous shape",
 "config creep", used as if the term were established. Describe the thing the
 label stands for.
-
-**A signposted summary.** "In summary", "As we've seen", or a closing paragraph
-restating each section. A reference page ends when its last fact does.
-
-**Bold-first bullets.** A bold lead on every item of an ordinary list is
-decoration. Keep bold for a term being defined, as in a glossary. Don't
-overcorrect into no formatting: a list, table or heading belongs wherever the
-content has several parallel parts a reader will scan or look up.
-
-**A dead metaphor.** One image repeated through a page ("doors", "walls",
-"layers of the onion"). Use it once or not at all.
-
-The [writing whip](https://tropes.fyi/whip) adds these.
 
 **Synonym cycling.** One referent called a track, then a lane, then a layer.
 In technical prose the reader assumes three words mean three things. Pick the
 noun and repeat it.
 
-**An announcer.** A sentence that names the shape of what follows: "Two
-constraints shape the design." Counting belongs to the same
-habit: "for two reasons", "three things to know". Write the first constraint.
-
-**Premise stacking.** A paragraph of evidence before the claim it supports. Put
-the claim first.
-
-**The tie-back.** A closing sentence that loops back to the question: "So, to
-answer the original question: yes." Stop after the answer.
-
-**Documentation as a changelog.** A doc that narrates what changed and when:
-"we switched to X after Y broke". A doc describes the current behavior, and the
-history goes in commits and release notes.
-
-**Appending a correction.** When a passage is wrong, rewrite or delete it. A new
-paragraph that corrects the one above leaves both for the reader to reconcile.
-
-**Appeal to familiarity.** "a classic", "famously", "the well-known" borrow
-consensus in place of a citation. Cite it or drop the adjective.
-
-**A comma-clipped tail.** A short phrase hung off a comma to close a sentence
-with a beat: "it rebuilds on every keystroke, every time."
-
-The [directory](https://tropes.fyi/directory) also lists these.
-
-**A reasoning leak.** The text narrates its own deliberation: "What that changes
-in the design is worth being precise about." In a PR description or a design
-doc, write the change.
-
-> what it changes is worth being precise about → The change moves validation
-> from the client to the server.
-
-**Belaboring the unnecessary.** Defending a minor point against an objection
-nobody raised: "We spell this out rather than changing it silently, because the
-failure mode is why it matters." State the point and move on.
-
-**A never-ending conclusion.** A closing sentence that stacks clause after
-clause. End on the last fact.
-
 **Self-echo.** A distinctive word from earlier in the page reused as if paying it
 off, such as "quietly" in two sections. Write the plain word each time. A
 technical term is the exception, and should repeat (see synonym cycling).
 
-**Grandiose stakes.** "This changes how we think about configuration." Say what
-the change does, with the number if there is one.
+**Small tics.** "serves as", "stands as", "represents" where "is" is meant;
+"reads straight off", "tells a story", "shape" as an all-purpose noun,
+"counterpoint", "actually", "genuinely", circular sentences ("an alignment is
+an alignment").
 
-**Title Case Headings.** Capitalize the first word and proper nouns only.
-
-## A rule that breaks its own rule teaches the break
-
-A style rule is read as prose before it is read as a rule, and the prose is the
-part that gets imitated. A "no em-dashes" rule written in a sentence containing
-one ships the em-dash. Write instruction files in the style they ask for.
+> The cache serves as the source of truth → The cache is the source of truth
 
 ## What not to flatten
 
@@ -436,13 +405,9 @@ one ships the em-dash. Write instruction files in the style they ask for.
 
 ## Quick scan
 
-Markers worth grepping for on a file or repo. Read each hit in context.
+`scan.sh` in this directory greps a file or directory for the markers above,
+labelled by group. Read each hit in context.
 
 ```sh
-grep -rnE ' — | -- |is what |which is what|rather than|, not |not just|instead of' .
-grep -rnE 'the (whole )?point|honest|payoff|worth (naming|noting)|exists to' .
-grep -rnE '\b(cannot|doesn.t|does not) know|says |silently|quietly|invisibly' .
-grep -rnE '^(Nothing|No one|None) |not (the|its|our) job|used to ' .
-grep -rniE 'delve|tapestry|testament|showcase|pivotal|vibrant|seamless|flagship' .
-grep -rniE 'serves as|here.s (the|where)|let.s (break|dive|unpack)|in summary' .
+bash ~/.claude/skills/anti-ai-writing-tropes/scan.sh docs/
 ```
