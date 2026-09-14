@@ -158,17 +158,20 @@ letters add none.
 
 ### Register
 
-Word choice gives generated prose away as surely as sentence
-shape does. The tells are promotional adjectives such as "robust" and
-"seamless", borrowed authority such as "surveys show", a sentence adverb such
-as "Additionally" that asserts a relation without saying what it is, verbs such
-as leverage, utilize and ensure where use, check and make were meant, a
-participle clause that draws a conclusion nobody is making ("highlighting how
-the two stages interact"), an invented label used as if it were an established
-term, and a cycle of synonyms for one thing that makes the reader suspect three
-things. Use the plain verb, delete the adjective, and use one term per thing
-throughout. An unqualified comparative such as "faster" is fine as it stands;
-inventing a measurement to replace it reads worse than the word did.
+Word choice gives generated prose away most clearly in combination: a verb
+cluster that stacks "leverage", "utilize" and "ensure" where "use", "check" and
+"make" were meant, a participle clause that draws a conclusion nobody is making
+("highlighting how the two stages interact"), an invented label used as if it
+were an established term, or a cycle of synonyms for one thing that makes the
+reader suspect three things. Those patterns are distinctive to generated text.
+A single promotional adjective such as "robust" or "seamless", a borrowed-authority
+phrase such as "surveys show", or a sentence adverb such as "Additionally" is
+weak prose on its own terms, not a tell — people wrote that way long before
+LLMs existed. Fix it anyway: the plain verb and the stated relation carry more
+information than the filler did. Use the plain verb, delete the adjective, and
+use one term per thing throughout. An unqualified comparative such as "faster"
+is fine as it stands; inventing a measurement to replace it reads worse than
+the word did.
 
 | Pattern | Before | After |
 |---|---|---|
@@ -184,8 +187,9 @@ Compared with the [tropes.fyi directory](https://tropes.fyi/directory), the
 [Writing Whip](https://tropes.fyi/whip) and
 [Wikipedia's Signs of AI writing](https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing),
 this repo deletes contrastive framing by default, gives every pattern a
-rewrite, and adds the patterns of technical prose: stance and agency, clefts,
-mechanism, headings and comments.
+rewrite, and adds the patterns of technical prose: stance and agency, sentence
+shapes, openings and closings, paragraph transitions, headings and labels,
+comments and history, and register.
 
 ## Install
 
