@@ -62,7 +62,7 @@ still says everything.
 > The overlay is column-locked instead of drawn per protein. → The overlay is
 > column-locked.
 >
-> It's not a cache. It's a log. → It is an append-only log.
+> It's not a cache. It's a log. → It is a log.
 >
 > The CLI doesn't just fetch domains, it caches them. → The CLI fetches domains
 > and caches them on disk.
@@ -245,13 +245,13 @@ does a semicolon's work and the reader has to hold the first half open across
 it. Fold the appositive into a relative clause on the noun, or split the
 sentence.
 
-> We built JBrowse 2 as a general-purpose genome browser without that
+> We built version 2 as a general-purpose genome browser without that
 > restriction, one that can display multiple assemblies together → We built
-> JBrowse 2 as a general-purpose genome browser that removes this restriction
+> version 2 as a general-purpose genome browser that removes this restriction
 > by displaying multiple assemblies together
 >
-> JBrowse 1 displays a single chromosome, a design that cannot show synteny →
-> JBrowse 1 is limited to a single chromosome at a time, so it cannot show
+> Version 1 displays a single chromosome, a design that cannot show synteny →
+> Version 1 is limited to a single chromosome at a time, so it cannot show
 > synteny
 
 **A comma-clipped tail.** A short phrase hung off a comma to close a sentence
@@ -334,9 +334,9 @@ lose that turn.
 old tool does and then what the new one does, and leaves the reader to work out
 that the first was a problem. Say it is a limitation.
 
-> JBrowse 1 shows a single chromosome of a single species at a time. We built
-> JBrowse 2 to lift that limit → JBrowse 1 is limited to visualizing a single
-> chromosome of a single species at a time. We built JBrowse 2 as a
+> Version 1 shows a single chromosome of a single species at a time. We built
+> version 2 to lift that limit → Version 1 is limited to visualizing a single
+> chromosome of a single species at a time. We built version 2 as a
 > general-purpose genome browser that removes this restriction by displaying
 > multiple assemblies and regions together
 
@@ -355,15 +355,15 @@ terms of the new tool's headline features, so the paragraph reads as
 back-formed. State the general limitation; the features follow from it in the
 next sentence.
 
-> JBrowse 1 cannot show a syntenic alignment between two genomes or a
+> Version 1 cannot show a syntenic alignment between two genomes or a
 > structural variant with breakpoints on different chromosomes. We built
-> JBrowse 2 to visualize synteny and structural variation → JBrowse 1 is
+> version 2 to visualize synteny and structural variation → Version 1 is
 > limited to visualizing a single chromosome of a single species at a time. We
-> built JBrowse 2 ... displaying multiple assemblies and regions together, which
+> built version 2 ... displaying multiple assemblies and regions together, which
 > allows it to visualize cross-species synteny and complex structural variation
 
 **A colon or a comma doing the turn.** "That adoption came with a fixed frame:
-JBrowse 1 shows ..." and "a browser without that restriction, one that can ..."
+version 1 shows ..." and "a browser without that restriction, one that can ..."
 both make the reader stop mid-sentence to reattach the halves. See
 [A colon lead-in](#sentence-shapes) and [A comma-hung
 appositive](#sentence-shapes). Two plain sentences, problem then response, read faster

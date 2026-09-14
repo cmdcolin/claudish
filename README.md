@@ -19,7 +19,7 @@ Keep it only when a reader who never saw it would pick the wrong option.
 | Before | After |
 |---|---|
 | Staleness is stamped, not compared. | Staleness is stamped. |
-| It's not a cache. It's a log. | It is an append-only log. |
+| It's not a cache. It's a log. | It is a log. |
 | The CLI doesn't just fetch domains, it caches them. | The CLI fetches domains and caches them on disk. |
 | CI runs the install command from the README, so it is tested rather than remembered. | CI runs the install command from the README, so a broken one fails the build. |
 
@@ -44,7 +44,7 @@ subject, and give each fact its own sentence.
 | Rounding is what buys the room. | Rounding saves two characters per value. |
 | The model scores the variant benign, which is the honest answer to the question it was asked. | The model scores the variant benign, because it predicts whether a substitution breaks the fold, and this one does not. |
 | Each scale resolves where updating it costs least: a categorical color resolves in the shader. | A categorical color resolves in the shader. |
-| JBrowse 1 displays a single chromosome, a design that cannot show synteny. | JBrowse 1 is limited to a single chromosome at a time, so it cannot show synteny. |
+| Version 1 displays a single chromosome, a design that cannot show synteny. | Version 1 is limited to a single chromosome at a time, so it cannot show synteny. |
 | A file in, a look applied, ProRes out. | The command reads the file, applies the look and writes ProRes 4444. |
 
 **Openings and closings.** A section opens on an aphorism or a pronoun,
@@ -67,7 +67,7 @@ limitation as a limitation, in one sentence, then give the response its own.
 
 | Before | After |
 |---|---|
-| JBrowse 1 shows a single chromosome of a single species at a time. We built JBrowse 2 to lift that limit. | JBrowse 1 is limited to visualizing a single chromosome of a single species at a time. We built JBrowse 2 as a general-purpose genome browser that removes this restriction. |
+| Version 1 shows a single chromosome of a single species at a time. We built version 2 to lift that limit. | Version 1 is limited to visualizing a single chromosome of a single species at a time. We built version 2 as a general-purpose genome browser that removes this restriction. |
 | Build tools have since moved toward incremental compilation. Our build recompiles every file on each change, so we added a dependency graph. | Our build recompiles every file on each change, so we added a dependency graph. |
 
 **Headings and labels.** A teaser, phrase or negative heading; Title Case; a
