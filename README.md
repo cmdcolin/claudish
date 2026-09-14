@@ -10,11 +10,15 @@ Skills for Claude Code.
 
 A checklist for technical writing: docs, READMEs, tutorials, code comments,
 figure captions, commit messages, PR descriptions and agent instruction files.
-Each entry pairs a problem with the fix that keeps the same facts.
+Each entry pairs a problem with the fix that keeps the same facts. Readers
+arrive at a paragraph by search hit and deep link, so every paragraph has to
+stand alone. Name the subject, state the fact, and leave nothing for the reader
+to carry over from the paragraph before.
 
-**Contrastive framing.** The sentence defines a thing by what it is not.
-Delete the negative half; the sentence almost always still says everything.
-Keep it only when a reader who never saw it would pick the wrong option.
+**Contrastive framing.** A contrastive sentence defines a thing by what it is
+not: "stamped, not compared", "not a cache but a log". Delete the negative
+half. The sentence almost always still says everything. Keep the negative only
+when a reader who never saw it would pick the wrong option.
 
 | Pattern | Before | After |
 |---|---|---|
@@ -23,10 +27,12 @@ Keep it only when a reader who never saw it would pick the wrong option.
 | Contrastive framing | The CLI doesn't just fetch domains, it caches them. | The CLI fetches domains and caches them on disk. |
 | Contrastive framing | CI runs the install command from the README, so it is tested rather than remembered. | CI runs the install command from the README, so a broken one fails the build. |
 
-**Stance and agency.** A value, file or figure knows, says and earns nothing,
-and a drawn thing owns nothing. Name the actor that does the thing, or use a
-verb of description. Replace a figure of speech with the literal word. Use the
-active voice where you know the actor.
+**Stance and agency.** Generated prose gives inanimate things a mind. A
+lockfile knows, a figure says, a bar earns its height, a tab has its own
+settings. A value or a drawing can do none of these. Name the component or
+person that does the thing, or use a verb of description such as lists, marks
+or shows. The same section covers figures of speech and the passive voice.
+Write the literal word, and name the actor wherever you know it.
 
 | Pattern | Before | After |
 |---|---|---|
@@ -36,10 +42,11 @@ active voice where you know the actor.
 | A figure of speech | The config file is load-bearing. | Every command reads the config file. |
 | The passive voice hiding the actor | The field is left unset. | The parser leaves the field unset. |
 
-**Sentence shapes.** The sentence bends to land a beat: a cleft, a
-significance announcement, a which-ladder, a colon lead-in, a comma-hung
-appositive, a fragment, a rule-of-three list. Write the plain verb and its
-subject, and give each fact its own sentence.
+**Sentence shapes.** Some sentence shapes exist to land a beat, and state no
+fact. The cleft ("rounding is what buys the room"), the colon that
+generalizes before the facts, the appositive hung off a comma, the fragment and
+the list of three all belong here. Write the subject and its plain verb. Give
+each fact its own sentence.
 
 | Pattern | Before | After |
 |---|---|---|
@@ -49,10 +56,12 @@ subject, and give each fact its own sentence.
 | A comma-hung appositive | Version 1 opens one file, a design that cannot compare two. | Version 1 opens only one file at a time, so it cannot compare two. |
 | A rule-of-three list | A file in, a look applied, ProRes out. | The command reads the file, applies the look and writes ProRes 4444. |
 
-**Openings and closings.** A section opens on an aphorism or a pronoun,
-states an outcome where the mechanism belongs, hides a failure behind
-"silently", announces its own shape, or closes by restating. Open on the
-subject by name. Write what the machine does. Stop at the last fact.
+**Openings and closings.** A reader who lands on a paragraph from a search
+hit has no antecedent for "it" or "this". Open every paragraph on its subject
+by name, even when the paragraph before named it. Say what the machine does
+where a sentence names only the outcome. Cut an aphorism, an announcer such as
+"two constraints shape the design", and a closing that restates. Stop at the
+last fact.
 
 | Pattern | Before | After |
 |---|---|---|
@@ -62,10 +71,12 @@ subject by name. Write what the machine does. Stop at the last fact.
 | A pronoun opening a paragraph | It runs the app's own engine. | The renderer runs the app's own engine. |
 | An announcer | Two constraints shape the design. First, ... | The design has to run offline. |
 
-**Paragraph transitions.** The turn from prior state to response is missing
-or overloaded: a description where a limitation belongs, a narrative bridge
-with no evidence, a problem sized to the solution's features. Name the
-limitation as a limitation, in one sentence, then give the response its own.
+**Paragraph transitions.** A paragraph that introduces a new version or a
+redesign has two parts: what was wrong before, and what changed. Common faults
+are a plain description of the old version where a limitation belongs, a
+limitation phrased in the new version's feature list, and an unsupported claim
+about where the field has moved. Name the limitation as a limitation in one
+sentence. Give the response a sentence of its own.
 
 | Pattern | Before | After |
 |---|---|---|
@@ -73,9 +84,11 @@ limitation as a limitation, in one sentence, then give the response its own.
 | A problem sized to the solution | Version 1 cannot show a diff between two files. Version 2 shows diffs. | Version 1 is limited to one open file at a time. Version 2 opens files in tabs, so it can show a diff between two. |
 | A narrative bridge | Build tools have since moved toward incremental compilation. Our build recompiled every file on each change. We added a dependency graph, so it now recompiles only the files a change affects. | Our build recompiled every file on each change. We added a dependency graph, so it now recompiles only the files a change affects. |
 
-**Headings and labels.** A teaser, phrase or negative heading; Title Case; a
-joke in a reference table; a bold-first bullet. Name the subject in the
-heading, in sentence case, and give a flag table plain labels.
+**Headings and labels.** A heading is read by someone scanning for a
+subject, and a flag table by someone looking one thing up. Name the subject in
+the heading, in sentence case. Give each flag a plain label. A teaser, a
+phrase, a negative and a joke all cost the reader that lookup, and a bold lead
+on every bullet is decoration.
 
 | Pattern | Before | After |
 |---|---|---|
@@ -84,9 +97,10 @@ heading, in sentence case, and give a flag table plain labels.
 | A heading that says what a thing is not | What it does not do | Limitations |
 | Cute naming in a reference table | `--seed=<n>` \| the dice | `--seed=<n>` \| random seed; the same seed gives the same output |
 
-**Comments and history.** A comment carries bug history or a rationale essay;
-a doc reads as a changelog; ALL-CAPS for emphasis. Comment the current
-behavior only. Put history in git and rationale in a design doc.
+**Comments and history.** A code comment describes the current behavior of
+the code beside it. Bug history belongs in the commit message, and a rationale
+essay in a design doc. A doc that reads as a changelog has the same fault at
+page scale. Write emphasis into the sentence, never in capitals.
 
 | Pattern | Before | After |
 |---|---|---|
@@ -94,11 +108,13 @@ behavior only. Put history in git and rationale in a design doc.
 | An essay where a clause would do | We considered leaving the keys in fetch order, but the diff output has to be stable across runs and fetch order is not, so we sort them first. | Sort the keys so the diff output is stable across runs. |
 | ALL-CAPS emphasis | the ONLY difference | the only difference |
 
-**Register.** An intensifier with no number, a promotional word, borrowed
-authority, a sentence adverb, the leverage/utilize/ensure verb cluster,
-present-participle synthesis, an invented label, synonym cycling. Use the plain
-verb, delete the promotional adjective, and use one term per thing. An
-unqualified "faster" is fine; don't invent a measurement to replace it.
+**Register.** Word choice gives generated prose away as surely as sentence
+shape. Promotional adjectives, borrowed authority ("surveys show"), a sentence
+adverb such as "Additionally", verbs such as leverage and ensure, a participle
+clause drawing a conclusion, an invented label and a cycle of synonyms for one
+thing all belong here. Use the plain verb, delete the adjective, and use one
+term per thing. An unqualified "faster" is fine; don't invent a measurement to
+replace it.
 
 | Pattern | Before | After |
 |---|---|---|
