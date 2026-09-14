@@ -120,6 +120,9 @@ noun that is not literally true of its subject, ask what literal word it stands
 for, and write that word. Keep a figure only when no literal phrase exists or
 the field has adopted it as a term ("memory leak", "race condition").
 
+> each bar rises to the height its frequency earns → each bar's height is
+> proportional to its frequency
+
 | Figure | Literal |
 |---|---|
 | earns its keep, earns its place | is needed, is used |

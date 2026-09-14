@@ -34,9 +34,10 @@ skill folds in the ones that also appear in technical prose, credited under
   - data, files and figures given knowledge or a stance ("a layer the alignment
     cannot know", "the boxes say")
   - cleft sentences ("column-locking is what stacks them")
-  - a conclusion in place of the mechanism ("a bad marker stops the build")
+  - a conclusion in place of the mechanism ("a marker that does not parse
+    stops the build")
   - a project policy restated as the closer of every caption ("the viewer
-    computes none of it")
+    computes nothing")
   - which-ladders ("a new alignment, which is a new model, which React spells
     `key`")
   - teaser headings, negative headings and jokes in reference tables
