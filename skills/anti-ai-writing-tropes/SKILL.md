@@ -111,6 +111,13 @@ always means one X per Y.
 >
 > each haplotype on its own contig with its own gene models → one contig per
 > haplotype, with the gene models annotated on that contig
+>
+> each haplotype takes its own row → the display draws each haplotype in a
+> separate row
+
+A possessive that states a literal relation ("each library bundles its own
+copy", "a module addresses only its own linear memory") is fine; the tell is
+"own" beside a verb of action on a drawn or displayed thing.
 
 **A technical term given a personality.** Keep the term the tools use and fix
 the sentence around it.
