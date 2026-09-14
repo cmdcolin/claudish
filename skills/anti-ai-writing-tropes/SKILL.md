@@ -23,16 +23,23 @@ stop connecting and the reader supplies the joins.
 - **Fixing:** keep every fact. A rewrite that drops a number or changes what a
   sentence claims is worse however plain it reads. See
   [What not to flatten](#what-not-to-flatten).
+- **Reviewing for someone else:** report every instance, then triage. A
+  "report only the worst" instruction makes a reviewer drop real findings.
 - **Instruction files:** fix `CLAUDE.md`, `AGENTS.md` and similar files first.
   Agents read them every session and copy their prose as house voice, so a
-  trope there spreads into every document written afterwards.
+  trope there spreads into every document written afterwards. When you add a
+  style rule to one, include the rewrite along with the ban: a model copies a
+  positive example more reliably than it obeys a prohibition.
 
 ## Stance and agency
 
 **A value given knowledge or a stance.** A component may act: the parser
 rejects a file, the CLI warns, the server refuses the request. A value, a
 column, a file, a figure or a sign is a thing being described, so it knows
-nothing, says nothing, disagrees with nothing and earns nothing.
+nothing, says nothing, disagrees with nothing and earns nothing. The test: could
+the subject perform the verb if you ran the program? A parser can reject; a
+column cannot know. When it could not, find the actor that does the thing, or
+use a verb of description (marks, contains, shows, is).
 
 > A layer the alignment cannot know → Pathogenic variants per residue, from
 > ClinVar
@@ -50,6 +57,34 @@ nothing, says nothing, disagrees with nothing and earns nothing.
 
 **A technical term given a personality.** Keep the term the tools use and fix
 the sentence around it.
+
+**A figure of speech where a literal word exists.** Metaphors like "a dial worth
+turning" for "a parameter worth varying", or "earns its keep" for "is useful",
+make the reader translate back to the literal claim. They also bring
+connotations the writer did not choose: "rot" implies decay nobody measured,
+and "a one-way door" implies a door. The test is mechanical. For each verb or
+noun that is not literally true of its subject, ask what literal word it stands
+for, and write that word. Keep a figure only when no literal phrase exists or
+the field has adopted it as a term ("memory leak", "race condition").
+
+| Figure | Literal |
+|---|---|
+| earns its keep, earns its place | is needed, is used |
+| buys (room, time, safety) | saves, gives, allows |
+| pays for itself, pays double | costs less than it saves, is useful twice |
+| a dial / knob / lever | a parameter, an option |
+| load-bearing | required, depended on |
+| a one-way door | irreversible |
+| rots, drifts, goes stale | falls out of date when X changes |
+| fight over, compete for | both write, both read |
+| the edge, the frontier | the exception, the limit |
+| lives in, lands in, arrives | is defined in, is stored in, is loaded |
+| a second door, the front door | a second entry point, the main API |
+| reads loud / reads quiet | is high / is low |
+| the shape (of a problem, of data) | the structure, the format, the pattern |
+| surfaces (a problem) | reports, shows |
+| a footgun, a trap | an error-prone API; name the error |
+| moves the needle | changes the measured result by N |
 
 ## Sentence shapes
 
@@ -110,6 +145,11 @@ the verbs dropped.
 > A file in, a look applied, ProRes out. → The command reads the file, applies
 > the look and writes ProRes 4444.
 
+**Density.** Long sentences packed with qualifications, and paragraphs that run
+for a screen without a break. A rewrite that removes the tropes above often
+makes this worse, because the fix adds a clause for the mechanism. Give each
+fact its own sentence, and break the paragraph where the subject changes.
+
 **Em-dash asides.** One in a paragraph is punctuation; three is a writer avoiding
 sentence boundaries. A ` -- ` in a code comment is the same habit. Promote one
 to its own sentence, demote one to a comma, keep the one that is genuinely
@@ -145,6 +185,11 @@ the rule once, in the design doc.
 **A thesis paragraph.** An opening that argues for the page's importance, or a
 wrong inference named only to refute it. Start at the first observation; stop a
 section at the last one.
+
+**Padding.** A document longer than its substance: an overview that repeats the
+headings, a summary per section, a boilerplate "Future work". Match the length
+to the facts. A report or a PR description leads with the outcome, what changed
+or what was found, and puts supporting detail after it.
 
 **A pronoun opening a paragraph.** A reader arriving by search hit or deep link
 has no antecedent for "It", "This" or "That". Name the subject.
@@ -240,7 +285,9 @@ label stands for.
 restating each section. A reference page ends when its last fact does.
 
 **Bold-first bullets.** A bold lead on every item of an ordinary list is
-decoration. Keep bold for a term being defined, as in a glossary.
+decoration. Keep bold for a term being defined, as in a glossary. Don't
+overcorrect into no formatting: a list, table or heading belongs wherever the
+content has several parallel parts a reader will scan or look up.
 
 **A dead metaphor.** One image repeated through a page ("doors", "walls",
 "layers of the onion"). Use it once or not at all.
