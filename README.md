@@ -16,7 +16,9 @@ of the paragraph before it, so each paragraph has to make sense by itself. Most
 of the entries below follow from that rule. Name the subject, state the fact,
 and leave nothing for the reader to carry over from the previous paragraph.
 
-**Contrastive framing.** A contrastive sentence defines a thing by what it is
+### Contrastive framing
+
+A contrastive sentence defines a thing by what it is
 not, as in "staleness is stamped, not compared" or "it's not a cache, it's a
 log". The negative half answers an objection the reader never raised, and it
 usually carries no information of its own. Delete it, and the sentence almost
@@ -32,7 +34,9 @@ usually carries the distinction better than the contrast does.
 | Contrastive framing | The CLI doesn't just fetch domains, it caches them. | The CLI fetches domains and caches them on disk. |
 | Contrastive framing | CI runs the install command from the README, so it is tested rather than remembered. | CI runs the install command from the README, so a broken one fails the build. |
 
-**Stance and agency.** Generated prose tends to give inanimate things a mind
+### Stance and agency
+
+Generated prose tends to give inanimate things a mind
 and a will, so that a lockfile knows which versions to install, a figure says
 what the parts are, a bar rises to the height its frequency earns, and each tab
 renders its own settings. None of these subjects can do what the verb claims,
@@ -52,7 +56,9 @@ the actor is.
 | A figure of speech | The config file is load-bearing. | Every command reads the config file. |
 | The passive voice hiding the actor | The field is left unset. | The parser leaves the field unset. |
 
-**Sentence shapes.** Some sentence shapes exist to land a beat, and they
+### Sentence shapes
+
+Some sentence shapes exist to land a beat, and they
 carry the rhythm of a conclusion without stating one. The cleft turns a plain
 verb into a verdict ("rounding is what buys the room"). The colon lead-in puts a
 generalization first and the facts second, so the reader has to match the two
@@ -70,7 +76,9 @@ let the facts supply the emphasis.
 | A comma-hung appositive | Version 1 opens one file, a design that cannot compare two. | Version 1 opens only one file at a time, so it cannot compare two. |
 | A rule-of-three list | A file in, a look applied, ProRes out. | The command reads the file, applies the look and writes ProRes 4444. |
 
-**Openings and closings.** A reader who lands on a paragraph from a search
+### Openings and closings
+
+A reader who lands on a paragraph from a search
 hit has no antecedent for "it", "this" or "that limit", so a paragraph that
 opens on a pronoun loses them at the first word. Open every paragraph on its
 subject by name, even when the paragraph before named the same subject. The
@@ -90,7 +98,9 @@ at its last fact.
 | A pronoun opening a paragraph | It runs the app's own engine. | The renderer runs the app's own engine. |
 | An announcer | Two constraints shape the design. First, ... | The design has to run offline. |
 
-**Paragraph transitions.** A paragraph that introduces a new version, a
+### Paragraph transitions
+
+A paragraph that introduces a new version, a
 redesign or a fix has two halves: what was wrong before, and what changed. The
 turn between them is where generated prose most often goes wrong. Sometimes
 the first half is a plain description of the old version that leaves the reader
@@ -108,7 +118,9 @@ sentence, in general terms, and then give the response a sentence of its own.
 | A problem sized to the solution | Version 1 cannot show a diff between two files. Version 2 shows diffs. | Version 1 is limited to one open file at a time. Version 2 opens files in tabs, so it can show a diff between two. |
 | A narrative bridge | Build tools have since moved toward incremental compilation. Our build recompiled every file on each change. We added a dependency graph, so it now recompiles only the files a change affects. | Our build recompiled every file on each change. We added a dependency graph, so it now recompiles only the files a change affects. |
 
-**Headings and labels.** Someone scanning for a subject reads a heading, and
+### Headings and labels
+
+Someone scanning for a subject reads a heading, and
 someone looking up one entry reads a flag table, so both have to name the thing
 plainly. A teaser heading withholds the subject to create interest, a
 phrase heading ("where the file goes") makes the reader parse a clause where a
@@ -125,7 +137,9 @@ same habit, and it belongs only where the bullet defines a term.
 | A heading that says what a thing is not | What it does not do | Limitations |
 | Cute naming in a reference table | `--seed=<n>` \| the dice | `--seed=<n>` \| random seed; the same seed gives the same output |
 
-**Comments and history.** A code comment describes the current behavior of
+### Comments and history
+
+A code comment describes the current behavior of
 the code beside it, and nothing else. A comment that recounts how the code got
 here ("used to leave the Cancel button showing") or argues for the choice at
 essay length is carrying material that belongs elsewhere: the history in the
@@ -142,7 +156,9 @@ letters add none.
 | An essay where a clause would do | We considered leaving the keys in fetch order, but the diff output has to be stable across runs and fetch order is not, so we sort them first. | Sort the keys so the diff output is stable across runs. |
 | ALL-CAPS emphasis | the ONLY difference | the only difference |
 
-**Register.** Word choice gives generated prose away as surely as sentence
+### Register
+
+Word choice gives generated prose away as surely as sentence
 shape does. The tells are promotional adjectives such as "robust" and
 "seamless", borrowed authority such as "surveys show", a sentence adverb such
 as "Additionally" that asserts a relation without saying what it is, verbs such
