@@ -12,9 +12,9 @@ A checklist for technical writing: docs, READMEs, tutorials, code comments,
 figure captions, commit messages, PR descriptions and agent instruction files.
 Each entry pairs a problem with the fix that keeps the same facts. A reader
 usually arrives at a paragraph from a search hit or a deep link, with no memory
-of the paragraph before it, so each paragraph has to make sense by itself, and
-most of the entries below follow from that. Name the subject, state the fact, and
-leave nothing for the reader to carry over from the previous paragraph.
+of the paragraph before it, so each paragraph has to make sense by itself. Most
+of the entries below follow from that rule. Name the subject, state the fact,
+and leave nothing for the reader to carry over from the previous paragraph.
 
 **Contrastive framing.** A contrastive sentence defines a thing by what it is
 not, as in "staleness is stamped, not compared" or "it's not a cache, it's a
@@ -22,8 +22,8 @@ log". The negative half answers an objection the reader never raised, and it
 usually carries no information of its own. Delete it, and the sentence almost
 always still says everything it said before. The exception is a negative that
 steers the reader away from a choice they would otherwise make, such as the
-flag value people type by mistake, and even then a plain sentence with a
-"because" usually carries the distinction better than the contrast does.
+flag value people type by mistake. Even then, a plain sentence with a "because"
+usually carries the distinction better than the contrast does.
 
 | Pattern | Before | After |
 |---|---|---|
@@ -37,8 +37,8 @@ and a will, so that a lockfile knows which versions to install, a figure says
 what the parts are, a bar rises to the height its frequency earns, and each tab
 renders its own settings. None of these subjects can do what the verb claims,
 and the reader has to translate each one back into the literal relation it
-stands for. Name the component or the person that actually does the thing, or
-use a verb of description such as lists, marks, contains or shows. The same
+stands for. Name the component or the person that does the thing, or use a
+verb of description such as lists, marks, contains or shows. The same
 habit produces figures of speech where a literal word exists, such as
 "load-bearing" for "required", and passive sentences that leave the actor out
 entirely. Write the literal word, and use the active voice wherever you know who
@@ -74,12 +74,13 @@ let the facts supply the emphasis.
 hit has no antecedent for "it", "this" or "that limit", so a paragraph that
 opens on a pronoun loses them at the first word. Open every paragraph on its
 subject by name, even when the paragraph before named the same subject. The
-same reader is poorly served by an aphorism that sounds like a conclusion but
-carries no fact, by a sentence that names an outcome ("the build stops") where
-the mechanism belongs, by an adverb such as "silently" standing in for what
-actually happens, and by an announcer such as "two constraints shape the
-design" that describes the paragraph instead of starting it. Say what the
-machine does, name the actor, and end the section at its last fact.
+same reader gets nothing from an aphorism that sounds like a conclusion but
+carries no fact, or from an announcer such as "two constraints shape the
+design" that describes the paragraph before it begins. A sentence that names an
+outcome ("the build stops") where the mechanism belongs, or an adverb such as
+"silently" standing in for what happens, leaves the reader without the fact
+they came for. Say what the machine does, name the actor, and end the section
+at its last fact.
 
 | Pattern | Before | After |
 |---|---|---|
@@ -92,14 +93,14 @@ machine does, name the actor, and end the section at its last fact.
 **Paragraph transitions.** A paragraph that introduces a new version, a
 redesign or a fix has two halves: what was wrong before, and what changed. The
 turn between them is where generated prose most often goes wrong. Sometimes
-the first half is a plain description of the old version, and the reader is
-left to infer that it was a problem. Sometimes the writer phrases the limitation in
+the first half is a plain description of the old version that leaves the reader
+to infer it was a problem. Sometimes the writer phrases the limitation in
 exactly the terms of the new version's feature list, so the whole paragraph
 reads as if it were written backwards from the solution. And sometimes the
 writer inserts a sentence about where the field has moved ("build tools have
 since shifted to incremental compilation") to motivate the change, with no
-citation or measurement behind it. Name the limitation as a limitation in one sentence,
-in general terms, and then give the response a sentence of its own.
+citation or measurement behind it. Name the limitation as a limitation in one
+sentence, in general terms, and then give the response a sentence of its own.
 
 | Pattern | Before | After |
 |---|---|---|
@@ -115,7 +116,7 @@ noun would do, a negative heading tells them what a section is not about, and a
 joke in a reference table makes them decode a label they only wanted to read.
 Name the subject in the heading, in sentence case, and give each flag a plain
 label. A bold lead on every bullet of an ordinary list is decoration from the
-same habit, and it earns its place only where the bullet defines a term.
+same habit, and it belongs only where the bullet defines a term.
 
 | Pattern | Before | After |
 |---|---|---|
@@ -132,8 +133,8 @@ commit message, and the rationale in a design doc that the comment can point
 to. A document that reads as a changelog, with a paragraph explaining what the
 previous version did before saying what this one does, has the same fault at
 page scale. Write the constraint the code satisfies, with the measurement if
-there is one, and put emphasis in the wording of the sentence, where capital
-letters cannot supply it.
+there is one. Emphasis belongs in the wording of the sentence, and capital
+letters add none.
 
 | Pattern | Before | After |
 |---|---|---|
@@ -210,5 +211,4 @@ it by name, e.g. "review README.md with the anti-ai-writing-tropes skill".
   promotional vocabulary, vague attribution and present-participle synthesis.
 - The writing guides in [videoskillet](https://github.com/cmdcolin/videoskillet/blob/main/docs/WRITING.md)
   and [react-msaview](https://github.com/GMOD/JBrowseMSA/blob/main/docs/WRITING.md),
-  where most of the technical-prose patterns and examples were first written
-  down.
+  where most of the technical-prose patterns and examples first appeared.
