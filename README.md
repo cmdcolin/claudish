@@ -9,7 +9,94 @@ Skills for Claude Code.
 ## anti-ai-writing-tropes
 
 A checklist for technical writing: docs, READMEs, tutorials, code comments,
-figure captions, commit messages and agent instruction files.
+figure captions, commit messages and agent instruction files. Each pattern
+comes with a rewrite that keeps the same facts, so the fix is a shape to copy.
+The tables below are the short form; the
+[skill](skills/anti-ai-writing-tropes/SKILL.md) has the tests and the
+exceptions.
+
+### What it catches
+
+**Contrastive framing.** The strictest rule. Every form gets the same fix:
+delete the negative half. A contrast survives only when the reader would
+otherwise pick the wrong option.
+
+| Pattern | Before | After |
+|---|---|---|
+| X, not Y | Staleness is stamped, not compared. | Staleness is stamped. |
+| rather than, instead of | The overlay is column-locked instead of drawn per protein. | The overlay is column-locked. |
+| It's not X. It's Y. | It's not a cache. It's a log. | It is an append-only log. |
+| not just X but Y | The CLI doesn't just fetch domains, it caches them. | The CLI fetches domains and caches them on disk. |
+
+**Stance and agency.** A component may act. A value, column, file or figure is
+a thing being described, so it knows, says and earns nothing.
+
+| Pattern | Before | After |
+|---|---|---|
+| A value given knowledge | ClinVar adds a layer the alignment cannot know. | The ClinVar track marks pathogenic variants per residue. |
+| A figure given a voice | The boxes say what the parts are; the arcs say how they pack. | The boxes mark the domains, and the arcs mark residue pairs in contact. |
+| An artifact given a will | which is the tree saying it cannot resolve them | the support values are too low to resolve them |
+| A figure of speech | each bar rises to the height its frequency earns | each bar's height is proportional to its frequency |
+| A figure of speech | the config is load-bearing | the config is required |
+
+**Sentence shapes.**
+
+| Pattern | Before | After |
+|---|---|---|
+| Cleft | Rounding is what buys the room | Rounding saves two characters per value |
+| Significance announcement | ..., which is the honest answer to the question it was asked | ..., because the model predicts whether a substitution breaks the fold, and this one does not |
+| Dramatic negation | Producing the file is not the viewer's job. | The CLI produces the file. |
+| Which-ladder | a different alignment, which is a new model, which React spells `key` | A new input needs a new model, so change the component's `key`. |
+| Mannered inversion | Hence the second pass. | The parser makes a second pass to resolve forward references. |
+| Fragment | Nine load paths, no unit test that can reach them. | There are nine load paths, and no unit test reaches any of them. |
+| Rule of three | A file in, a look applied, ProRes out. | The command reads the file, applies the look and writes ProRes 4444. |
+| Em-dash asides | three in one paragraph | one kept, one promoted to a sentence, one demoted to a comma |
+
+**Openings and closings.**
+
+| Pattern | Before | After |
+|---|---|---|
+| Aphorism | A phone GPU is still a phone GPU. | A phone GPU has much less headroom. |
+| Conclusion in place of mechanism | A marker that does not parse stops the build. | The generator exits with an error on a marker it cannot parse, so the build fails. |
+| Silently, quietly, invisibly | The second bug is the same class of wrong, quieter. | The second bug highlights the wrong residue and raises no error. |
+| Policy refrain | "the viewer computes nothing" closing every caption | the rule stated once, in the design doc |
+| Pronoun opening a paragraph | It runs the app's own engine. | The renderer runs the app's own engine. |
+| Padding | an overview that repeats the headings, a summary per section | the outcome first, supporting detail after |
+
+**Headings and labels.**
+
+| Pattern | Before | After |
+|---|---|---|
+| Teaser heading | The four columns nobody else has | PRRA insert |
+| Phrase where a noun would do | Where the file goes | Output |
+| Negative heading | What it does not do | Limitations |
+| Cute naming in a reference table | `--seed=<n>`: the dice | `--seed=<n>`: random seed; the same seed gives the same output |
+
+**Comments.**
+
+| Pattern | Before | After |
+|---|---|---|
+| Bug history | `reset() used to leave the Cancel button showing` | `reset() also hides the Cancel button` |
+| Essay where a clause would do | `We considered leaving the keys in fetch order, but the diff output has to be stable across runs and fetch order is not, so we sort them first.` | `Keys are sorted so the diff output is stable across runs.` |
+| ALL-CAPS emphasis | `the ONLY difference` | `the only difference` |
+
+**Register.**
+
+| Pattern | Before | After |
+|---|---|---|
+| Stock sentence | the same caution on every page | said once and linked |
+| Intensifier with no number | dramatically simpler | the measured difference |
+| Promotional words | robust, seamless, delve, pivotal, testament | the plain word, or nothing |
+| Present-participle synthesis | Scores drop after the tokenizer change, highlighting how the two stages interact. | Scores drop after the tokenizer change, because the tagger was trained on the old token boundaries. |
+| Synonym cycling | a track, then a lane, then a layer | one noun, repeated |
+
+**From tropes.fyi.** The skill also carries the essay-prose tropes that turn up
+in docs: the self-answered question, "serves as", suspense and teacher
+transitions, false ranges, invented concept labels, signposted summaries,
+bold-first bullets, dead metaphors, announcers and counts, premise stacking,
+the tie-back, documentation as a changelog, appended corrections, appeals to
+familiarity, comma-clipped tails, reasoning leaks, belaboring the unnecessary,
+never-ending conclusions, self-echo, grandiose stakes and Title Case Headings.
 
 ### What it offers over other trope lists
 
@@ -21,32 +108,14 @@ catalog the tells of essays, blog posts, slides and encyclopedia articles. The
 skill folds in the ones that also appear in technical prose, credited under
 [References](#references), and adds:
 
-- Contrastive framing is banned by default. "X, not Y", "rather than",
-  "instead of", "not just X but Y" and "It's not X. It's Y." all get the same
-  fix: delete the negative half. The skill allows a contrast in three narrow
-  cases, each defined by a test. The directory objects to negative parallelism
-  only when it is overused.
-- Every pattern comes with a rewrite that keeps the same facts, e.g. "the height
-  its frequency earns" → "a height proportional to its frequency". The
-  directory and the whip show one example to avoid per trope, with no rewrite.
-- The skill lists tropes specific to technical prose. As of September 2026, none
-  of these appears in the directory:
-  - data, files and figures given knowledge or a stance ("a layer the alignment
-    cannot know", "the boxes say")
-  - cleft sentences ("column-locking is what stacks them")
-  - a conclusion in place of the mechanism ("a marker that does not parse
-    stops the build")
-  - a project policy restated as the closer of every caption ("the viewer
-    computes nothing")
-  - which-ladders ("a new alignment, which is a new model, which React spells
-    `key`")
-  - teaser headings, negative headings and jokes in reference tables
-  - a paragraph that opens on "It" or "This", which a reader arriving by deep
-    link cannot resolve
-- It covers code comments: bug history ("used to", "the previous version")
-  that belongs in the commit, rationale essays that fit in a clause, and
-  ALL-CAPS emphasis.
-- It gives tests a writer can apply mechanically:
+- Contrastive framing is banned by default. The directory objects to negative
+  parallelism only when it is overused.
+- Every pattern has a rewrite that keeps the same facts. The directory and the
+  whip show one example to avoid per trope, with no rewrite.
+- The stance and agency, sentence shape, heading and comment patterns above
+  are specific to technical prose. As of September 2026, none of them appears
+  in the directory.
+- Tests a writer can apply mechanically:
   - "Could the subject perform the verb if you ran the program?" A parser can
     reject; a column cannot know.
   - "What literal word does this figure stand for?" A table maps common figures
@@ -54,18 +123,17 @@ skill folds in the ones that also appear in technical prose, credited under
     door" → "irreversible").
   - "Would a reader who never saw the negative half choose wrong?" If not, the
     contrast goes.
-- It lists what a fix must preserve: the claim, every number and identifier,
+- A list of what a fix must preserve: the claim, every number and identifier,
   the terms the tools use, an author's deliberate idiom, the declined option in
   a design record, and generated text, whose fix goes in the generator.
-- It warns about overcorrecting. Removing tropes tends to lengthen sentences,
+- A warning about overcorrecting. Removing tropes tends to lengthen sentences,
   so the skill covers density, and it says when a list or table is the right
   format.
-- It treats instruction files as the source of the problem. Agents copy the
-  prose of `CLAUDE.md` and `AGENTS.md` into everything they write, so the skill
-  says to fix those files first and to write every style rule in the style it
-  asks for.
-- It includes a review workflow: grep commands for finding hotspots, each hit
-  read in context, and every instance reported before deciding which to fix.
+- Instruction files first. Agents copy the prose of `CLAUDE.md` and `AGENTS.md`
+  into everything they write, so the skill says to fix those files before any
+  other and to write every style rule in the style it asks for.
+- A review workflow: grep commands for finding hotspots, each hit read in
+  context, and every instance reported before deciding which to fix.
 - Most patterns and examples came from rewriting the docs and comments of two
   real codebases, videoskillet and react-msaview.
 
