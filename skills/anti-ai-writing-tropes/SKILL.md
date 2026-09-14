@@ -32,12 +32,12 @@ and the reader supplies the joins.
 
 ## Contrastive framing
 
-This is the strictest rule in the checklist. State what a thing is or does.
-Leave out what it is not, what it replaces, and what someone might have
-assumed.
+Contrastive framing is the strictest rule in the checklist. State what a thing
+is or does. Leave out what it is not, what it replaces, and what someone might
+have assumed.
 
-Contrastive framing defines a thing against an alternative the reader never
-raised. It shows up in every register and in several forms:
+The pattern defines a thing against an alternative the reader never raised.
+It shows up in every register and in several forms:
 
 - "X, not Y": "Staleness is stamped, not compared."
 - "rather than" and "instead of": "so it is tested rather than remembered"
@@ -54,7 +54,9 @@ still says everything.
 
 > Staleness is stamped, not compared. → Staleness is stamped.
 >
-> so it is tested rather than remembered → so a broken install line fails CI
+> CI runs the install command from the README, so it is tested rather than
+> remembered. → CI runs the install command from the README, so a broken one
+> fails the build.
 >
 > The overlay is column-locked instead of drawn per protein. → The overlay is
 > column-locked.
@@ -69,8 +71,8 @@ hold a wrong belief? If not, delete it. The test passes only in three cases:
 
 - An option the reader would otherwise pick. "Use `Pfam`, not `PfamA`" names
   the value people type by mistake.
-- A fault that resembles another. "All-atom distance, not C-beta" matters when
-  the two give different contact sets.
+- A choice whose alternative gives a different result. "All-atom distance,
+  not C-beta" matters when the two give different contact sets.
 - A design record naming the option it declined, which is the record's
   purpose.
 
@@ -89,8 +91,8 @@ the subject perform the verb if you ran the program? A parser can reject; a
 column cannot know. When it could not, find the actor that does the thing, or
 use a verb of description (marks, contains, shows, is).
 
-> A layer the alignment cannot know → Pathogenic variants per residue, from
-> ClinVar
+> ClinVar adds a layer the alignment cannot know. → The ClinVar track marks
+> pathogenic variants per residue.
 >
 > The boxes say what the parts are; the arcs say how they pack → The boxes mark
 > the domains, and the arcs mark residue pairs in contact.
@@ -105,6 +107,9 @@ use a verb of description (marks, contains, shows, is).
 
 **A technical term given a personality.** Keep the term the tools use and fix
 the sentence around it.
+
+> `useEffect` is eager to re-run → `useEffect` re-runs whenever a dependency
+> changes
 
 **A figure of speech where a literal word exists.** Metaphors like "a dial worth
 turning" for "a parameter worth varying", or "earns its keep" for "is useful",
@@ -147,8 +152,9 @@ the field has adopted it as a term ("memory leak", "race condition").
 answer", "the payoff", "the key insight", "worth naming". Delete the
 announcement and state the fact.
 
-> which is the honest answer to the question it was asked → because the model
-> predicts whether a substitution breaks the fold, and this one does not
+> The model scores the variant benign, which is the honest answer to the
+> question it was asked. → The model scores the variant benign, because it
+> predicts whether a substitution breaks the fold, and this one does not.
 
 **Dramatic negation.** A sentence whose subject is "nothing", "no one" or
 "none", or a "not X's job", reads as a pronouncement. Say what does happen.
@@ -166,17 +172,24 @@ announcement and state the fact.
 **Two conclusions stacked on "so".** Split the second into its own sentence; it
 is the one the reader loses.
 
+> The key includes the path, so a rename misses the cache, so the first load
+> after a rename is slow. → The key includes the path, so a rename misses the
+> cache. The first load after a rename is therefore slow.
+
 **A mannered inversion or dropped subject.** Fronting the complement, or opening
 on "So", "And" or "Hence" that carries the previous sentence's subject.
 
-> Which latency is now known: the lane's own. → The latency is now known, and it
-> is the lane's own.
+> Known now is which latency the number reports: the queue's own. → The number
+> reports the queue's own latency.
+>
+> Hence the second pass. → The parser makes a second pass to resolve forward
+> references.
 
 **A fragment standing in for a sentence.** A caption with no verb, or a bullet
 with its subject dropped.
 
-> Nine load paths, no unit test that can touch them. → Nine load paths, and no
-> unit test can touch them.
+> Nine load paths, no unit test that can reach them. → There are nine load
+> paths, and no unit test reaches any of them.
 
 **A rule-of-three list doing a sentence's work.** Three parallel fragments with
 the verbs dropped.
@@ -208,14 +221,14 @@ it reads as style.
 (the build stops, the link breaks) where the sentence saying how it happens
 belongs. Write what the machine does and name the actor.
 
-> A marker that does not parse stops the build. → The build fails when a marker
-> is misspelled.
+> A marker that does not parse stops the build. → The generator exits with an
+> error on a marker it cannot parse, so the build fails.
 
 **Silently, quietly, invisibly.** An adverb standing in for the mechanism of a
 failure. Name what the reader observes, or drop it.
 
-> the same class of wrong, quieter → a highlight on the wrong residue, with no
-> error
+> The second bug is the same class of wrong, quieter. → The second bug
+> highlights the wrong residue and raises no error.
 
 **The policy refrain.** A project rule ("the viewer computes nothing", "no
 external services") restated as the closer of captions and section intros. State
@@ -246,7 +259,9 @@ interest. Name the subject.
 a question the reader asks in those words, such as an FAQ entry or a `Why ...`
 section.
 
-> Where the file goes → Output · What you need before starting → Requirements
+> Where the file goes → Output
+>
+> What you need before starting → Requirements
 
 **A heading that says what a thing is not.** A scanning reader gets nothing from
 a negative, unless the distinction is the whole finding of the section.
@@ -266,12 +281,16 @@ debugging" describe how the code got here, and that belongs in the commit
 message. The comment states the constraint the code satisfies, with the
 measurement if there is one.
 
-> reset() used to leave the Cancel button behind → reset() also clears the
-> download status
+> reset() used to leave the Cancel button showing → reset() also hides the
+> Cancel button
 
 **An essay where a clause would do.** Keep the measurement and the non-obvious
 constraint; cut the argument around them. Repeated rationale belongs in one
 place with pointers to it.
+
+> // We considered leaving the keys in fetch order, but the diff output has to
+> // be stable across runs and fetch order is not, so we sort them first. →
+> // Keys are sorted so the diff output is stable across runs.
 
 **ALL-CAPS emphasis.** "the ONLY difference", "DON'T MEASURE". Emphasis is the
 sentence's job.
@@ -294,6 +313,10 @@ cluster.
 is a claim with nobody making it. Write the claim as its own sentence or drop
 it.
 
+> Scores drop after the tokenizer change, highlighting how the two stages
+> interact. → Scores drop after the tokenizer change, because the tagger was
+> trained on the old token boundaries.
+
 **Small tics.** "reads straight off", "tells a story", "shape" as an all-purpose
 noun, "counterpoint", "actually", "genuinely", circular sentences ("an alignment
 is an alignment").
@@ -301,7 +324,7 @@ is an alignment").
 ## Also in technical prose
 
 [tropes.fyi](https://tropes.fyi) catalogs the tropes of essay and blog prose.
-These ones from its list turn up in docs and READMEs too.
+These, from its directory, turn up in docs and READMEs too.
 
 **The self-answered question.** "The result? A 3x speedup." State the result.
 
@@ -360,7 +383,7 @@ consensus in place of a citation. Cite it or drop the adjective.
 **A comma-clipped tail.** A short phrase hung off a comma to close a sentence
 with a beat: "it rebuilds on every keystroke, every time."
 
-The [tropes.fyi directory](https://tropes.fyi/directory) adds these.
+The [directory](https://tropes.fyi/directory) also lists these.
 
 **A reasoning leak.** The text narrates its own deliberation: "What that changes
 in the design is worth being precise about." In a PR description or a design
@@ -413,7 +436,7 @@ one ships the em-dash. Write instruction files in the style they ask for.
 Markers worth grepping for on a file or repo. Read each hit in context.
 
 ```sh
-grep -rnE ' — | -- |is what |which is what|rather than|, not |instead of' .
+grep -rnE ' — | -- |is what |which is what|rather than|, not |not just|instead of' .
 grep -rnE 'the (whole )?point|honest|payoff|worth (naming|noting)|exists to' .
 grep -rnE '\b(cannot|doesn.t|does not) know|says |silently|quietly|invisibly' .
 grep -rnE '^(Nothing|No one|None) |not (the|its|our) job|used to ' .
