@@ -292,6 +292,35 @@ content has several parallel parts a reader will scan or look up.
 **A dead metaphor.** One image repeated through a page ("doors", "walls",
 "layers of the onion"). Use it once or not at all.
 
+The [writing whip](https://tropes.fyi/whip) adds these.
+
+**Synonym cycling.** One referent called a track, then a lane, then a layer.
+In technical prose the reader assumes three words mean three things. Pick the
+noun and repeat it.
+
+**An announcer.** A sentence that names the shape of what follows instead of
+saying it: "Two constraints shape the design." Counting belongs to the same
+habit: "for two reasons", "three things to know". Write the first constraint.
+
+**Premise stacking.** A paragraph of evidence before the claim it supports. Put
+the claim first.
+
+**The tie-back.** A closing sentence that loops back to the question: "So, to
+answer the original question: yes." Stop after the answer.
+
+**Documentation as a changelog.** A doc that narrates what changed and when
+("we switched to X after Y broke") instead of describing the current behavior.
+The history goes in commits and release notes.
+
+**Appending a correction.** When a passage is wrong, rewrite or delete it. A new
+paragraph that corrects the one above leaves both for the reader to reconcile.
+
+**Appeal to familiarity.** "a classic", "famously", "the well-known" borrow
+consensus in place of a citation. Cite it or drop the adjective.
+
+**A comma-clipped tail.** A short phrase hung off a comma to close a sentence
+with a beat: "it rebuilds on every keystroke, every time."
+
 ## A rule that breaks its own rule teaches the break
 
 A style rule is read as prose before it is read as a rule, and the prose is the
