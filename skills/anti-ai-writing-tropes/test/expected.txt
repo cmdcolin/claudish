@@ -12,3 +12,7 @@
 [register] 9:The parser is robust and leverages a comprehensive cache.
 [register] 11:Furthermore, the ONLY difference is a bug, one that nobody sees.
 [staccato] 21:The key includes the path. A rename changes the key. The cache misses.
+[coldstart] 23:So that the view loads faster, we built an index.
+[shape] 23:So that the view loads faster, we built an index.
+[register] 25:To optimize the rendering of alignments, we split the file.
+[claim] 27:The encoding cuts at large indels in the same way as break-paf.

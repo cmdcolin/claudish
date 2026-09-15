@@ -78,6 +78,7 @@ each other.
 | A comma-hung appositive | Version 1 opens one file, a design that cannot compare two. | Version 1 opens only one file at a time, so it cannot compare two. |
 | A rule-of-three list | A file in, a look applied, ProRes out. | The command reads the file, applies the look and writes ProRes 4444. |
 | A staccato run | The key includes the path. A rename changes the key. The cache misses. | The key includes the path, so a rename changes the key and misses the cache. |
+| A fronted "So that" clause | So that a browser fetches only the region in view, we built an index. | To limit the download to the region in view, we built an index. |
 
 ### Openings and closings
 
@@ -116,6 +117,7 @@ give the response a separate sentence.
 | A description where a limitation belongs | Version 1 opens one file at a time. Version 2 opens several. | Version 1 is limited to one open file at a time. Version 2 removes that limit by opening files in tabs, so you can compare two files side by side. |
 | A problem sized to the solution | Version 1 cannot show a diff between two files. Version 2 shows diffs. | Version 1 is limited to one open file at a time. Version 2 opens files in tabs, so it can show a diff between two. |
 | A narrative bridge | Build tools have since moved toward incremental compilation. Our build recompiled every file on each change. We added a dependency graph, so it now recompiles only the files a change affects. | Our build recompiled every file on each change. We added a dependency graph, so it now recompiles only the files a change affects. |
+| The old tool as the subject | A browser that reads PAF downloads the whole file to draw any region. We created PIF, which `make-pif` generates from PAF. | To limit the data transferred to the alignments in view, we created PIF, a Tabix-indexed form of PAF. |
 
 ### Headings and labels
 
@@ -176,6 +178,7 @@ the word did.
 |---|---|---|
 | The verb cluster | The tool leverages a comprehensive set of heuristics to ensure correctness. | The tool checks each file against a set of heuristics. |
 | Present-participle synthesis | Scores drop after the tokenizer change, highlighting how the two stages interact. | Scores drop after the tokenizer change, because the tagger was trained on the old token boundaries. |
+| A goal with no quantity | To optimize the rendering of alignments, we created an indexed format. | To limit the data transferred when drawing alignments to the region in view, we created an indexed format. |
 | A sentence adverb | Ultimately, the index is the bottleneck. | The index is the bottleneck. |
 | Small tics | The cache serves as the source of truth. | The cache is the source of truth. |
 

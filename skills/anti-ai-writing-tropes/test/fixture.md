@@ -19,3 +19,9 @@ The field is left unset when the flag is missing.
 We measured it, and the option was measured and rejected.
 
 The key includes the path. A rename changes the key. The cache misses.
+
+So that the view loads faster, we built an index.
+
+To optimize the rendering of alignments, we split the file.
+
+The encoding cuts at large indels in the same way as break-paf.

@@ -20,6 +20,9 @@ below pairs each habit with a rewrite, so the fix is a pattern to copy.
 - Fixing: keep every fact. A rewrite that drops a number or changes what a
   sentence claims is worse however plain it reads. See
   [What not to flatten](#what-not-to-flatten).
+- Shortening: delete the sentences and clauses that do not serve the page, and
+  keep the ones that remain as full sentences. Compressing every sentence into
+  a shorter one produces a [staccato run](#sentence-shapes).
 - Rewording a paragraph: rewrite the whole paragraph and reflow it. Splicing a
   clause into the old line breaks keeps the diff small, but it leaves two ideas
   that depend on each other in one sentence without the word that connects
@@ -295,6 +298,13 @@ sentence.
 > Version 1 opens one file, a design that cannot compare two → Version 1 opens
 > only one file at a time, so it cannot compare two
 
+**A fronted "So that" clause.** "So that X happens, we did Y" puts the result
+before the actor and reads as translated. Open on "To" with the goal, or put
+the purpose after the main clause.
+
+> So that a browser fetches only the region in view, we built an index → To
+> limit the download to the region in view, we built an index
+
 **A comma-clipped tail.** A short phrase hung off a comma to close a sentence
 with a beat: "it rebuilds on every keystroke, every time."
 
@@ -346,6 +356,12 @@ it. A preview that names its parts in the same sentence is fine:
 support, an opening that argues for the page's importance, or a wrong inference
 named only to refute it. Put the claim first. Start at the first observation;
 stop a section at the last one.
+
+**A term used before its definition.** An opening sentence mentions a feature
+in passing ("stores each record at two resolutions") and a later paragraph,
+after an unrelated one, defines it. The reader carries an undefined term across
+the gap. Introduce the feature in the paragraph that defines it, or move the
+two paragraphs together.
 
 **A closing that restates.** "In summary", "As we've seen", a paragraph
 restating each section, a tie-back to the opening question ("So, to answer the
@@ -403,6 +419,18 @@ next sentence.
 > Version 1 cannot show a diff between two files. Version 2 shows diffs →
 > Version 1 is limited to one open file at a time. Version 2 opens files in
 > tabs, so it can show a diff between two
+
+**The old tool as the subject.** A paragraph introducing a new format or tool
+spends its opening sentences on what the old one fails to do, so the old tool
+becomes the topic. Keep the limitation to a clause or fold it into the goal,
+name the new thing in the first sentence, and mention the old format where it
+enters the mechanism, such as the file the new one is converted from.
+
+> A browser that reads PAF downloads the whole file to draw any region, and an
+> index over PAF answers queries on one genome only. We created PIF, which
+> `make-pif` generates from PAF. → To limit the data transferred to the
+> alignments in view, we created PIF, a Tabix-indexed form of PAF. The
+> `make-pif` command writes each PAF line twice, once per genome.
 
 **A colon or a comma doing the turn.** "That adoption came with a fixed frame:
 version 1 opens ..." and "an editor without that limit, one that opens ..."
@@ -484,6 +512,22 @@ appears in. A plain unqualified comparative ("faster", "much smaller") is fine
 as it stands, because a made-up or overly precise number reads worse than the
 word it replaces.
 
+**A goal with no quantity.** "To optimize rendering", "to improve
+performance" and "to help with scale" name a direction but not what changes.
+Name the quantity the design lowers or raises: bytes transferred, time to
+first draw, memory per track.
+
+> To optimize the rendering of whole-genome alignments, we created an indexed
+> format → To limit the data transferred when drawing whole-genome alignments
+> to the region in view, we created an indexed format
+
+**An undefined abbreviation.** A format or tool name ("PAF", "BGZF") at its
+first use with no expansion or gloss. Gloss it at the first use in the
+document, where a reader who does not know it will stop.
+
+> The inputs are PAF files → The inputs are PAF files, the pairwise alignment
+> format that minimap2 writes
+
 **Promotional words and grandiose stakes.** `vibrant`, `groundbreaking`,
 `boasts`, `flagship`, `crisp`, `seamless`, `robust`; the `delve` / `tapestry` /
 `testament` / `showcase` / `pivotal` cluster; "This changes how we think about
@@ -544,6 +588,10 @@ an alignment").
 - Measurements. Numbers, identifiers, file paths and the names of mechanisms
   are the content. A prose pass moves sentences around them and changes none of
   them.
+- The mechanism. A rewrite that adds "in the same way as tool X", "each record
+  consists of" or "collapses into a single run" makes a new claim, and the
+  spec may contradict it. Check the sentence against the spec or the code, or
+  cut it.
 - Terms the tools use. Renaming a flag or a field in prose leaves the reader
   without the word the manual uses.
 - An established idiom. A device an author uses deliberately and consistently
@@ -559,9 +607,11 @@ an alignment").
 `scan.sh` beside this file greps the Markdown, LaTeX, reStructuredText and
 plain-text files under a path for the markers above, and labels each hit by the
 section its marker comes from: `contrast`, `shape`, `agency`, `colon`,
-`apposition`, `opening`, `passive`, `history`, `register`, `coldstart` and
-`staccato`. Read each hit in context. The `coldstart` label marks a paragraph
-whose first line opens on a pronoun, a demonstrative or a sentence-initial
+`apposition`, `opening`, `passive`, `history`, `register`, `claim`, `coldstart`
+and `staccato`. Read each hit in context. The `claim` label marks a comparison
+to another tool ("in the same way", "similar to"), which needs checking against
+that tool's documentation. The `coldstart` label marks a paragraph whose first
+line opens on a pronoun, a demonstrative or a sentence-initial
 "So"/"And"/"Hence". The `staccato` label marks a paragraph or bullet with three
 sentences in a row of six words or fewer.
 The `colon` and `apposition` labels mark the two sentence shapes that split a
