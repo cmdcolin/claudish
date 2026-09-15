@@ -63,10 +63,12 @@ a plain verb as "X is what does Y" ("rounding is what buys the room"), and the
 significance announcement calls a fact important without saying why. The colon
 lead-in puts a generalization first and the facts second, so the reader has to
 match the two halves. The comma-hung appositive restates the subject
-mid-sentence, and the fragment and the list of three leave out their verbs. In
-each case the reader has to rebuild the plain sentence the writer could have
-written. Write the subject and its plain verb, and give each fact a separate
-sentence.
+mid-sentence, and the fragment and the list of three leave out their verbs. A
+staccato run of short sentences keeps the verbs and leaves out the "so" or
+"because" that connects the facts. In each case the reader has to rebuild the
+plain sentence the writer could have written. Write the subject and its plain
+verb, give unrelated facts separate sentences, and join facts that depend on
+each other.
 
 | Pattern | Before | After |
 |---|---|---|
@@ -75,6 +77,7 @@ sentence.
 | A colon lead-in | Each scale resolves where updating it costs least: a categorical color resolves in the shader. | A categorical color resolves in the shader. |
 | A comma-hung appositive | Version 1 opens one file, a design that cannot compare two. | Version 1 opens only one file at a time, so it cannot compare two. |
 | A rule-of-three list | A file in, a look applied, ProRes out. | The command reads the file, applies the look and writes ProRes 4444. |
+| A staccato run | The key includes the path. A rename changes the key. The cache misses. | The key includes the path, so a rename changes the key and misses the cache. |
 
 ### Openings and closings
 

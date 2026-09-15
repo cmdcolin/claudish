@@ -258,6 +258,19 @@ the verbs dropped.
 > A file in, a look applied, ProRes out. → The command reads the file, applies
 > the look and writes ProRes 4444.
 
+**Staccato, or telegraphic, sentences.** A run of short sentences, each
+complete, where the facts depend on each other. Every full stop drops the
+"so", "and" or "because" that says how one fact leads to the next, and the
+reader has to put it back. Join sentences that share a subject or where one
+causes the next. Keep a short sentence for a single step or a fact that stands
+alone.
+
+> The parser reads the header. It checks the version. It rejects old files. →
+> The parser reads the version from the header and rejects old files.
+>
+> The key includes the path. A rename changes the key. The cache misses. → The
+> key includes the path, so a rename changes the key and misses the cache.
+
 **A false range.** "from parsing to rendering to export" where nothing sits on a
 scale between the ends. List the items, or name the one that matters.
 
@@ -287,8 +300,9 @@ with a beat: "it rebuilds on every keystroke, every time."
 
 **Density.** Long sentences packed with qualifications, and paragraphs that run
 for a screen without a break. Fixing the tropes above adds clauses, so after a
-pass give each fact a separate sentence and break the paragraph where the
-subject changes.
+pass split a sentence that carries unrelated facts and break the paragraph
+where the subject changes. Keep facts that depend on each other in one sentence,
+or the split produces a staccato run.
 
 **Em-dash asides.** One in a paragraph is punctuation; three is a writer avoiding
 sentence boundaries. A ` -- ` in a code comment is the same habit. Promote one
@@ -545,9 +559,11 @@ an alignment").
 `scan.sh` beside this file greps the Markdown, LaTeX, reStructuredText and
 plain-text files under a path for the markers above, and labels each hit by the
 section its marker comes from: `contrast`, `shape`, `agency`, `colon`,
-`apposition`, `opening`, `passive`, `history`, `register` and `coldstart`. Read
-each hit in context. The `coldstart` label marks a paragraph whose first line
-opens on a pronoun, a demonstrative or a sentence-initial "So"/"And"/"Hence".
+`apposition`, `opening`, `passive`, `history`, `register`, `coldstart` and
+`staccato`. Read each hit in context. The `coldstart` label marks a paragraph
+whose first line opens on a pronoun, a demonstrative or a sentence-initial
+"So"/"And"/"Hence". The `staccato` label marks a paragraph or bullet with three
+sentences in a row of six words or fewer.
 The `colon` and `apposition` labels mark the two sentence shapes that split a
 sentence at its punctuation. A paragraph that follows a list and opens on
 "These" is usually fine.

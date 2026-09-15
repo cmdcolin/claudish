@@ -11,3 +11,4 @@
 [history] 13:reset() used to leave the button showing.
 [register] 9:The parser is robust and leverages a comprehensive cache.
 [register] 11:Furthermore, the ONLY difference is a bug, one that nobody sees.
+[staccato] 21:The key includes the path. A rename changes the key. The cache misses.
