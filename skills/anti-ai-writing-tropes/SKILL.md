@@ -6,8 +6,8 @@ allowed-tools: Bash(bash *scan.sh*)
 
 # Anti-AI writing tropes
 
-Write plain technical English in ordinary declarative sentences. Each habit
-below is paired with a rewrite, so the fix is a pattern to copy.
+Write plain technical English in ordinary declarative sentences. The checklist
+below pairs each habit with a rewrite, so the fix is a pattern to copy.
 
 ## How to use this
 
@@ -21,10 +21,10 @@ below is paired with a rewrite, so the fix is a pattern to copy.
   sentence claims is worse however plain it reads. See
   [What not to flatten](#what-not-to-flatten).
 - Rewording a paragraph: rewrite the whole paragraph and reflow it. Splicing a
-  clause into the old line breaks to keep the diff small yields an optimal diff
-  and tangled prose, where two ideas that depend on each other sit in one
-  sentence without the word that connects them. A small edit means a narrow
-  scope, not few changed lines.
+  clause into the old line breaks keeps the diff small, but it leaves two ideas
+  that depend on each other in one sentence without the word that connects
+  them. Keep a small edit to a narrow scope, and reflow every line that scope
+  touches.
 
   > The WebGL context cap limits the linear genome view, where JBrowse 2
   > renders each track in a separate canvas because each track is an
@@ -127,7 +127,7 @@ what it is annotated on, how many there are per what. "its own X" nearly
 always means one X per Y.
 
 > each tab renders its own settings → each tab renders the settings stored for
-> that window
+> that tab
 >
 > each lane draws its own cluster genes → each lane draws the cluster genes
 > annotated in that genome
@@ -179,8 +179,7 @@ image repeated through a page ("doors", "walls") is a dead metaphor.
 **The passive voice hiding the actor.** "The field is left unset", "the
 constant is exported", "it was measured and rejected". Use the active voice
 where you know the actor, and name it. Keep an idiomatic passive ("is
-required", "is deprecated") and a passive whose actor genuinely does not
-matter.
+required", "is deprecated") and a passive whose actor does not matter.
 
 > The field is left unset → The parser leaves the field unset
 >
@@ -288,13 +287,13 @@ with a beat: "it rebuilds on every keystroke, every time."
 
 **Density.** Long sentences packed with qualifications, and paragraphs that run
 for a screen without a break. Fixing the tropes above adds clauses, so after a
-pass give each fact its own sentence and break the paragraph where the subject
-changes.
+pass give each fact a separate sentence and break the paragraph where the
+subject changes.
 
 **Em-dash asides.** One in a paragraph is punctuation; three is a writer avoiding
 sentence boundaries. A ` -- ` in a code comment is the same habit. Promote one
-to its own sentence, demote one to a comma, keep the one that is genuinely
-parenthetical.
+aside to a sentence, demote another to a comma, and keep a dash only around a
+parenthetical remark.
 
 ## Openings and closings
 
@@ -325,10 +324,9 @@ State it once, in the design doc, and link to it.
 
 **An announcer.** A sentence that promises content instead of giving it:
 "Here's the thing", "Here's where it gets interesting", "Let's break this
-down", "Think of it as". Delete the announcer; the next sentence stands on its
-own. This isn't a ban on previewing structure — "two constraints shape the
-design: it must run offline and fit under 50MB" names its parts in the same
-breath and earns its place.
+down", "Think of it as". Delete the announcer and start on the sentence after
+it. A preview that names its parts in the same sentence is fine:
+"The design has two constraints: it must run offline and fit under 50MB."
 
 **The claim after its evidence.** A paragraph of premises before the claim they
 support, an opening that argues for the page's importance, or a wrong inference
@@ -349,16 +347,17 @@ or what was found, and puts supporting detail after it.
 has no antecedent for "It", "This", "That" or "that limit". Name the subject,
 even when the previous paragraph named it.
 
-> It runs the app's own engine. → The renderer runs the app's own engine.
+> It runs the same engine as the app. → The renderer runs the same engine as the
+> app.
 >
 > That limit is why we wrote a second parser. → The 2 GB file limit is why we
 > wrote a second parser.
 
 ## Paragraph transitions
 
-A paragraph that introduces a design or a project turns on one sentence: the
-prior state named as a problem, then the response to it. The shapes below all
-lose that turn.
+A paragraph that introduces a design or a project names the problem with the
+prior state in one sentence and gives the response in the next. Each shape below
+leaves the reader to work out where the problem ends and the response begins.
 
 **A description where a limitation belongs.** The paragraph states what the
 old tool does and then what the new one does, and leaves the reader to work out
@@ -374,8 +373,7 @@ Z.*
 **A narrative bridge with nothing behind it.** A sentence about how the field
 moved ("teams have since shifted to monorepos", "that design fit its era")
 written to motivate the turn, with no citation and no measurement. It is a
-claim, and the reader will test it. Cut it and let the limitation carry the
-turn.
+claim, and the reader will test it. Cut it, and state the limitation instead.
 
 > Build tools have since moved toward incremental compilation. Our build
 > recompiled every file on each change. We added a dependency graph, so it now
@@ -435,9 +433,9 @@ someone looking one thing up.
 > same output
 
 **Bold-first bullets.** A bold lead on every item of an ordinary list is
-decoration. Keep bold for a term being defined, as in a glossary. Don't
-overcorrect into no formatting: a list, table or heading belongs wherever the
-content has several parallel parts a reader will scan or look up.
+decoration. Keep bold for a term being defined, as in a glossary. Keep a list,
+table or heading wherever the content has several parallel parts a reader will
+scan or look up.
 
 ## Comments and history
 
@@ -462,15 +460,15 @@ place with pointers to it.
 > // be stable across runs and fetch order is not, so we sort them first. →
 > // Sort the keys so the diff output is stable across runs.
 
-**ALL-CAPS emphasis.** "the ONLY difference", "DON'T MEASURE". Emphasis is the
-sentence's job.
+**ALL-CAPS emphasis.** "the ONLY difference", "DON'T MEASURE". Put the emphasis
+in the wording, and write the words in lowercase.
 
 ## Register
 
 **An informalism in a formal register.** Judge a word by the document it
-appears in. A plain unqualified comparative ("faster", "much smaller") is fine;
-don't invent a measurement to replace it. A made-up or overly precise number
-reads worse than the word it replaced.
+appears in. A plain unqualified comparative ("faster", "much smaller") is fine
+as it stands, because a made-up or overly precise number reads worse than the
+word it replaces.
 
 **Promotional words and grandiose stakes.** `vibrant`, `groundbreaking`,
 `boasts`, `flagship`, `crisp`, `seamless`, `robust`; the `delve` / `tapestry` /
@@ -545,14 +543,14 @@ an alignment").
 ## Quick scan
 
 `scan.sh` beside this file greps the Markdown, LaTeX, reStructuredText and
-plain-text files under a path for the markers above, labelled by the section
-they belong to: `contrast`, `shape`, `agency`, `colon`, `apposition`,
-`opening`, `passive`, `history`, `register` and `coldstart`. Read each hit in context. The
-`coldstart` label marks a paragraph whose first line opens on a pronoun, a
-demonstrative or a sentence-initial "So"/"And"/"Hence"; `colon` and
-`apposition` mark the two sentence shapes that split a sentence at its
-punctuation. A paragraph that follows a list and opens on "These" is usually
-fine.
+plain-text files under a path for the markers above, and labels each hit by the
+section its marker comes from: `contrast`, `shape`, `agency`, `colon`,
+`apposition`, `opening`, `passive`, `history`, `register` and `coldstart`. Read
+each hit in context. The `coldstart` label marks a paragraph whose first line
+opens on a pronoun, a demonstrative or a sentence-initial "So"/"And"/"Hence".
+The `colon` and `apposition` labels mark the two sentence shapes that split a
+sentence at its punctuation. A paragraph that follows a list and opens on
+"These" is usually fine.
 
 ```sh
 # installed as a plugin

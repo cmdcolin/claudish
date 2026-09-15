@@ -8,65 +8,65 @@ Skills for Claude Code.
 
 ## anti-ai-writing-tropes
 
-A checklist for technical writing: docs, READMEs, tutorials, code comments,
-figure captions, commit messages, PR descriptions and agent instruction files.
-Each entry pairs a problem with the fix that keeps the same facts. A reader
-usually arrives at a paragraph from a search hit or a deep link, with no memory
-of the paragraph before it, so each paragraph has to make sense by itself. Most
-of the entries below follow from that rule. Name the subject, state the fact,
-and leave nothing for the reader to carry over from the previous paragraph.
+The skill is a checklist for technical writing: docs, READMEs, tutorials, code
+comments, figure captions, commit messages, PR descriptions and agent
+instruction files. Each entry pairs a problem with a fix that keeps the same
+facts. A reader usually arrives at a paragraph from a search hit or a deep link,
+with no memory of the paragraph before it, so each paragraph has to make sense
+by itself. Most of the entries below follow from that rule. Name the subject,
+state the fact, and leave nothing for the reader to carry over from the previous
+paragraph.
 
 ### Contrastive framing
 
-A contrastive sentence defines a thing by what it is
-not, as in "staleness is stamped, not compared" or "it's not a cache, it's a
-log". The negative half answers an objection the reader never raised, and it
-usually carries no information of its own. Delete it, and the sentence almost
-always still says everything it said before. The exception is a negative that
-steers the reader away from a choice they would otherwise make, such as the
-flag value people type by mistake. Even then, a plain sentence with a "because"
-usually carries the distinction better than the contrast does.
+A contrastive sentence defines a thing by what it is not, as in "staleness is
+stamped, not compared" or "it's not a cache, it's a log". The negative half
+answers an objection the reader never raised, and it usually carries no
+information. Delete the negative half, and the sentence almost always still says
+everything it said before. The exception is a negative that steers the reader
+away from a choice they would otherwise make, such as the flag value people type
+by mistake. Even then, a plain sentence with a "because" usually carries the
+distinction better than the contrast does.
 
 | Pattern | Before | After |
 |---|---|---|
-| Contrastive framing | Staleness is stamped, not compared. | Staleness is stamped. |
-| Contrastive framing | It's not a cache. It's a log. | It is a log. |
-| Contrastive framing | The CLI doesn't just fetch domains, it caches them. | The CLI fetches domains and caches them on disk. |
-| Contrastive framing | CI runs the install command from the README, so it is tested rather than remembered. | CI runs the install command from the README, so a broken one fails the build. |
+| X, not Y | Staleness is stamped, not compared. | Staleness is stamped. |
+| A negation, then the claim | It's not a cache. It's a log. | It is a log. |
+| Doesn't just X, it Y | The CLI doesn't just fetch domains, it caches them. | The CLI fetches domains and caches them on disk. |
+| Rather than | CI runs the install command from the README, so it is tested rather than remembered. | CI runs the install command from the README, so a broken one fails the build. |
 
 ### Stance and agency
 
-Generated prose tends to give inanimate things a mind
-and a will, so that a lockfile knows which versions to install, a figure says
-what the parts are, a bar rises to the height its frequency earns, and each tab
-renders its own settings. None of these subjects can do what the verb claims,
-and the reader has to translate each one back into the literal relation it
-stands for. Name the component or the person that does the thing, or use a
-verb of description such as lists, marks, contains or shows. The same
-habit produces figures of speech where a literal word exists, such as
-"load-bearing" for "required", and passive sentences that leave the actor out
-entirely. Write the literal word, and use the active voice wherever you know who
-the actor is.
+Generated prose tends to give inanimate things a mind and a will, so that a
+lockfile knows which versions to install, a figure says what the parts are, a
+bar rises to the height its frequency earns, and each tab renders its own
+settings. None of these subjects can do what the verb claims, and the reader has
+to translate each one back into the literal relation it stands for. Name the
+component or the person that does the thing, or use a verb of description such
+as lists, marks, contains or shows. The same habit produces figures of speech
+where a literal word exists, such as "load-bearing" for "required", and passive
+sentences that leave the actor out entirely. Write the literal word, and use the
+active voice wherever you know who the actor is.
 
 | Pattern | Before | After |
 |---|---|---|
 | A value given knowledge | The lockfile knows which versions to install. | The lockfile lists the exact version of each package. |
-| An inanimate subject given ownership | each tab renders its own settings | each tab renders the settings stored for that window |
+| An inanimate subject given ownership | each tab renders its own settings | each tab renders the settings stored for that tab |
 | An artifact given a will | each bar rises to the height its frequency earns | each bar's height is proportional to its frequency |
 | A figure of speech | The config file is load-bearing. | Every command reads the config file. |
 | The passive voice hiding the actor | The field is left unset. | The parser leaves the field unset. |
 
 ### Sentence shapes
 
-Some sentence shapes exist to land a beat, and they
-carry the rhythm of a conclusion without stating one. The cleft turns a plain
-verb into a verdict ("rounding is what buys the room"). The colon lead-in puts a
-generalization first and the facts second, so the reader has to match the two
-halves. The comma-hung appositive restates the subject mid-sentence, and the
-fragment and the list of three drop their verbs altogether. Each of these forms
-asks the reader to reconstruct a plain sentence the writer could have written.
-Write the subject and its plain verb, give each fact a sentence of its own, and
-let the facts supply the emphasis.
+Some sentence shapes sound like a conclusion and state none. The cleft restates
+a plain verb as "X is what does Y" ("rounding is what buys the room"), and the
+significance announcement calls a fact important without saying why. The colon
+lead-in puts a generalization first and the facts second, so the reader has to
+match the two halves. The comma-hung appositive restates the subject
+mid-sentence, and the fragment and the list of three leave out their verbs. In
+each case the reader has to rebuild the plain sentence the writer could have
+written. Write the subject and its plain verb, and give each fact a separate
+sentence.
 
 | Pattern | Before | After |
 |---|---|---|
@@ -78,37 +78,35 @@ let the facts supply the emphasis.
 
 ### Openings and closings
 
-A reader who lands on a paragraph from a search
-hit has no antecedent for "it", "this" or "that limit", so a paragraph that
-opens on a pronoun loses them at the first word. Open every paragraph on its
-subject by name, even when the paragraph before named the same subject. The
-same reader gets nothing from an aphorism that sounds like a conclusion but
-carries no fact. A sentence that names an
-outcome ("the build stops") where the mechanism belongs, or an adverb such as
-"silently" standing in for what happens, leaves the reader without the fact
-they came for. Say what the machine does, name the actor, and end the section
-at its last fact.
+A reader who lands on a paragraph from a search hit has no antecedent for "it",
+"this" or "that limit". Open every paragraph on its subject by name, even when
+the paragraph before named the same subject. The same reader gets nothing from
+an aphorism that sounds like a conclusion and carries no fact. A sentence that
+names an outcome ("the build stops") where the mechanism belongs, or an adverb
+such as "silently" standing in for what happens, leaves the reader without the
+fact they came for. Say what the machine does, name the actor, and end the
+section at its last fact.
 
 | Pattern | Before | After |
 |---|---|---|
+| A pronoun opening a paragraph | It runs the same engine as the app. | The renderer runs the same engine as the app. |
 | An aphorism opening a section | A phone GPU is still a phone GPU. | A phone GPU has much less headroom. |
 | A conclusion standing in for the mechanism | A marker that does not parse stops the build. | The generator exits with an error on a marker it cannot parse, so the build fails. |
 | Silently, quietly, invisibly | The second bug is the same class of wrong, quieter. | The second bug writes the wrong value and raises no error. |
-| A pronoun opening a paragraph | It runs the app's own engine. | The renderer runs the app's own engine. |
 
 ### Paragraph transitions
 
-A paragraph that introduces a new version, a
-redesign or a fix has two halves: what was wrong before, and what changed. The
-turn between them is where generated prose most often goes wrong. Sometimes
-the first half is a plain description of the old version that leaves the reader
-to infer it was a problem. Sometimes the writer phrases the limitation in
-exactly the terms of the new version's feature list, so the whole paragraph
-reads as if it were written backwards from the solution. And sometimes the
-writer inserts a sentence about where the field has moved ("build tools have
-since shifted to incremental compilation") to motivate the change, with no
-citation or measurement behind it. Name the limitation as a limitation in one
-sentence, in general terms, and then give the response a sentence of its own.
+A paragraph that introduces a new version, a redesign or a fix has two halves:
+what was wrong before, and what changed. Generated prose most often goes wrong
+at the step from one half to the other. Sometimes the first half is a plain
+description of the old version that leaves the reader to infer it was a
+problem. Sometimes the writer phrases the limitation in exactly the terms of the
+new version's feature list, so the whole paragraph reads as if it were written
+backwards from the solution. And sometimes the writer inserts a sentence about
+where the field has moved ("build tools have since shifted to incremental
+compilation") to motivate the change, with no citation or measurement behind
+it. Name the limitation as a limitation in one sentence, in general terms, and
+give the response a separate sentence.
 
 | Pattern | Before | After |
 |---|---|---|
@@ -118,15 +116,15 @@ sentence, in general terms, and then give the response a sentence of its own.
 
 ### Headings and labels
 
-Someone scanning for a subject reads a heading, and
-someone looking up one entry reads a flag table, so both have to name the thing
-plainly. A teaser heading withholds the subject to create interest, a
-phrase heading ("where the file goes") makes the reader parse a clause where a
-noun would do, a negative heading tells them what a section is not about, and a
-joke in a reference table makes them decode a label they only wanted to read.
-Name the subject in the heading, in sentence case, and give each flag a plain
-label. A bold lead on every bullet of an ordinary list is decoration from the
-same habit, and it belongs only where the bullet defines a term.
+Someone scanning for a subject reads a heading, and someone looking up one entry
+reads a flag table, so both have to name the thing plainly. A teaser heading
+withholds the subject to create interest, a phrase heading ("where the file
+goes") makes the reader parse a clause where a noun would do, a negative heading
+tells them what a section is not about, and a joke in a reference table makes
+them decode a label they only wanted to read. Name the subject in the heading,
+in sentence case, and give each flag a plain label. A bold lead on every bullet
+of an ordinary list is decoration from the same habit, and it belongs only where
+the bullet defines a term.
 
 | Pattern | Before | After |
 |---|---|---|
@@ -137,16 +135,15 @@ same habit, and it belongs only where the bullet defines a term.
 
 ### Comments and history
 
-A code comment describes the current behavior of
-the code beside it, and nothing else. A comment that recounts how the code got
-here ("used to leave the Cancel button showing") or argues for the choice at
-essay length is carrying material that belongs elsewhere: the history in the
-commit message, and the rationale in a design doc that the comment can point
-to. A document that reads as a changelog, with a paragraph explaining what the
-previous version did before saying what this one does, has the same fault at
-page scale. Write the constraint the code satisfies, with the measurement if
-there is one. Emphasis belongs in the wording of the sentence, and capital
-letters add none.
+A code comment describes the current behavior of the code beside it, and
+nothing else. A comment that recounts how the code got here ("used to leave the
+Cancel button showing") or argues for the choice at essay length is carrying
+material that belongs elsewhere: the history in the commit message, and the
+rationale in a design doc that the comment can point to. A document that reads
+as a changelog, with a paragraph explaining what the previous version did before
+saying what this one does, has the same fault at page scale. Write the
+constraint the code satisfies, with the measurement if there is one, and write
+emphasized words in lowercase.
 
 | Pattern | Before | After |
 |---|---|---|
@@ -156,19 +153,20 @@ letters add none.
 
 ### Register
 
-Word choice gives generated prose away most clearly in combination: a verb
-cluster that stacks "leverage", "utilize" and "ensure" where "use", "check" and
-"make" were meant, a participle clause that draws a conclusion nobody is making
-("highlighting how the two stages interact"), an invented label used as if it
-were an established term, or a cycle of synonyms for one thing that makes the
-reader suspect three things. Those patterns are distinctive to generated text.
-A single promotional adjective such as "robust" or "seamless", a borrowed-authority
-phrase such as "surveys show", or a sentence adverb such as "Additionally" is
-weak prose on its own terms, not a tell — people wrote that way long before
-LLMs existed. Fix it anyway: the plain verb and the stated relation carry more
+Four word-level patterns are distinctive to generated text. A verb cluster
+stacks "leverage", "utilize" and "ensure" where "use", "check" and "make" were
+meant. A participle clause draws a conclusion nobody is making ("highlighting
+how the two stages interact"). An invented label appears as if it were an
+established term. A cycle of synonyms for one thing makes the reader suspect
+three things.
+
+A single promotional adjective such as "robust" or "seamless", a
+borrowed-authority phrase such as "surveys show", or a sentence adverb such as
+"Additionally" is weak prose that people wrote long before LLMs existed. Fix
+those as well, because the plain verb and the stated relation carry more
 information than the filler did. Use the plain verb, delete the adjective, and
 use one term per thing throughout. An unqualified comparative such as "faster"
-is fine as it stands; inventing a measurement to replace it reads worse than
+is fine as it stands, and a measurement invented to replace it reads worse than
 the word did.
 
 | Pattern | Before | After |
@@ -181,13 +179,13 @@ the word did.
 The skill also lists what a fix must preserve, and ships `scan.sh`, which greps
 a file or directory for the markers and labels each hit by section.
 
-Compared with the [tropes.fyi directory](https://tropes.fyi/directory), the
-[Writing Whip](https://tropes.fyi/whip) and
+The skill borrows from the [tropes.fyi directory](https://tropes.fyi/directory),
+the [Writing Whip](https://tropes.fyi/whip) and
 [Wikipedia's Signs of AI writing](https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing),
-this repo deletes contrastive framing by default, gives every pattern a
-rewrite, and adds the patterns of technical prose: stance and agency, sentence
-shapes, openings and closings, paragraph transitions, headings and labels,
-comments and history, and register.
+and differs from them in three ways. It tells the writer to delete contrastive
+framing by default, it pairs every pattern with a rewrite, and it adds sections
+for technical prose: stance and agency, sentence shapes, openings and closings,
+paragraph transitions, headings and labels, comments and history, and register.
 
 ## Install
 
