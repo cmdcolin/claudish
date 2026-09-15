@@ -174,6 +174,14 @@ use one term per thing throughout. An unqualified comparative such as "faster"
 is fine as it stands, and a measurement invented to replace it reads worse than
 the word did.
 
+The pitch register uses none of those words and sells the thing anyway. "WebGPU
+is the most modern GPU API in browsers, and it does more than draw" ranks the
+API and boasts a capability, and the reader can check neither claim. The same
+register produces the future-potential teaser ("they could do much more") and
+the priority claim ("an early use of compute shaders in a genome browser").
+Write what the thing does, give a superlative the measurement that ranks it, and
+give a priority claim the citation it comes before.
+
 | Pattern | Before | After |
 |---|---|---|
 | The verb cluster | The tool leverages a comprehensive set of heuristics to ensure correctness. | The tool checks each file against a set of heuristics. |
@@ -181,6 +189,7 @@ the word did.
 | A goal with no quantity | To optimize the rendering of alignments, we created an indexed format. | To limit the data transferred when drawing alignments to the region in view, we created an indexed format. |
 | A sentence adverb | Ultimately, the index is the bottleneck. | The index is the bottleneck. |
 | Small tics | The cache serves as the source of truth. | The cache is the source of truth. |
+| The pitch register | WebGPU is the most modern GPU API in browsers, and it does more than draw. | A WebGPU compute shader runs general-purpose work on the GPU. |
 
 The skill also lists what a fix must preserve, and ships `scan.sh`, which greps
 a file or directory for the markers and labels each hit by section.

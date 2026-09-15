@@ -16,3 +16,4 @@
 [shape] 23:So that the view loads faster, we built an index.
 [register] 25:To optimize the rendering of alignments, we split the file.
 [claim] 27:The encoding cuts at large indels in the same way as break-paf.
+[pitch] 29:WebGPU is the most modern GPU API in browsers, and it does more than draw.

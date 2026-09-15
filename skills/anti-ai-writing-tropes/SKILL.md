@@ -528,6 +528,28 @@ document, where a reader who does not know it will stop.
 > The inputs are PAF files → The inputs are PAF files, the pairwise alignment
 > format that minimap2 writes
 
+**The pitch register.** A sentence that sells the thing's capability or
+standing where a description of what it does belongs. Plain vocabulary carries
+it, so the promotional word list below misses it, and the tell is a claim the
+reader cannot check. Its forms:
+
+- A capability boast: "does more than draw", "goes beyond rendering", "is not
+  limited to alignments".
+- An unquantified superlative: "the most modern GPU API", "state of the art",
+  "industry-leading".
+- A future-potential teaser: "they could do much more", "the possibilities are
+  broad".
+- A novelty or priority claim: "an early use of compute shaders in a genome
+  browser", "the first tool to index PAF".
+
+Write what the thing does. A superlative needs the measurement that ranks it,
+and a priority claim needs the citation it comes before.
+
+> WebGPU is the most modern GPU API in browsers, and it does more than draw. A
+> compute shader runs general-purpose work on the GPU, and they could do much
+> more. → A WebGPU compute shader runs general-purpose work on the GPU, which
+> we use for the clustering distance matrix in Section \ref{sec:modalities}.
+
 **Promotional words and grandiose stakes.** `vibrant`, `groundbreaking`,
 `boasts`, `flagship`, `crisp`, `seamless`, `robust`; the `delve` / `tapestry` /
 `testament` / `showcase` / `pivotal` cluster; "This changes how we think about
@@ -607,11 +629,13 @@ an alignment").
 `scan.sh` beside this file greps the Markdown, LaTeX, reStructuredText and
 plain-text files under a path for the markers above, and labels each hit by the
 section its marker comes from: `contrast`, `shape`, `agency`, `colon`,
-`apposition`, `opening`, `passive`, `history`, `register`, `claim`, `coldstart`
-and `staccato`. Read each hit in context. The `claim` label marks a comparison
-to another tool ("in the same way", "similar to"), which needs checking against
-that tool's documentation. The `coldstart` label marks a paragraph whose first
-line opens on a pronoun, a demonstrative or a sentence-initial
+`apposition`, `opening`, `passive`, `history`, `register`, `pitch`, `claim`,
+`coldstart` and `staccato`. Read each hit in context. The `claim` label marks a
+comparison to another tool ("in the same way", "similar to"), which needs
+checking against that tool's documentation. The `pitch` label marks a capability
+boast, a superlative, a potential teaser or a priority claim; a superlative that
+reports a measurement is fine. The `coldstart` label marks a paragraph whose
+first line opens on a pronoun, a demonstrative or a sentence-initial
 "So"/"And"/"Hence". The `staccato` label marks a paragraph or bullet with three
 sentences in a row of six words or fewer.
 The `colon` and `apposition` labels mark the two sentence shapes that split a

@@ -47,4 +47,5 @@ scan opening    ''  '^(Nothing|No one|None) |not (the|its|our) job|silently|quie
 scan passive    ''  '\b(is|are|was|were) ([a-z]+ed and [a-z]+ed|[a-z]+ed by|left unset)\b'
 scan history    ''  'used to |previous version|found while|\b[A-Z]{4,}\b'
 scan register   'i' 'serves as|stands as|delve|tapestry|testament|showcase|pivotal|vibrant|seamless|flagship|robust|groundbreaking|famously|a classic|well-known|leverage|utili[sz]e|streamline|empower|unlock|comprehensive|crucial|a (variety|range) of|^(additionally|furthermore|moreover|notably|importantly|ultimately|overall),|to (optimi[sz]e|improve|enhance|help with) '
+scan pitch      'i' '(does|do|is|are|goes|go) (more than|beyond)|more than just|not limited to|state.of.the.art|cutting.edge|industry.leading|best.in.class|next.generation|the most [a-z]+ |the first (tool|browser|library|system|format|program|to )|an early (use|example)|(could|can) do (much )?more|the possibilities'
 scan claim      ''  'in the same way|similar to|just like'

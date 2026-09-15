@@ -25,3 +25,5 @@ So that the view loads faster, we built an index.
 To optimize the rendering of alignments, we split the file.
 
 The encoding cuts at large indels in the same way as break-paf.
+
+WebGPU is the most modern GPU API in browsers, and it does more than draw.
