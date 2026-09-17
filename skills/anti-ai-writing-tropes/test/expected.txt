@@ -19,3 +19,4 @@
 [pitch] 29:WebGPU is the most modern GPU API in browsers, and it does more than draw.
 [coldstart] 31:Both hold the same session.
 [history] 35:Do NOT merge the branch.
+[agency] 37:A caller gets the cache for free.

@@ -33,3 +33,5 @@ Both hold the same session.
 Each BGZF block contains one CIGAR string per record.
 
 Do NOT merge the branch.
+
+A caller gets the cache for free.

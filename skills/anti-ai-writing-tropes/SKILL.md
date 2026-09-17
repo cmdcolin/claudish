@@ -192,6 +192,8 @@ image repeated through a page ("doors", "walls") is a dead metaphor.
 |---|---|
 | earns its keep, earns its place | is needed, is used |
 | buys (room, time, safety) | saves, gives, allows |
+| for free, costs nothing | with no extra code, adds no request, takes no time |
+| stands between X and Y | prevents X from becoming Y |
 | pays for itself, pays double | costs less than it saves, is useful twice |
 | a dial / knob / lever | a parameter, an option |
 | load-bearing | required, depended on |

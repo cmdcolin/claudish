@@ -40,7 +40,7 @@ find "${targets[@]}" -name .git -prune -o -type f \( -name '*.md' -o -name '*.te
   while read -r f; do coldstart "$f"; staccato "$f"; done
 scan contrast   ''  'is what |which is what|rather than|, not |not just|instead of|isn.t (the|about)|not because'
 scan shape      ''  '(^|\. )So that | — | -- |the (whole )?point|honest|payoff|worth (naming|noting|being)|key insight|the result\?'
-scan agency     ''  '\b(cannot|doesn.t|does not) know|says |exists to|earns|buys |load-bearing|one-way door|footgun|moves the needle|surfaces |\b(its|their) own\b'
+scan agency     ''  '\b(cannot|doesn.t|does not) know|says |exists to|earns|buys |load-bearing|one-way door|footgun|moves the needle|surfaces |for free|costs? nothing|stands? between|\b(its|their) own\b'
 scan colon      ''  '[a-z]: [a-z]'
 scan apposition ''  ', (one|ones|a|an) (that|which|whose|where) |, (a|an) [a-z-]+ (that|which|whose) '
 scan opening    ''  '^(Nothing|No one|None) |not (the|its|our) job|silently|quietly|invisibly|\bhere.s (the|where)|let.s (break|dive|unpack)|think of it as|in summary|as we.ve seen|for (two|three) reasons|(two|three) things'
