@@ -25,7 +25,9 @@ answers an objection the reader never raised, and it usually carries no
 information. Delete the negative half, and the sentence almost always still says
 everything it said before. The exception is a negative that steers the reader
 away from a choice they would otherwise make, such as the flag value people type
-by mistake. Even then, a plain sentence with a "because" usually carries the
+by mistake, or that names the one behavior separating two functions ("the strict
+runner propagates a throw instead of logging it"). Deleting that half deletes
+the fact. Even then, a plain sentence with a "because" usually carries the
 distinction better than the contrast does.
 
 | Pattern | Before | After |
@@ -46,7 +48,8 @@ component or the person that does the thing, or use a verb of description such
 as lists, marks, contains or shows. The same habit produces figures of speech
 where a literal word exists, such as "load-bearing" for "required", and passive
 sentences that leave the actor out entirely. Write the literal word, and use the
-active voice wherever you know who the actor is.
+active voice wherever you know who the actor is. Where you do not, keep the
+passive, because an invented actor is a new claim.
 
 | Pattern | Before | After |
 |---|---|---|
@@ -94,6 +97,7 @@ end the section at its last fact.
 | Pattern | Before | After |
 |---|---|---|
 | A pronoun opening a paragraph | It runs the same engine as the app. | The renderer runs the same engine as the app. |
+| "The same X" across a heading | The same track feeds the graph view. | The `hprc_lanes` track also feeds the graph view. |
 | A count standing in for its nouns | Click **Share**, or save the session to a file. *(video)* Both hold the same JSON. | The JSON from the Share dialog and the saved session file contain the same session. |
 | An aphorism opening a section | A phone GPU is still a phone GPU. | A phone GPU has much less headroom. |
 | A conclusion standing in for the mechanism | A marker that does not parse stops the build. | The generator exits with an error on a marker it cannot parse, so the build fails. |

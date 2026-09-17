@@ -18,8 +18,9 @@ below pairs each habit with a rewrite, so the fix is a pattern to copy.
   find hotspots, then read those passages in context. Treat a hit as a lead to
   read; some em-dashes are fine.
 - Fixing: keep every fact. A rewrite that drops a number or changes what a
-  sentence claims is worse however plain it reads. See
-  [What not to flatten](#what-not-to-flatten).
+  sentence claims is worse however plain it reads. Reread the diff before
+  finishing, looking for a fact the rewrite deleted and a detail it added to
+  make a sentence concrete. See [What not to flatten](#what-not-to-flatten).
 - Shortening: delete the sentences and clauses that do not serve the page, and
   keep the ones that remain as full sentences. Compressing every sentence into
   a shorter one produces a [staccato run](#sentence-shapes).
@@ -41,6 +42,10 @@ below pairs each habit with a rewrite, so the fix is a pattern to copy.
   Group the lines by file and put the tropes that recur across the document at
   the top of the report, because one habit fixed at the source clears many
   lines.
+- Delegating a review to other agents: name every section of the checklist in
+  the brief, with one example each. A brief that leads with one vivid example
+  gets back fixes for that pattern alone and "no other issues" for the rest.
+  Read each diff that comes back for changed claims before accepting it.
 - Instruction files: fix `CLAUDE.md`, `AGENTS.md` and similar files first,
   because agents copy their prose into everything they write. Write each style
   rule in the style it asks for, and include the rewrite along with the ban: a
@@ -91,6 +96,13 @@ hold a wrong belief? If not, delete it. The test passes only in three cases:
   not C-beta" matters when the two give different contact sets.
 - A design record naming the option it declined, which is the record's
   purpose.
+
+API documentation hits the second case constantly, because the negative half
+often names the one behavior that separates two functions. "The strict runner
+propagates a throw to the caller instead of logging it" is the whole difference
+between the strict and the plain runner, so deleting "instead of logging it"
+deletes the fact. Rewrite it as two positive statements, one per function, or
+keep it.
 
 Even then, a plain sentence usually carries the distinction better than the
 "X, not Y" pattern: "Contacts use all-atom distance, because C-beta distance
@@ -182,7 +194,10 @@ image repeated through a page ("doors", "walls") is a dead metaphor.
 **The passive voice hiding the actor.** "The field is left unset", "the
 constant is exported", "it was measured and rejected". Use the active voice
 where you know the actor, and name it. Keep an idiomatic passive ("is
-required", "is deprecated") and a passive whose actor does not matter.
+required", "is deprecated") and a passive whose actor does not matter. Keep the
+passive, too, when you do not know the actor: "the service keys requests" or "a
+cleanup step collapses the calls" invents a component the reader will look
+for.
 
 > The field is left unset → The parser leaves the field unset
 >
@@ -396,6 +411,13 @@ more than one pair that could fit. The test: point to the two noun phrases
 
 "Linux and macOS ship `tar`. Both accept `-z`." is fine, because the count
 directly follows the sentence that names the pair.
+
+"The same X" opening a paragraph has the same fault. It compares against a
+first X the reader has to find, and a heading or a code block between the two
+hides it.
+
+> The same track feeds the graph view. → The `hprc_lanes` track also feeds the
+> graph view.
 
 ## Paragraph transitions
 
