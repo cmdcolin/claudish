@@ -49,8 +49,12 @@ below pairs each habit with a rewrite, so the fix is a pattern to copy.
   lines.
 - Delegating a review to other agents: name every section of the checklist in
   the brief, with one example each. A brief that leads with one vivid example
-  gets back fixes for that pattern alone and "no other issues" for the rest.
-  Read each diff that comes back for changed claims before accepting it.
+  gets back fixes for that pattern alone and "no other issues" for the rest. A
+  brief that lists every section still gets back mostly the sections `scan.sh`
+  finds (clefts, pronoun openings, "used to"), with Stance and agency nearly
+  untouched, so run a second pass for the sections the scan cannot find and
+  quote misses from the files as its examples. Read each diff that comes back
+  for changed claims before accepting it.
 - Instruction files: fix `CLAUDE.md`, `AGENTS.md` and similar files first,
   because agents copy their prose into everything they write. Write each style
   rule in the style it asks for, and include the rewrite along with the ban: a
@@ -101,6 +105,10 @@ hold a wrong belief? If not, delete it. The test passes only in three cases:
   not C-beta" matters when the two give different contact sets.
 - A design record naming the option it declined, which is the record's
   purpose.
+
+Apply these exceptions one sentence at a time. A page that records a decision,
+or an API reference, still contains contrasts written for rhythm, and an auditor
+who exempts the whole page keeps them all.
 
 API documentation hits the second case constantly, because the negative half
 often names the one behavior that separates two functions. "The strict runner
@@ -219,6 +227,13 @@ for.
 > which lines them up
 >
 > Rounding is what buys the room → Rounding saves two characters per value
+
+Deleting "is what" alone leaves the verb on the old subject, so check that verb
+against [Stance and agency](#stance-and-agency).
+
+> What each accessor costs is what says which are worth tuning → What each
+> accessor costs says which are worth tuning (still a cost that speaks) → The
+> cost of each accessor on first access shows which are worth tuning
 
 **The significance announcement.** "the point", "the whole point", "the honest
 answer", "the payoff", "the key insight", "worth naming". Delete the
@@ -505,9 +520,8 @@ section.
 >
 > What you need before starting → Requirements
 
-**A heading that gives its subject agency.** A heading is read before any
-sentence under it, so a subject that acts there sets the page's register. Name
-the contents.
+**A heading that gives its subject agency.** Readers scan the headings before
+the text, so name what the section contains.
 
 > What a database answers → Contents and limitations
 
@@ -543,6 +557,11 @@ measurement if there is one.
 X after Y broke". A doc describes the current behavior, and the history goes in
 commits and release notes. When a passage is wrong, rewrite or delete it; a new
 paragraph that corrects the one above leaves both for the reader to reconcile.
+Replace the history with the current fact, and keep the claim it made.
+
+> a lot of machinery for what used to be a `for` loop → a lot of machinery for
+> what a `for` loop could do instead (now claims the loop would work) → the
+> largest piece of machinery in the library, in place of a sequential `for` loop
 
 **An essay where a clause would do.** Keep the measurement and the non-obvious
 constraint; cut the argument around them. Repeated rationale belongs in one
