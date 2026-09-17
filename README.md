@@ -83,17 +83,18 @@ each other.
 ### Openings and closings
 
 A reader who lands on a paragraph from a search hit has no antecedent for "it",
-"this" or "that limit". Open every paragraph on its subject by name, even when
-the paragraph before named the same subject. The same reader gets nothing from
-an aphorism that sounds like a conclusion and carries no fact. A sentence that
-names an outcome ("the build stops") where the mechanism belongs, or an adverb
-such as "silently" standing in for what happens, leaves the reader without the
-fact they came for. Say what the machine does, name the actor, and end the
-section at its last fact.
+"this", "both" or "that limit". Open every paragraph on its subject by name,
+even when the paragraph before named the same subject. The same reader gets
+nothing from an aphorism that sounds like a conclusion and carries no fact. A
+sentence that names an outcome ("the build stops") where the mechanism belongs,
+or an adverb such as "silently" standing in for what happens, leaves the reader
+without the fact they came for. Say what the machine does, name the actor, and
+end the section at its last fact.
 
 | Pattern | Before | After |
 |---|---|---|
 | A pronoun opening a paragraph | It runs the same engine as the app. | The renderer runs the same engine as the app. |
+| A count standing in for its nouns | Click **Share**, or save the session to a file. *(video)* Both hold the same JSON. | The JSON from the Share dialog and the saved session file contain the same session. |
 | An aphorism opening a section | A phone GPU is still a phone GPU. | A phone GPU has much less headroom. |
 | A conclusion standing in for the mechanism | A marker that does not parse stops the build. | The generator exits with an error on a marker it cannot parse, so the build fails. |
 | Silently, quietly, invisibly | The second bug is the same class of wrong, quieter. | The second bug writes the wrong value and raises no error. |

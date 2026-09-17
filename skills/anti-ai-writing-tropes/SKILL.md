@@ -383,6 +383,20 @@ even when the previous paragraph named it.
 > That limit is why we wrote a second parser. → The 2 GB file limit is why we
 > wrote a second parser.
 
+**A count standing in for its nouns.** "Both", "neither", "either", "the two"
+or "all three" as a subject, where the text never named the things it counts
+as nouns side by side. The writer knows which two things they mean. The reader
+finds only steps to follow, a figure or a paragraph further back, and often
+more than one pair that could fit. The test: point to the two noun phrases
+"both" replaces in the sentence before it. If you cannot, write the nouns.
+
+> In the web app, click **Share** and copy the JSON. In the desktop app, save
+> the session to a file. *(video)* Both hold the same JSON. → The JSON from the
+> Share dialog and the saved session file contain the same session.
+
+"Linux and macOS ship `tar`. Both accept `-z`." is fine, because the count
+directly follows the sentence that names the pair.
+
 ## Paragraph transitions
 
 A paragraph that introduces a design or a project names the problem with the
@@ -635,9 +649,9 @@ comparison to another tool ("in the same way", "similar to"), which needs
 checking against that tool's documentation. The `pitch` label marks a capability
 boast, a superlative, a potential teaser or a priority claim; a superlative that
 reports a measurement is fine. The `coldstart` label marks a paragraph whose
-first line opens on a pronoun, a demonstrative or a sentence-initial
-"So"/"And"/"Hence". The `staccato` label marks a paragraph or bullet with three
-sentences in a row of six words or fewer.
+first line opens on a pronoun, a demonstrative, a count such as "Both" or "The
+two", or a sentence-initial "So"/"And"/"Hence". The `staccato` label marks a
+paragraph or bullet with three sentences in a row of six words or fewer.
 The `colon` and `apposition` labels mark the two sentence shapes that split a
 sentence at its punctuation. A paragraph that follows a list and opens on
 "These" is usually fine.

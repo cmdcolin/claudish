@@ -12,7 +12,7 @@ scan() {
     sed "s/^/[$label] /"
 }
 coldstart() {
-  awk -v f="$1" 'prev=="" && /^(\\[a-z]+\{)?(It|This|That|These|Those|Such|The same|So|And|Hence) / {print "[coldstart] " f ":" NR ":" $0} {prev=$0}' "$1"
+  awk -v f="$1" 'prev=="" && /^(\\[a-z]+\{)?(It|This|That|These|Those|Such|The same|So|And|Hence|Both|Neither|Either|The (two|three|four)|All (three|four)|Each of the) / {print "[coldstart] " f ":" NR ":" $0} {prev=$0}' "$1"
 }
 staccato() {
   awk -v f="$1" '
