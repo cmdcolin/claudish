@@ -70,6 +70,8 @@ The pattern defines a thing against an alternative the reader never raised.
 Its forms:
 
 - "X, not Y": "Staleness is stamped, not compared."
+- a negative half written as a question-word clause: "records what the graph
+  contains, not who carries what"
 - "rather than" and "instead of": "so it is tested rather than remembered"
 - "not just X but Y" and "X doesn't just Y, it Z"
 - "not because X but because Y"
@@ -121,6 +123,16 @@ Even then, a plain sentence usually carries the distinction better than the
 "X, not Y" pattern: "Contacts use all-atom distance, because C-beta distance
 misses side-chain contacts." A contrast written for rhythm or emphasis never
 passes the test.
+
+Two shapes get the plain rewrite even when the fact survives the test. One is
+the question-word clause — "not who carries what", "not where it came from" —
+which is an aphorism whatever it records. The other is two contrasts stacked in
+one sentence. Give the absence its own sentence and say what is missing:
+
+> The indexes record what the graph contains, not who carries what, because the
+> `SR` tag is build order and not sample. → The indexes record what the graph
+> contains. Which strain carries which segment is not in them, because the `SR`
+> tag is build order, not sample.
 
 ## Stance and agency
 

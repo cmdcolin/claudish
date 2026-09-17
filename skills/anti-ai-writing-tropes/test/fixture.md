@@ -35,3 +35,5 @@ Each BGZF block contains one CIGAR string per record.
 Do NOT merge the branch.
 
 A caller gets the cache for free.
+
+The index records what the graph holds, not who carries what.
