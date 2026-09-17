@@ -1,6 +1,6 @@
 ---
 name: anti-ai-writing-tropes
-description: Checklist of prose habits that make technical writing read as generated, each with a before/after rewrite. Use when writing or editing docs, READMEs, tutorials, code comments, commit messages, PR descriptions, release notes, manuscripts, figure captions or agent instruction files (CLAUDE.md), and when asked to review or clean up writing for AI tropes.
+description: Checklist of prose habits that make technical writing read as generated, each with a before/after rewrite. Use when writing or editing docs, READMEs, tutorials, code comments, commit messages, PR descriptions, release notes, manuscripts, figure captions, agent instruction files (CLAUDE.md) or an explanation written in a chat, and when asked to review or clean up writing for AI tropes.
 allowed-tools: Bash(bash *scan.sh*)
 ---
 
@@ -36,6 +36,11 @@ below pairs each habit with a rewrite, so the fix is a pattern to copy.
   > component, so JBrowse 2 renders each track in its own canvas. Browsers cap
   > a page at 16 WebGL contexts, one per canvas, so a WebGL view with more
   > tracks than that would exceed the cap
+- Answering in a chat: apply the same checklist. An explanation of how a
+  system works invites the agency tropes, because it narrates what each part
+  does: "gbz-base hands us every haplotype's walk", "a PIF does that",
+  "gbz-base earns its place". Make a program or a person the subject, and
+  describe data with contains, lists or records.
 - Reviewing for someone else: report every instance, then triage. A "report
   only the worst" instruction makes a reviewer drop real findings. One line
   per finding: `file:line`, the trope name, the quoted phrase, the rewrite.
@@ -125,6 +130,9 @@ the thing, or use a verb of description (marks, contains, shows, is).
 >
 > The boxes say what the parts are; the arcs say how they pack → The boxes mark
 > the domains, and the arcs mark residue pairs in contact.
+>
+> the caches see the first walk → `refIndex` stores the index of the first walk
+> passed to it
 >
 > signs that disagree → one end marked `+` and the other `-`
 
@@ -497,6 +505,12 @@ section.
 >
 > What you need before starting → Requirements
 
+**A heading that gives its subject agency.** A heading is read before any
+sentence under it, so a subject that acts there sets the page's register. Name
+the contents.
+
+> What a database answers → Contents and limitations
+
 **A heading that says what a thing is not.** A scanning reader gets nothing from
 a negative, unless the distinction is the whole finding of the section.
 
@@ -673,10 +687,12 @@ boast, a superlative, a potential teaser or a priority claim; a superlative that
 reports a measurement is fine. The `coldstart` label marks a paragraph whose
 first line opens on a pronoun, a demonstrative, a count such as "Both" or "The
 two", or a sentence-initial "So"/"And"/"Hence". The `staccato` label marks a
-paragraph or bullet with three sentences in a row of six words or fewer.
-The `colon` and `apposition` labels mark the two sentence shapes that split a
-sentence at its punctuation. A paragraph that follows a list and opens on
-"These" is usually fine.
+paragraph or bullet with three sentences in a row of six words or fewer. The
+`history` label's ALL-CAPS check matches common emphasis words such as NOT, ONLY
+and SAME, so an acronym such as BGZF or CIGAR does not fire it. The `colon` and
+`apposition` labels mark the two sentence shapes that split a sentence at its
+punctuation. A paragraph that follows a list and opens on "These" is usually
+fine.
 
 ```sh
 # installed as a plugin

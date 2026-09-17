@@ -4,7 +4,7 @@ Skills for Claude Code.
 
 | Skill | Use it for |
 |---|---|
-| [anti-ai-writing-tropes](skills/anti-ai-writing-tropes/SKILL.md) | Writing and reviewing docs, comments, captions and CLAUDE.md files. A checklist of the habits that make prose read as generated, each with a rewrite. |
+| [anti-ai-writing-tropes](skills/anti-ai-writing-tropes/SKILL.md) | Writing and reviewing docs, comments, captions, CLAUDE.md files and chat answers. A checklist of the habits that make prose read as generated, each with a rewrite. |
 
 ## anti-ai-writing-tropes
 
@@ -58,6 +58,7 @@ passive, because an invented actor is a new claim.
 | An artifact given a will | each bar rises to the height its frequency earns | each bar's height is proportional to its frequency |
 | A figure of speech | The config file is load-bearing. | Every command reads the config file. |
 | The passive voice hiding the actor | The field is left unset. | The parser leaves the field unset. |
+| A value given perception | the caches see the first walk | `refIndex` stores the index of the first walk passed to it |
 
 ### Sentence shapes
 
@@ -141,6 +142,7 @@ the bullet defines a term.
 | A teaser heading | The one setting nobody else has | Offline mode |
 | A phrase where a noun would do | Where the file goes | Output |
 | A heading that says what a thing is not | What it does not do | Limitations |
+| A heading that gives its subject agency | What a database answers | Contents and limitations |
 | Cute naming in a reference table | `--seed=<n>` \| the dice | `--seed=<n>` \| random seed; the same seed gives the same output |
 
 ### Comments and history

@@ -18,3 +18,4 @@
 [claim] 27:The encoding cuts at large indels in the same way as break-paf.
 [pitch] 29:WebGPU is the most modern GPU API in browsers, and it does more than draw.
 [coldstart] 31:Both hold the same session.
+[history] 35:Do NOT merge the branch.

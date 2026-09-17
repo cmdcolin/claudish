@@ -29,3 +29,7 @@ The encoding cuts at large indels in the same way as break-paf.
 WebGPU is the most modern GPU API in browsers, and it does more than draw.
 
 Both hold the same session.
+
+Each BGZF block contains one CIGAR string per record.
+
+Do NOT merge the branch.
