@@ -220,6 +220,9 @@ for.
 > The field is left unset → The parser leaves the field unset
 >
 > It was measured and rejected → We measured it and rejected it
+>
+> The arena sizes itself up front → The record pass sizes the arena up front
+> (invents a component the reader will look for) → The arena is sized up front
 
 ## Sentence shapes
 
@@ -680,7 +683,9 @@ an alignment").
   plain it reads.
 - Measurements. Numbers, identifiers, file paths and the names of mechanisms
   are the content. A prose pass moves sentences around them and changes none of
-  them.
+  them. A rewrite can also add precision the original never claimed: "the
+  absolute heights survive the trip" is not "the absolute heights round-trip
+  exactly".
 - The mechanism. A rewrite that adds "in the same way as tool X", "each record
   consists of" or "collapses into a single run" makes a new claim, and the
   spec may contradict it. Check the sentence against the spec or the code, or
