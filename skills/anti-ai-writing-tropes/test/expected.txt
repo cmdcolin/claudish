@@ -22,3 +22,4 @@
 [agency] 37:A caller gets the cache for free.
 [contrast] 39:The index records what the graph holds, not who carries what.
 [aphorism] 39:The index records what the graph holds, not who carries what.
+[contrast] 41:The worker is where the decoding happens.

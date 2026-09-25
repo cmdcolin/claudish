@@ -37,3 +37,5 @@ Do NOT merge the branch.
 A caller gets the cache for free.
 
 The index records what the graph holds, not who carries what.
+
+The worker is where the decoding happens.

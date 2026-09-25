@@ -38,7 +38,7 @@ staccato() {
 }
 find "${targets[@]}" -name .git -prune -o -type f \( -name '*.md' -o -name '*.tex' -o -name '*.txt' -o -name '*.rst' \) -print 2>/dev/null |
   while read -r f; do coldstart "$f"; staccato "$f"; done
-scan contrast   ''  'is what |which is what|rather than|, not |not just|instead of|isn.t (the|about)|not because'
+scan contrast   ''  'is what |which is what|is where |rather than|, not |not just|instead of|isn.t (the|about)|not because'
 scan aphorism   ''  ', not (who|what|where|when|how|which|why)\b|, not .*( and not | instead of | rather than )'
 scan shape      ''  '(^|\. )So that | — | -- |the (whole )?point|honest|payoff|worth (naming|noting|being)|key insight|the result\?'
 scan agency     ''  '\b(cannot|doesn.t|does not) know|says |exists to|earns|buys |load-bearing|one-way door|footgun|moves the needle|surfaces |for free|costs? nothing|stands? between|\b(its|their) own\b'
