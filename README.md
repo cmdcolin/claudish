@@ -38,6 +38,7 @@ fact it points at instead, such as where the missing thing comes from.
 | A negation, then the claim | It's not a cache. It's a log. | It is a log. |
 | Doesn't just X, it Y | The CLI doesn't just fetch domains, it caches them. | The CLI fetches domains and caches them on disk. |
 | Rather than | CI runs the install command from the README, so it is tested rather than remembered. | CI runs the install command from the README, so a broken one fails the build. |
+| A limiting "only" | Upstream gbz-base names only the query path and prints every other walk as `unknown#N`. | Upstream gbz-base prints each walk other than the query path as `unknown#N`. |
 | A bare negative | A walk extracted from a window does not record which path it belongs to. | Walk names come from the haplotype index. |
 
 ### Stance and agency
@@ -201,6 +202,7 @@ give a priority claim the citation it comes before.
 | A goal with no quantity | To optimize the rendering of alignments, we created an indexed format. | To limit the data transferred when drawing alignments to the region in view, we created an indexed format. |
 | A sentence adverb | Ultimately, the index is the bottleneck. | The index is the bottleneck. |
 | Small tics | The cache serves as the source of truth. | The cache is the source of truth. |
+| A code-internal verb | A query names walks by one of two routes. | A query identifies walks by one of two routes. |
 | The pitch register | WebGPU is the most modern GPU API in browsers, and it does more than draw. | A WebGPU compute shader runs general-purpose work on the GPU. |
 
 The skill also lists what a fix must preserve, and ships `scan.sh`, which greps

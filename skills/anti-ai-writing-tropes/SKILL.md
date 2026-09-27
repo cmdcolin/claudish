@@ -87,6 +87,8 @@ Its forms:
 - "is not X's job" or "is not the point" before saying what is
 - a bare negative sentence: "A walk extracted from a window does not record
   which path it belongs to."
+- "only" limiting a verb against a complement nobody raised: "Upstream
+  gbz-base names only the query path"
 - a heading that says what a thing is not: "What this is not"
 
 The default fix is to delete the negative half. The sentence almost always
@@ -116,6 +118,22 @@ delete the sentence. State a limitation as what the thing does accept.
 >
 > Neither function accepts a region on a haplotype. → Range queries take a
 > reference path: GRCh38 or CHM13 in HPRC v2.1.
+
+"Only" makes the same move inside one word. "X reads only the header" asserts
+the header and denies everything else, and the reader is left to supply what
+else there was. State what happens to each case the reader cares about, or drop
+"only" when the complement does not matter.
+
+> Upstream gbz-base names only the query path and prints every other walk as
+> `unknown#N`. → Upstream gbz-base prints each walk other than the query path as
+> `unknown#N`.
+>
+> The anchored route reads the names at the anchor, then follows only the
+> chosen haplotypes. → The anchored route reads which haplotypes pass the
+> anchor, then follows the chosen ones.
+
+Keep "only" where the restriction is the fact: "the pager reads only the 64 KiB
+blocks a query touches" answers a question about bandwidth the reader has.
 
 The test: would a reader who never saw the negative half make a wrong choice or
 hold a wrong belief? If not, delete it. The test passes only in three cases:
@@ -649,6 +667,19 @@ first draw, memory per track.
 > To optimize the rendering of whole-genome alignments, we created an indexed
 > format → To limit the data transferred when drawing whole-genome alignments
 > to the region in view, we created an indexed format
+
+**A code-internal verb in prose.** A verb taken from the program's vocabulary
+or from a metaphor the authors use among themselves: a query "names" a walk, a
+loader "hydrates" a record, a path "resolves". Readers outside the codebase do
+not say these, and the sentence reads as translated. Use the verb a user of the
+tool would say, such as identify, label, look up or fill in, and keep the
+internal word in code font where it is an identifier.
+
+> A query names walks by one of two routes. → A query identifies walks by one of
+> two routes.
+>
+> `identifyPaths()` names each walk from a sample. → `identifyPaths()`
+> identifies each walk from a sample.
 
 **An undefined abbreviation.** A format or tool name ("PAF", "BGZF") at its
 first use with no expansion or gloss. Gloss it at the first use in the

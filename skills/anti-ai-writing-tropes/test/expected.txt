@@ -24,3 +24,4 @@
 [aphorism] 39:The index records what the graph holds, not who carries what.
 [contrast] 41:The worker is where the decoding happens.
 [negative] 43:A walk extracted from a window does not record which path it belongs to.
+[contrast] 45:Upstream gbz-base names only the query path.
