@@ -28,7 +28,9 @@ away from a choice they would otherwise make, such as the flag value people type
 by mistake, or that names the one behavior separating two functions ("the strict
 runner propagates a throw instead of logging it"). Deleting that half deletes
 the fact. Even then, a plain sentence with a "because" usually carries the
-distinction better than the contrast does.
+distinction better than the contrast does. A sentence that is all negative
+("the walk does not record its path") has no positive half to keep, so write the
+fact it points at instead, such as where the missing thing comes from.
 
 | Pattern | Before | After |
 |---|---|---|
@@ -36,6 +38,7 @@ distinction better than the contrast does.
 | A negation, then the claim | It's not a cache. It's a log. | It is a log. |
 | Doesn't just X, it Y | The CLI doesn't just fetch domains, it caches them. | The CLI fetches domains and caches them on disk. |
 | Rather than | CI runs the install command from the README, so it is tested rather than remembered. | CI runs the install command from the README, so a broken one fails the build. |
+| A bare negative | A walk extracted from a window does not record which path it belongs to. | Walk names come from the haplotype index. |
 
 ### Stance and agency
 
@@ -69,7 +72,8 @@ lead-in puts a generalization first and the facts second, so the reader has to
 match the two halves. The comma-hung appositive restates the subject
 mid-sentence, and the fragment and the list of three leave out their verbs. A
 staccato run of short sentences keeps the verbs and leaves out the "so" or
-"because" that connects the facts. In each case the reader has to rebuild the
+"because" that connects the facts. A compressed noun phrase packs a clause into
+modifiers, as in "a kept contig with no row at the anchor". In each case the reader has to rebuild the
 plain sentence the writer could have written. Write the subject and its plain
 verb, give unrelated facts separate sentences, and join facts that depend on
 each other.
@@ -83,6 +87,7 @@ each other.
 | A rule-of-three list | A file in, a look applied, ProRes out. | The command reads the file, applies the look and writes ProRes 4444. |
 | A staccato run | The key includes the path. A rename changes the key. The cache misses. | The key includes the path, so a rename changes the key and misses the cache. |
 | A fronted "So that" clause | So that a browser fetches only the region in view, we built an index. | To limit the download to the region in view, we built an index. |
+| A compressed noun phrase | A kept contig with no row at the anchor is found as in the sampled route. | Some chosen haplotypes skip the anchor node, and the reader finds them from the samples on the window's nodes. |
 
 ### Openings and closings
 

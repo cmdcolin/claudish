@@ -23,7 +23,13 @@ below pairs each habit with a rewrite, so the fix is a pattern to copy.
   make a sentence concrete. See [What not to flatten](#what-not-to-flatten).
 - Shortening: delete the sentences and clauses that do not serve the page, and
   keep the ones that remain as full sentences. Compressing every sentence into
-  a shorter one produces a [staccato run](#sentence-shapes).
+  a shorter one produces a [staccato run](#sentence-shapes), or a
+  [compressed noun phrase](#sentence-shapes).
+- Improving a document: start by cutting. A pass that keeps every paragraph and
+  fixes each sentence makes the page longer, because the fixes add clauses. Two
+  such passes took the gbz-base-js docs from 1,391 to 1,460 lines, and a pass
+  that cut took them to 814. Keep the tables, the numbers and the examples a
+  reader looks up, and delete the prose that walks through them.
 - Rewording a paragraph: rewrite the whole paragraph and reflow it. Splicing a
   clause into the old line breaks keeps the diff small, but it leaves two ideas
   that depend on each other in one sentence without the word that connects
@@ -79,6 +85,8 @@ Its forms:
   "The question isn't speed. The question is correctness."
 - "Not X. Not Y. Just Z."
 - "is not X's job" or "is not the point" before saying what is
+- a bare negative sentence: "A walk extracted from a window does not record
+  which path it belongs to."
 - a heading that says what a thing is not: "What this is not"
 
 The default fix is to delete the negative half. The sentence almost always
@@ -97,6 +105,17 @@ still says everything.
 >
 > The CLI doesn't just fetch domains, it caches them. → The CLI fetches domains
 > and caches them on disk.
+
+A bare negative sentence has no positive half to keep. Write the fact the
+negative points at, which is usually where the missing thing comes from, or
+delete the sentence. State a limitation as what the thing does accept.
+
+> A walk extracted from a window does not record which path it belongs to. The
+> haplotype index adds the tables this package needs to name it. → Walk names
+> come from the haplotype index.
+>
+> Neither function accepts a region on a haplotype. → Range queries take a
+> reference path: GRCh38 or CHM13 in HPRC v2.1.
 
 The test: would a reader who never saw the negative half make a wrong choice or
 hold a wrong belief? If not, delete it. The test passes only in three cases:
@@ -362,6 +381,30 @@ the purpose after the main clause.
 
 **A comma-clipped tail.** A short phrase hung off a comma to close a sentence
 with a beat: "it rebuilds on every keystroke, every time."
+
+**A compressed noun phrase.** A noun phrase that packs a clause into its
+modifiers. An option or a verb becomes an adjective ("a kept contig", "the named
+half of each record", "private bp"), or a chain of prepositions stands in for a
+subject and a verb ("a contig with no row at the anchor", "companion seeks
+against graph record lookups"). The writer coins the shorthand while reading the
+code, and the reader has to expand it back into the sentence it came from. The
+test: could a reader who has not seen the code expand the phrase? If not, write
+the sentence, or delete it when the page can do without it.
+
+> A kept contig with no row at the anchor, because it bypasses that node or
+> starts inside the window, is found as in the sampled route. → Some chosen
+> haplotypes skip the anchor node, because their path goes around it or their
+> contig starts inside the window. The reader finds these from the samples on
+> the window's nodes.
+>
+> The reader then trims to the kept set. → The reader then removes the
+> haplotypes the predicate rejects.
+>
+> `maxGap` caps the private bp a record skips → `maxGap` caps the bases a record
+> may skip on nodes that only one walk visits
+
+A term the page defines, or a name from the API in code font such as `keep`, is
+fine. See also [An invented concept label](#register).
 
 **Density.** Long sentences packed with qualifications, and paragraphs that run
 for a screen without a break. Fixing the tropes above adds clauses, so after a

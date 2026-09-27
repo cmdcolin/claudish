@@ -39,3 +39,5 @@ A caller gets the cache for free.
 The index records what the graph holds, not who carries what.
 
 The worker is where the decoding happens.
+
+A walk extracted from a window does not record which path it belongs to.
