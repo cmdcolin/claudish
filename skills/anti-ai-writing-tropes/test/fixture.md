@@ -43,3 +43,7 @@ The worker is where the decoding happens.
 A walk extracted from a window does not record which path it belongs to.
 
 Upstream gbz-base names only the query path.
+
+The graph holds 130,510 bubbles and the median is 0.873.
+
+Open chr6:70,080,000-70,180,000 to see it.

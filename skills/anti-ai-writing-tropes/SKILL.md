@@ -659,6 +659,18 @@ appears in. A plain unqualified comparative ("faster", "much smaller") is fine
 as it stands, because a made-up or overly precise number reads worse than the
 word it replaces.
 
+**A precise number the reader cannot check.** "130,510 bubbles", "ranked 50th
+of 9,444", "an allele of 37,545 bp against the reference's 20,622". A reader has
+no way to verify a count like that, so its precision claims an authority the
+page cannot back, and it goes out of date the next time the data or the code
+changes, with nothing to flag it. Say which way the result went and let a
+figure, a table or a script the page points at carry how far. A round magnitude
+("about a thousand"), a coordinate, an identifier and a published size name
+something and stay.
+
+> The Simmental allele is 37,545 bp against the reference's 20,622 → The
+> Simmental allele is nearly twice the reference's length
+
 **A goal with no quantity.** "To optimize rendering", "to improve
 performance" and "to help with scale" name a direction but not what changes.
 Name the quantity the design lowers or raises: bytes transferred, time to
@@ -769,9 +781,10 @@ an alignment").
   plain it reads.
 - Measurements. Numbers, identifiers, file paths and the names of mechanisms
   are the content. A prose pass moves sentences around them and changes none of
-  them. A rewrite can also add precision the original never claimed: "the
-  absolute heights survive the trip" is not "the absolute heights round-trip
-  exactly".
+  them, except a precise number the reader cannot check, which is a trope of its
+  own under [Register](#register). A rewrite can also add precision the original
+  never claimed: "the absolute heights survive the trip" is not "the absolute
+  heights round-trip exactly".
 - The mechanism. A rewrite that adds "in the same way as tool X", "each record
   consists of" or "collapses into a single run" makes a new claim, and the
   spec may contradict it. Check the sentence against the spec or the code, or
@@ -792,11 +805,14 @@ an alignment").
 plain-text files under a path for the markers above, and labels each hit by the
 section its marker comes from: `contrast`, `shape`, `agency`, `colon`,
 `apposition`, `opening`, `passive`, `history`, `register`, `pitch`, `claim`,
-`coldstart` and `staccato`. Read each hit in context. The `claim` label marks a
+`number`, `coldstart` and `staccato`. Read each hit in context. The `claim` label marks a
 comparison to another tool ("in the same way", "similar to"), which needs
 checking against that tool's documentation. The `pitch` label marks a capability
 boast, a superlative, a potential teaser or a priority claim; a superlative that
-reports a measurement is fine. The `coldstart` label marks a paragraph whose
+reports a measurement is fine. The `number` label marks a number grouped in thousands or carrying two or more
+decimal places; a coordinate after a colon or a dash, a version and a DOI do
+not fire it. The
+`coldstart` label marks a paragraph whose
 first line opens on a pronoun, a demonstrative, a count such as "Both" or "The
 two", or a sentence-initial "So"/"And"/"Hence". The `staccato` label marks a
 paragraph or bullet with three sentences in a row of six words or fewer. The
