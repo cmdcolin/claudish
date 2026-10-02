@@ -77,7 +77,7 @@ Its forms:
 
 - "X, not Y": "Staleness is stamped, not compared."
 - a negative half written as a question-word clause: "records what the graph
-  contains, not who carries what"
+  contains, not who has what"
 - "rather than" and "instead of": "so it is tested rather than remembered"
 - "not just X but Y" and "X doesn't just Y, it Z"
 - "not because X but because Y"
@@ -156,19 +156,19 @@ between the strict and the plain runner, so deleting "instead of logging it"
 deletes the fact. Rewrite it as two positive statements, one per function, or
 keep it.
 
-Even then, a plain sentence usually carries the distinction better than the
+Even then, a plain sentence usually states the distinction better than the
 "X, not Y" pattern: "Contacts use all-atom distance, because C-beta distance
 misses side-chain contacts." A contrast written for rhythm or emphasis never
 passes the test.
 
 Two shapes get the plain rewrite even when the fact survives the test. One is
-the question-word clause — "not who carries what", "not where it came from" —
+the question-word clause — "not who has what", "not where it came from" —
 which is an aphorism whatever it records. The other is two contrasts stacked in
 one sentence. Give the absence its own sentence and say what is missing:
 
-> The indexes record what the graph contains, not who carries what, because the
+> The indexes record what the graph contains, not who has what, because the
 > `SR` tag is build order and not sample. → The indexes record what the graph
-> contains. Which strain carries which segment is not in them, because the `SR`
+> contains. Which strains have each segment is not in them, because the `SR`
 > tag is build order, not sample.
 
 ## Stance and agency
@@ -192,6 +192,19 @@ the thing, or use a verb of description (marks, contains, shows, is).
 > passed to it
 >
 > signs that disagree → one end marked `+` and the other `-`
+
+**"Carry" for having or holding.** A sequence, a file, a record or a config
+has, contains, lists or holds. "Carry" describes that relation as an action, and
+"carriage" names it as a quantity. Say the relation, and name a count by what it
+counts. A carrier of a recessive allele is a person in the clinical sense, and
+stays.
+
+> each haplotype that carries the allele → each haplotype with the allele
+>
+> the config carries the track → the config holds the track
+>
+> a lane colored by carriage → a lane colored by how many haplotypes walk each
+> segment
 
 **An artifact given a purpose or a will.** "the choice it exists to offer",
 "the failure this layer exists to avoid", "the tree cannot resolve them".
@@ -333,7 +346,7 @@ is the one the reader loses.
 > cache. The first load after a rename is therefore slow.
 
 **A mannered inversion or dropped subject.** Fronting the complement, or opening
-on "So", "And" or "Hence" that carries the previous sentence's subject.
+on "So", "And" or "Hence" that leaves the subject to the previous sentence.
 
 > Known now is which latency the number reports: the queue's own. → The number
 > reports the queue's own latency.
@@ -379,7 +392,7 @@ generalization first, specifics second.
 > resolves in the shader → A categorical color resolves in the shader
 
 **A comma-hung appositive.** A noun phrase, a comma, then "one that" or "a
-design that" restating the subject before the sentence carries on. The comma
+design that" restating the subject before the sentence goes on. The comma
 does a semicolon's work and the reader has to hold the first half open across
 it. Fold the appositive into a relative clause on the noun, or split the
 sentence.
@@ -426,7 +439,7 @@ fine. See also [An invented concept label](#register).
 
 **Density.** Long sentences packed with qualifications, and paragraphs that run
 for a screen without a break. Fixing the tropes above adds clauses, so after a
-pass split a sentence that carries unrelated facts and break the paragraph
+pass split a sentence that states unrelated facts and break the paragraph
 where the subject changes. Keep facts that depend on each other in one sentence,
 or the split produces a staccato run.
 
@@ -438,7 +451,7 @@ parenthetical remark.
 ## Openings and closings
 
 **An aphorism closing (or opening) a section.** A short balanced sentence that
-sounds like a conclusion and carries no fact.
+sounds like a conclusion and states no fact.
 
 > A phone GPU is still a phone GPU. → A phone GPU has much less headroom.
 >
@@ -475,8 +488,8 @@ stop a section at the last one.
 
 **A term used before its definition.** An opening sentence mentions a feature
 in passing ("stores each record at two resolutions") and a later paragraph,
-after an unrelated one, defines it. The reader carries an undefined term across
-the gap. Introduce the feature in the paragraph that defines it, or move the
+after an unrelated one, defines it. The reader crosses the gap with the term
+undefined. Introduce the feature in the paragraph that defines it, or move the
 two paragraphs together.
 
 **A closing that restates.** "In summary", "As we've seen", a paragraph
@@ -664,7 +677,7 @@ of 9,444", "an allele of 37,545 bp against the reference's 20,622". A reader has
 no way to verify a count like that, so its precision claims an authority the
 page cannot back, and it goes out of date the next time the data or the code
 changes, with nothing to flag it. Say which way the result went and let a
-figure, a table or a script the page points at carry how far. A round magnitude
+figure, a table or a script the page points at show how far. A round magnitude
 ("about a thousand"), a coordinate, an identifier and a published size name
 something and stay.
 
@@ -701,8 +714,8 @@ document, where a reader who does not know it will stop.
 > format that minimap2 writes
 
 **The pitch register.** A sentence that sells the thing's capability or
-standing where a description of what it does belongs. Plain vocabulary carries
-it, so the promotional word list below misses it, and the tell is a claim the
+standing where a description of what it does belongs. It uses plain vocabulary,
+so the promotional word list below misses it, and the tell is a claim the
 reader cannot check. Its forms:
 
 - A capability boast: "does more than draw", "goes beyond rendering", "is not
@@ -730,7 +743,7 @@ configuration." Say what the thing does.
 **Borrowed authority.** `industry reports`, `surveys show`, "a classic",
 "famously", "the well-known". Cite it or drop the adjective.
 
-**A sentence adverb carrying the transition.** "Additionally", "Furthermore",
+**A sentence adverb as the transition.** "Additionally", "Furthermore",
 "Moreover", "Notably", "Importantly", "Ultimately", "Overall" at the head of a
 sentence. Each says the sentence relates to the last one without saying how.
 Delete it, or write the relation as a clause.
@@ -809,8 +822,7 @@ section its marker comes from: `contrast`, `shape`, `agency`, `colon`,
 comparison to another tool ("in the same way", "similar to"), which needs
 checking against that tool's documentation. The `pitch` label marks a capability
 boast, a superlative, a potential teaser or a priority claim; a superlative that
-reports a measurement is fine. The `number` label marks a number grouped in thousands or carrying two or more
-decimal places; a coordinate after a colon or a dash, a version and a DOI do
+reports a measurement is fine. The `number` label marks a number grouped in thousands or with two or more decimal places; a coordinate after a colon or a dash, a version and a DOI do
 not fire it. The
 `coldstart` label marks a paragraph whose
 first line opens on a pronoun, a demonstrative, a count such as "Both" or "The

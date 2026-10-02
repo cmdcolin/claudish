@@ -36,7 +36,7 @@ Do NOT merge the branch.
 
 A caller gets the cache for free.
 
-The index records what the graph holds, not who carries what.
+The index records what the graph holds, not who has what.
 
 The worker is where the decoding happens.
 
@@ -47,3 +47,5 @@ Upstream gbz-base names only the query path.
 The graph holds 130,510 bubbles and the median is 0.873.
 
 Open chr6:70,080,000-70,180,000 to see it.
+
+Each haplotype that carries the allele is blue.

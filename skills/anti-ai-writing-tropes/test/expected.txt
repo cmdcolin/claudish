@@ -20,9 +20,10 @@
 [coldstart] 31:Both hold the same session.
 [history] 35:Do NOT merge the branch.
 [agency] 37:A caller gets the cache for free.
-[contrast] 39:The index records what the graph holds, not who carries what.
-[aphorism] 39:The index records what the graph holds, not who carries what.
+[contrast] 39:The index records what the graph holds, not who has what.
+[aphorism] 39:The index records what the graph holds, not who has what.
 [contrast] 41:The worker is where the decoding happens.
 [negative] 43:A walk extracted from a window does not record which path it belongs to.
 [contrast] 45:Upstream gbz-base names only the query path.
 [number] 47:The graph holds 130,510 bubbles and the median is 0.873.
+[agency] 51:Each haplotype that carries the allele is blue.
