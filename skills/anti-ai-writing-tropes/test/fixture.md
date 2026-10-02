@@ -49,3 +49,4 @@ The graph holds 130,510 bubbles and the median is 0.873.
 Open chr6:70,080,000-70,180,000 to see it.
 
 Each haplotype that carries the allele is blue.
+The sort collects the inversion's carriers into a block.

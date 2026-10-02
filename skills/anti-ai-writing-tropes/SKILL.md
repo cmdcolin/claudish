@@ -196,15 +196,38 @@ the thing, or use a verb of description (marks, contains, shows, is).
 **"Carry" for having or holding.** A sequence, a file, a record or a config
 has, contains, lists or holds. "Carry" describes that relation as an action, and
 "carriage" names it as a quantity. Say the relation, and name a count by what it
-counts. A carrier of a recessive allele is a person in the clinical sense, and
-stays.
+counts: "samples with the inversion", not "the inversion's carriers". A carrier
+of a recessive allele, a person or an animal heterozygous for it, is the
+clinical sense, and stays.
 
 > each haplotype that carries the allele → each haplotype with the allele
 >
 > the config carries the track → the config holds the track
 >
-> a lane colored by carriage → a lane colored by how many haplotypes walk each
+> a lane colored by carriage → a lane colored by how many haplotypes have each
 > segment
+>
+> the sort collects the inversion's carriers into a block → the sort collects
+> the samples with the inversion into a block
+
+The replacement is a verb of description, not another action. Swapping "carry"
+for "names", "shows", "takes", "keeps", "sends" or "stores" leaves the same
+inanimate actor. Where a verb of description does not fit, make the component
+or the person that acts the subject.
+
+> CD8A is carried by the CD8 rows → CD8A shows in the CD8 rows (still an actor)
+> → the CD8 rows have signal at CD8A
+>
+> every VCF record carries the result as its `svType` field → every record
+> stores the result (still an actor) → JBrowse stores the result as each
+> record's `svType` field
+>
+> the allele rose and carried its neighbours with it → the allele rose and took
+> its neighbours with it (still an actor) → the allele rose in frequency, and
+> its neighbouring variants rose with it
+
+In the idioms, "carries on" is "continues", and "carries over" is "stays" or
+"applies".
 
 **An artifact given a purpose or a will.** "the choice it exists to offer",
 "the failure this layer exists to avoid", "the tree cannot resolve them".
