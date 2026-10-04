@@ -27,8 +27,8 @@ below pairs each habit with a rewrite, so the fix is a pattern to copy.
   [compressed noun phrase](#sentence-shapes).
 - Improving a document: start by cutting. A pass that keeps every paragraph and
   fixes each sentence makes the page longer, because the fixes add clauses. Two
-  such passes took the gbz-base-js docs from 1,391 to 1,460 lines, and a pass
-  that cut took them to 814. Keep the tables, the numbers and the examples a
+  such passes took one docs set from 1,391 to 1,460 lines, and a pass that cut
+  took it to 814. Keep the tables, the numbers and the examples a
   reader looks up, and delete the prose that walks through them.
 - Rewording a paragraph: rewrite the whole paragraph and reflow it. Splicing a
   clause into the old line breaks keeps the diff small, but it leaves two ideas
@@ -36,16 +36,15 @@ below pairs each habit with a rewrite, so the fix is a pattern to copy.
   them. Keep a small edit to a narrow scope, and reflow every line that scope
   touches.
 
-  > The WebGL context cap limits the linear genome view, where JBrowse 2
-  > renders each track in a separate canvas because each track is an
-  > independent React component → Each track is an independent React
-  > component, so JBrowse 2 renders each track in its own canvas. Browsers cap
-  > a page at 16 WebGL contexts, one per canvas, so a WebGL view with more
-  > tracks than that would exceed the cap
+  > The process limit caps the batch size, where the server renders each
+  > report in a separate process because each report is an independent job →
+  > Each report is an independent job, so the server renders each one in a
+  > separate process. The operating system caps the processes per user, so a
+  > batch with more reports than that would exceed the cap
 - Answering in a chat: apply the same checklist. An explanation of how a
   system works invites the agency tropes, because it narrates what each part
-  does: "gbz-base hands us every haplotype's walk", "a PIF does that",
-  "gbz-base earns its place". Make a program or a person the subject, and
+  does: "the cache hands us every request's entry", "an index does that",
+  "the cache earns its place". Make a program or a person the subject, and
   describe data with contains, lists or records.
 - Reviewing for someone else: report every instance, then triage. A "report
   only the worst" instruction makes a reviewer drop real findings. One line
@@ -75,9 +74,9 @@ have assumed.
 The pattern defines a thing against an alternative the reader never raised.
 Its forms:
 
-- "X, not Y": "Staleness is stamped, not compared."
-- a negative half written as a question-word clause: "records what the graph
-  contains, not who has what"
+- "X, not Y": "Each cache entry is stamped with an expiry time, not compared."
+- a negative half written as a question-word clause: "records what the build
+  contains, not who requested it"
 - "rather than" and "instead of": "so it is tested rather than remembered"
 - "not just X but Y" and "X doesn't just Y, it Z"
 - "not because X but because Y"
@@ -85,52 +84,51 @@ Its forms:
   "The question isn't speed. The question is correctness."
 - "Not X. Not Y. Just Z."
 - "is not X's job" or "is not the point" before saying what is
-- a bare negative sentence: "A walk extracted from a window does not record
-  which path it belongs to."
-- "only" limiting a verb against a complement nobody raised: "Upstream
-  gbz-base names only the query path"
+- a bare negative sentence: "A record from a shard does not store its sample
+  name."
+- "only" limiting a verb against a complement nobody raised: "The exporter
+  names only the primary sample"
 - a heading that says what a thing is not: "What this is not"
 
 The default fix is to delete the negative half. The sentence almost always
 still says everything.
 
-> Staleness is stamped, not compared. → Staleness is stamped.
+> Each cache entry is stamped with an expiry time, not compared against the
+> source. → Each cache entry is stamped with an expiry time.
 >
 > CI runs the install command from the README, so it is tested rather than
-> remembered. → CI runs the install command from the README, so a broken one
-> fails the build.
+> remembered. → CI runs the install command from the README, so the command is
+> tested.
 >
-> The overlay is column-locked instead of drawn per protein. → The overlay is
-> column-locked.
+> The overlay is drawn once instead of per page. → The overlay is drawn once.
 >
 > It's not a cache. It's a log. → It is a log.
 >
-> The CLI doesn't just fetch domains, it caches them. → The CLI fetches domains
-> and caches them on disk.
+> The CLI doesn't just fetch the page, it caches it. → The CLI fetches the page
+> and caches it.
 
 A bare negative sentence has no positive half to keep. Write the fact the
 negative points at, which is usually where the missing thing comes from, or
 delete the sentence. State a limitation as what the thing does accept.
 
-> A walk extracted from a window does not record which path it belongs to. The
-> haplotype index adds the tables this package needs to name it. → Walk names
-> come from the haplotype index.
+> A record from a shard does not store its sample name. The sample table adds
+> the names. → Sample names come from the sample table.
 >
-> Neither function accepts a region on a haplotype. → Range queries take a
-> reference path: GRCh38 or CHM13 in HPRC v2.1.
+> The `fetch` and `count` functions do not accept a region on a sample. A
+> region is a range on the reference path. → A region in `fetch` and `count` is
+> a range on the reference path.
 
 "Only" makes the same move inside one word. "X reads only the header" asserts
 the header and denies everything else, and the reader is left to supply what
 else there was. State what happens to each case the reader cares about, or drop
 "only" when the complement does not matter.
 
-> Upstream gbz-base names only the query path and prints every other walk as
-> `unknown#N`. → Upstream gbz-base prints each walk other than the query path as
+> The exporter names only the primary sample and labels every other sample
+> `unknown#N`. → The exporter labels each sample other than the primary one
 > `unknown#N`.
 >
-> The anchored route reads the names at the anchor, then follows only the
-> chosen haplotypes. → The anchored route reads which haplotypes pass the
-> anchor, then follows the chosen ones.
+> The importer reads the headers, then loads only the selected files. → The
+> importer reads the headers, then loads the selected files.
 
 Keep "only" where the restriction is the fact: "the pager reads only the 64 KiB
 blocks a query touches" answers a question about bandwidth the reader has.
@@ -138,10 +136,10 @@ blocks a query touches" answers a question about bandwidth the reader has.
 The test: would a reader who never saw the negative half make a wrong choice or
 hold a wrong belief? If not, delete it. The test passes only in three cases:
 
-- An option the reader would otherwise pick. "Use `Pfam`, not `PfamA`" names
-  the value people type by mistake.
-- A choice whose alternative gives a different result. "All-atom distance,
-  not C-beta" matters when the two give different contact sets.
+- An option the reader would otherwise pick. "Use `--force-with-lease`, not
+  `--force`" names the flag people type by mistake.
+- A choice whose alternative gives a different result. "Median, not mean"
+  matters when outliers make the two differ.
 - A design record naming the option it declined, which is the record's
   purpose.
 
@@ -157,8 +155,8 @@ deletes the fact. Rewrite it as two positive statements, one per function, or
 keep it.
 
 Even then, a plain sentence usually states the distinction better than the
-"X, not Y" pattern: "Contacts use all-atom distance, because C-beta distance
-misses side-chain contacts." A contrast written for rhythm or emphasis never
+"X, not Y" pattern: "Latency is the median, because the mean is skewed
+by timeouts." A contrast written for rhythm or emphasis never
 passes the test.
 
 Two shapes get the plain rewrite even when the fact survives the test. One is
@@ -166,10 +164,10 @@ the question-word clause — "not who has what", "not where it came from" —
 which is an aphorism whatever it records. The other is two contrasts stacked in
 one sentence. Give the absence its own sentence and say what is missing:
 
-> The indexes record what the graph contains, not who has what, because the
-> `SR` tag is build order and not sample. → The indexes record what the graph
-> contains. Which strains have each segment is not in them, because the `SR`
-> tag is build order, not sample.
+> The manifest records what the build contains, not who requested it, because
+> the `owner` field is the build host and not the user. → The manifest records
+> what the build contains. Who requested the build is not in it, because the
+> `owner` field is the build host, not the user.
 
 ## Stance and agency
 
@@ -179,17 +177,16 @@ nothing, says nothing and earns nothing. The test: could the subject perform
 the verb if you ran the program? When it could not, name the actor that does
 the thing, or use a verb of description (marks, contains, shows, is).
 
-> The lockfile knows which versions to install. → The lockfile lists the exact
-> version of each package.
+> The lockfile knows which versions to install. → The lockfile lists the
+> versions to install.
 >
-> ClinVar adds a layer the alignment cannot know. → The ClinVar track marks
-> pathogenic variants per residue.
+> The log remembers every request. → The log contains every request.
 >
-> The boxes say what the parts are; the arcs say how they pack → The boxes mark
-> the domains, and the arcs mark residue pairs in contact.
+> The boxes say which files changed; the arcs say how they depend on each
+> other → The boxes mark the changed files, and the arcs mark dependencies
+> between files.
 >
-> the caches see the first walk → `refIndex` stores the index of the first walk
-> passed to it
+> the cache sees the first request → the cache stores the first request
 >
 > signs that disagree → one end marked `+` and the other `-`
 
@@ -218,9 +215,8 @@ or the person that acts the subject.
 > CD8A is carried by the CD8 rows → CD8A shows in the CD8 rows (still an actor)
 > → the CD8 rows have signal at CD8A
 >
-> every VCF record carries the result as its `svType` field → every record
-> stores the result (still an actor) → JBrowse stores the result as each
-> record's `svType` field
+> every record carries the result as its `svType` field → every record stores
+> the result (still an actor) → each record's `svType` field holds the result
 >
 > the allele rose and carried its neighbours with it → the allele rose and took
 > its neighbours with it (still an actor) → the allele rose in frequency, and
@@ -316,7 +312,7 @@ for.
 > column-locking is what stacks them → the overlay places domains by column,
 > which lines them up
 >
-> Rounding is what buys the room → Rounding saves two characters per value
+> Rounding is what buys the room → Rounding shrinks the file
 
 Deleting "is what" alone leaves the verb on the old subject, so check that verb
 against [Stance and agency](#stance-and-agency).
@@ -329,13 +325,12 @@ against [Stance and agency](#stance-and-agency).
 answer", "the payoff", "the key insight", "worth naming". Delete the
 announcement and state the fact.
 
-> The linter accepts the file, which is the honest answer to the question it
-> was asked. → The linter accepts the file, because it checks only syntax, and
-> the syntax is valid.
+> The linter checks only syntax, and the syntax is valid. It accepts the file,
+> which is the honest answer to the question it was asked. → The linter checks
+> only syntax, and the syntax is valid, so it accepts the file.
 >
-> The model scores the variant benign, which is the honest answer to the
-> question it was asked. → The model scores the variant benign, because it
-> predicts whether a substitution breaks the fold, and this one does not.
+> The key insight is that the index is sorted, which lets lookups use binary
+> search. → The index is sorted, so lookups can use binary search.
 
 **Narrated deliberation.** The text describes its own thinking ("What that
 changes in the design is worth being precise about") or defends a minor point
@@ -358,8 +353,8 @@ point, and move on.
 
 **A which-ladder.** Each relative clause relabels the one before it.
 
-> a different alignment, which is a new model, which React spells `key` → A new
-> input needs a new model, so change the component's `key`.
+> a different file, which is a new model, which React spells `key` → A new file
+> needs a new model, so change the component's `key`.
 
 **Two conclusions stacked on "so".** Split the second into its own sentence; it
 is the one the reader loses.
@@ -386,8 +381,8 @@ with its subject dropped.
 **A rule-of-three list doing a sentence's work.** Three parallel fragments with
 the verbs dropped.
 
-> A file in, a look applied, ProRes out. → The command reads the file, applies
-> the look and writes ProRes 4444.
+> A file in, a filter applied, a PNG out. → The command reads the file, applies
+> the filter and writes a PNG.
 
 **Staccato, or telegraphic, sentences.** A run of short sentences, each
 complete, where the facts depend on each other. Every full stop drops the
@@ -411,8 +406,8 @@ half. Delete the lead-in and start on the facts. A colon that introduces a list
 or an example ("four sets of measurements: ...") is fine; the tell is a
 generalization first, specifics second.
 
-> Each scale resolves where updating it costs least: a categorical color
-> resolves in the shader → A categorical color resolves in the shader
+> Each cache invalidates where a stale read costs most: the session cache
+> invalidates on logout → The session cache invalidates on logout
 
 **A comma-hung appositive.** A noun phrase, a comma, then "one that" or "a
 design that" restating the subject before the sentence goes on. The comma
@@ -424,38 +419,35 @@ sentence.
 > Version 2 is an editor that removes that limit by opening files in tabs
 >
 > Version 1 opens one file, a design that cannot compare two → Version 1 opens
-> only one file at a time, so it cannot compare two
+> one file, so it cannot compare two
 
 **A fronted "So that" clause.** "So that X happens, we did Y" puts the result
 before the actor and reads as translated. Open on "To" with the goal, or put
 the purpose after the main clause.
 
-> So that a browser fetches only the region in view, we built an index → To
-> limit the download to the region in view, we built an index
+> So that the page loads faster, we added an index → To make the page load
+> faster, we added an index
 
 **A comma-clipped tail.** A short phrase hung off a comma to close a sentence
 with a beat: "it rebuilds on every keystroke, every time."
 
 **A compressed noun phrase.** A noun phrase that packs a clause into its
-modifiers. An option or a verb becomes an adjective ("a kept contig", "the named
-half of each record", "private bp"), or a chain of prepositions stands in for a
-subject and a verb ("a contig with no row at the anchor", "companion seeks
-against graph record lookups"). The writer coins the shorthand while reading the
+modifiers. An option or a verb becomes an adjective ("a dirty half", "the named
+half of each record", "private bytes"), or a chain of prepositions stands in for a
+subject and a verb ("a page with no entry at the root", "companion reads
+against cache lookups"). The writer coins the shorthand while reading the
 code, and the reader has to expand it back into the sentence it came from. The
 test: could a reader who has not seen the code expand the phrase? If not, write
 the sentence, or delete it when the page can do without it.
 
-> A kept contig with no row at the anchor, because it bypasses that node or
-> starts inside the window, is found as in the sampled route. → Some chosen
-> haplotypes skip the anchor node, because their path goes around it or their
-> contig starts inside the window. The reader finds these from the samples on
-> the window's nodes.
+> The flush writes the dirty half of each page. → The flush writes the half of
+> each page that has unsaved changes.
 >
-> The reader then trims to the kept set. → The reader then removes the
-> haplotypes the predicate rejects.
+> The reader then trims to the kept set. → The reader then removes the rows the
+> filter rejects.
 >
-> `maxGap` caps the private bp a record skips → `maxGap` caps the bases a record
-> may skip on nodes that only one walk visits
+> `maxSkip` caps the cold bytes a read skips → `maxSkip` caps the bytes a read
+> skips in blocks that no other read touches
 
 A term the page defines, or a name from the API in code font such as `keep`, is
 fine. See also [An invented concept label](#register).
@@ -476,9 +468,11 @@ parenthetical remark.
 **An aphorism closing (or opening) a section.** A short balanced sentence that
 sounds like a conclusion and states no fact.
 
-> A phone GPU is still a phone GPU. → A phone GPU has much less headroom.
+> The rate limit counts retries. A retry is still a request. → The rate limit
+> counts retries as requests.
 >
-> The snapshot is the API. → Every field below is a property of the model.
+> The snapshot is the API. Every field below is a property of the model. →
+> Every field below is a property of the model.
 
 **A conclusion standing in for the mechanism.** A sentence naming the outcome
 (the build stops, the link breaks) where the sentence saying how it happens
@@ -490,8 +484,8 @@ belongs. Write what the machine does and name the actor.
 **Silently, quietly, invisibly.** An adverb standing in for the mechanism of a
 failure. Name what the reader observes, or drop it.
 
-> The second bug is the same class of wrong, quieter. → The second bug
-> writes the wrong value and raises no error.
+> The second bug silently writes the wrong value. → The second bug writes the
+> wrong value and raises no error.
 
 **A refrain.** A project rule ("the viewer computes nothing", "no external
 services") restated as the closer of captions and section intros, or a caution
@@ -532,8 +526,8 @@ even when the previous paragraph named it.
 > It runs the same engine as the app. → The renderer runs the same engine as the
 > app.
 >
-> That limit is why we wrote a second parser. → The 2 GB file limit is why we
-> wrote a second parser.
+> That limit is why we wrote a second parser. (after a paragraph on the 2 GB
+> file limit) → The 2 GB file limit is why we wrote a second parser.
 
 **A count standing in for its nouns.** "Both", "neither", "either", "the two"
 or "all three" as a subject, where the text never named the things it counts
@@ -553,7 +547,7 @@ directly follows the sentence that names the pair.
 first X the reader has to find, and a heading or a code block between the two
 hides it.
 
-> The same track feeds the graph view. → The `hprc_lanes` track also feeds the
+> The same track feeds the graph view. → The `coverage` track also feeds the
 > graph view.
 
 ## Paragraph transitions
@@ -569,9 +563,9 @@ that the first was a problem. Say it is a limitation.
 The pattern: *A is limited to X. B removes that limit by doing Y, so it can
 Z.*
 
-> Version 1 opens one file at a time. Version 2 opens several → Version 1 is
-> limited to one open file at a time. Version 2 removes that limit by opening
-> files in tabs, so you can compare two files side by side
+> Version 1 opens one file at a time. Version 2 opens several, in tabs →
+> Version 1 is limited to one open file at a time. Version 2 removes that limit
+> by opening several files in tabs
 
 **A narrative bridge with nothing behind it.** A sentence about how the field
 moved ("teams have since shifted to monorepos", "that design fit its era")
@@ -589,9 +583,9 @@ terms of the new tool's headline features, so the paragraph reads as
 back-formed. State the general limitation; the features follow from it in the
 next sentence.
 
-> Version 1 cannot show a diff between two files. Version 2 shows diffs →
-> Version 1 is limited to one open file at a time. Version 2 opens files in
-> tabs, so it can show a diff between two
+> Version 1 cannot show a diff between two files. Version 2 opens files in tabs
+> and shows diffs → Version 1 is limited to one open file at a time. Version 2
+> opens files in tabs, so it shows diffs
 
 **The old tool as the subject.** A paragraph introducing a new format or tool
 spends its opening sentences on what the old one fails to do, so the old tool
@@ -599,11 +593,10 @@ becomes the topic. Keep the limitation to a clause or fold it into the goal,
 name the new thing in the first sentence, and mention the old format where it
 enters the mechanism, such as the file the new one is converted from.
 
-> A browser that reads PAF downloads the whole file to draw any region, and an
-> index over PAF answers queries on one genome only. We created PIF, which
-> `make-pif` generates from PAF. → To limit the data transferred to the
-> alignments in view, we created PIF, a Tabix-indexed form of PAF. The
-> `make-pif` command writes each PAF line twice, once per genome.
+> A viewer that reads a log file downloads the whole file to show any line
+> range. We created a chunked format, which `make-chunks` generates from a log
+> file. → To limit the data transferred to the line range in view, we created a
+> chunked format, which `make-chunks` generates from a log file.
 
 **A colon or a comma doing the turn.** "That adoption came with a fixed frame:
 version 1 opens ..." and "an editor without that limit, one that opens ..."
@@ -649,8 +642,7 @@ a negative, unless the distinction is the whole finding of the section.
 **Cute naming in a reference table.** A flag table or column header is read by
 someone looking one thing up.
 
-> `--seed=<n>` | the dice → `--seed=<n>` | random seed; the same seed gives the
-> same output
+> `--seed=<n>` | the dice → `--seed=<n>` | random seed
 
 **Bold-first bullets.** A bold lead on every item of an ordinary list is
 decoration. Keep bold for a term being defined, as in a glossary. Keep a list,
@@ -695,8 +687,8 @@ appears in. A plain unqualified comparative ("faster", "much smaller") is fine
 as it stands, because a made-up or overly precise number reads worse than the
 word it replaces.
 
-**A precise number the reader cannot check.** "130,510 bubbles", "ranked 50th
-of 9,444", "an allele of 37,545 bp against the reference's 20,622". A reader has
+**A precise number the reader cannot check.** "130,510 rows", "ranked 50th
+of 9,444", "an index of 37,545 bytes against the old one's 20,622". A reader has
 no way to verify a count like that, so its precision claims an authority the
 page cannot back, and it goes out of date the next time the data or the code
 changes, with nothing to flag it. Say which way the result went and let a
@@ -704,37 +696,37 @@ figure, a table or a script the page points at show how far. A round magnitude
 ("about a thousand"), a coordinate, an identifier and a published size name
 something and stay.
 
-> The Simmental allele is 37,545 bp against the reference's 20,622 → The
-> Simmental allele is nearly twice the reference's length
+> The new index is 37,545 bytes against the old one's 20,622 → The new index is
+> nearly twice the size of the old one
 
 **A goal with no quantity.** "To optimize rendering", "to improve
 performance" and "to help with scale" name a direction but not what changes.
 Name the quantity the design lowers or raises: bytes transferred, time to
 first draw, memory per track.
 
-> To optimize the rendering of whole-genome alignments, we created an indexed
-> format → To limit the data transferred when drawing whole-genome alignments
-> to the region in view, we created an indexed format
+> To optimize the rendering of alignments, we created an indexed format → To
+> limit the data transferred when drawing alignments to the region in view, we
+> created an indexed format
 
 **A code-internal verb in prose.** A verb taken from the program's vocabulary
-or from a metaphor the authors use among themselves: a query "names" a walk, a
-loader "hydrates" a record, a path "resolves". Readers outside the codebase do
+or from a metaphor the authors use among themselves: a loader "hydrates" a
+record, a router "resolves" a path, a query "names" a column. Readers outside the codebase do
 not say these, and the sentence reads as translated. Use the verb a user of the
 tool would say, such as identify, label, look up or fill in, and keep the
 internal word in code font where it is an identifier.
 
-> A query names walks by one of two routes. → A query identifies walks by one of
-> two routes.
+> The loader hydrates each record from the cache or the database. → The loader
+> fills in each record from the cache or the database.
 >
-> `identifyPaths()` names each walk from a sample. → `identifyPaths()`
-> identifies each walk from a sample.
+> The router resolves a path to a handler. → The router looks up a handler for
+> a path.
 
-**An undefined abbreviation.** A format or tool name ("PAF", "BGZF") at its
+**An undefined abbreviation.** A format or tool name ("WAL", "BGZF") at its
 first use with no expansion or gloss. Gloss it at the first use in the
 document, where a reader who does not know it will stop.
 
-> The inputs are PAF files → The inputs are PAF files, the pairwise alignment
-> format that minimap2 writes
+> The output is a WAL file → The output is a WAL file, the write-ahead log the
+> database appends each change to
 
 **The pitch register.** A sentence that sells the thing's capability or
 standing where a description of what it does belongs. It uses plain vocabulary,
@@ -747,16 +739,15 @@ reader cannot check. Its forms:
   "industry-leading".
 - A future-potential teaser: "they could do much more", "the possibilities are
   broad".
-- A novelty or priority claim: "an early use of compute shaders in a genome
-  browser", "the first tool to index PAF".
+- A novelty or priority claim: "an early use of compute shaders in a map
+  viewer", "the first tool to index CSV".
 
 Write what the thing does. A superlative needs the measurement that ranks it,
 and a priority claim needs the citation it comes before.
 
-> WebGPU is the most modern GPU API in browsers, and it does more than draw. A
-> compute shader runs general-purpose work on the GPU, and they could do much
-> more. → A WebGPU compute shader runs general-purpose work on the GPU, which
-> we use for the clustering distance matrix in Section \ref{sec:modalities}.
+> The library is the most modern JSON toolkit, and it does more than parse: it
+> validates against a schema, and it could do much more. → The library parses
+> JSON and validates it against a schema.
 
 **Promotional words and grandiose stakes.** `vibrant`, `groundbreaking`,
 `boasts`, `flagship`, `crisp`, `seamless`, `robust`; the `delve` / `tapestry` /
@@ -783,15 +774,16 @@ The same for the filler adjectives `comprehensive`, `crucial`, `essential`,
 drop the filler; don't add a count or a list the original didn't have.
 
 > The tool leverages a comprehensive set of heuristics to ensure correctness.
-> → The tool checks each file against a set of heuristics.
+> → The tool uses a set of heuristics to check correctness.
 
 **Present-participle synthesis.** `…, highlighting how the two stages interact`
 is a claim with nobody making it. Write the claim as its own sentence or drop
 it.
 
-> Scores drop after the tokenizer change, highlighting how the two stages
-> interact. → Scores drop after the tokenizer change, because the tagger was
-> trained on the old token boundaries.
+> Scores drop after the tokenizer change because the tagger was trained on the
+> old token boundaries, highlighting how the two stages interact. → Scores drop
+> after the tokenizer change because the tagger was trained on the old token
+> boundaries.
 
 **An invented concept label.** "the staleness trap", "the dangerous shape",
 "config creep", used as if the term were established. Describe the thing the

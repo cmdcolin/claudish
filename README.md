@@ -8,140 +8,93 @@ Skills for Claude Code.
 
 ## anti-ai-writing-tropes
 
-The skill is a checklist for technical writing: docs, READMEs, tutorials, code
-comments, figure captions, commit messages, PR descriptions and agent
-instruction files. Each entry pairs a problem with a fix that keeps the same
-facts. A reader usually arrives at a paragraph from a search hit or a deep link,
-with no memory of the paragraph before it, so each paragraph has to make sense
-by itself. Most of the entries below follow from that rule. Name the subject,
-state the fact, and leave nothing for the reader to carry over from the previous
-paragraph.
+The skill is a checklist for technical writing: docs, READMEs, code comments,
+figure captions, commit messages, PR descriptions and agent instruction files.
+Each entry pairs a habit with a rewrite that keeps the same facts. A reader
+often arrives at a paragraph from a search hit, so each paragraph has to make
+sense alone: name the subject, state the fact, and leave nothing to carry over
+from the previous paragraph.
 
 ### Contrastive framing
 
-A contrastive sentence defines a thing by what it is not, as in "staleness is
-stamped, not compared" or "it's not a cache, it's a log". The negative half
-answers an objection the reader never raised, and it usually carries no
-information. Delete the negative half, and the sentence almost always still says
-everything it said before. The exception is a negative that steers the reader
-away from a choice they would otherwise make, such as the flag value people type
-by mistake, or that names the one behavior separating two functions ("the strict
-runner propagates a throw instead of logging it"). Deleting that half deletes
-the fact. Even then, a plain sentence with a "because" usually carries the
-distinction better than the contrast does. A sentence that is all negative
-("the walk does not record its path") has no positive half to keep, so write the
-fact it points at instead, such as where the missing thing comes from.
+A sentence that defines a thing by what it is not answers an objection nobody
+raised. Delete the negative half unless it steers the reader away from a choice
+they would otherwise make.
 
 | Pattern | Before | After |
 |---|---|---|
-| X, not Y | Staleness is stamped, not compared. | Staleness is stamped. |
+| X, not Y | Each cache entry is stamped with an expiry time, not compared against the source. | Each cache entry is stamped with an expiry time. |
 | A negation, then the claim | It's not a cache. It's a log. | It is a log. |
-| Doesn't just X, it Y | The CLI doesn't just fetch domains, it caches them. | The CLI fetches domains and caches them on disk. |
-| Rather than | CI runs the install command from the README, so it is tested rather than remembered. | CI runs the install command from the README, so a broken one fails the build. |
-| A limiting "only" | Upstream gbz-base names only the query path and prints every other walk as `unknown#N`. | Upstream gbz-base prints each walk other than the query path as `unknown#N`. |
-| A bare negative | A walk extracted from a window does not record which path it belongs to. | Walk names come from the haplotype index. |
+| Doesn't just X, it Y | The CLI doesn't just fetch the page, it caches it. | The CLI fetches the page and caches it. |
+| Rather than | CI runs the install command from the README, so it is tested rather than remembered. | CI runs the install command from the README, so the command is tested. |
+| A limiting "only" | The exporter names only the primary sample and labels every other sample `unknown#N`. | The exporter labels each sample other than the primary one `unknown#N`. |
+| A bare negative | A record from a shard does not store its sample name. The sample table adds the names. | Sample names come from the sample table. |
 
 ### Stance and agency
 
-Generated prose tends to give inanimate things a mind and a will, so that a
-lockfile knows which versions to install, a figure says what the parts are, a
-bar rises to the height its frequency earns, and each tab renders its own
-settings. None of these subjects can do what the verb claims, and the reader has
-to translate each one back into the literal relation it stands for. Name the
-component or the person that does the thing, or use a verb of description such
-as lists, marks, contains or shows. The same habit produces figures of speech
-where a literal word exists, such as "load-bearing" for "required", and passive
-sentences that leave the actor out entirely. Write the literal word, and use the
-active voice wherever you know who the actor is. Where you do not, keep the
-passive, because an invented actor is a new claim.
+A value, a file or a figure cannot know, say or earn anything. Name the
+component or person that acts, or use a verb of description such as lists,
+marks, contains or shows. Keep the passive where the actor is unknown, because
+an invented actor is a new claim.
 
 | Pattern | Before | After |
 |---|---|---|
-| A value given knowledge | The lockfile knows which versions to install. | The lockfile lists the exact version of each package. |
+| A value given knowledge | The lockfile knows which versions to install. | The lockfile lists the versions to install. |
 | An inanimate subject given ownership | each tab renders its own settings | each tab renders the settings stored for that tab |
 | An artifact given a will | each bar rises to the height its frequency earns | each bar's height is proportional to its frequency |
 | A figure of speech | The config file is load-bearing. | Every command reads the config file. |
 | The passive voice hiding the actor | The field is left unset. | The parser leaves the field unset. |
-| A value given perception | the caches see the first walk | `refIndex` stores the index of the first walk passed to it |
+| A value given perception | the cache sees the first request | the cache stores the first request |
 
 ### Sentence shapes
 
-Some sentence shapes sound like a conclusion and state none. The cleft restates
-a plain verb as "X is what does Y" ("rounding is what buys the room"), and the
-significance announcement calls a fact important without saying why. The colon
-lead-in puts a generalization first and the facts second, so the reader has to
-match the two halves. The comma-hung appositive restates the subject
-mid-sentence, and the fragment and the list of three leave out their verbs. A
-staccato run of short sentences keeps the verbs and leaves out the "so" or
-"because" that connects the facts. A compressed noun phrase packs a clause into
-modifiers, as in "a kept contig with no row at the anchor". In each case the reader has to rebuild the
-plain sentence the writer could have written. Write the subject and its plain
-verb, give unrelated facts separate sentences, and join facts that depend on
-each other.
+These shapes sound like a conclusion and state none, or split one sentence
+across punctuation so the reader has to rejoin it. Write the subject and its
+plain verb, and join facts that depend on each other.
 
 | Pattern | Before | After |
 |---|---|---|
-| The cleft | Rounding is what buys the room. | Rounding saves two characters per value. |
-| The significance announcement | The linter accepts the file, which is the honest answer to the question it was asked. | The linter accepts the file, because it checks only syntax, and the syntax is valid. |
-| A colon lead-in | Each scale resolves where updating it costs least: a categorical color resolves in the shader. | A categorical color resolves in the shader. |
-| A comma-hung appositive | Version 1 opens one file, a design that cannot compare two. | Version 1 opens only one file at a time, so it cannot compare two. |
-| A rule-of-three list | A file in, a look applied, ProRes out. | The command reads the file, applies the look and writes ProRes 4444. |
+| The cleft | Rounding is what shrinks the file. | Rounding shrinks the file. |
+| The significance announcement | The key insight is that the index is sorted, which lets lookups use binary search. | The index is sorted, so lookups can use binary search. |
+| A colon lead-in | Each cache invalidates where a stale read costs most: the session cache invalidates on logout. | The session cache invalidates on logout. |
+| A comma-hung appositive | Version 1 opens one file, a design that cannot compare two. | Version 1 opens one file, so it cannot compare two. |
+| A rule-of-three list | A file in, a filter applied, a PNG out. | The command reads the file, applies the filter and writes a PNG. |
 | A staccato run | The key includes the path. A rename changes the key. The cache misses. | The key includes the path, so a rename changes the key and misses the cache. |
-| A fronted "So that" clause | So that a browser fetches only the region in view, we built an index. | To limit the download to the region in view, we built an index. |
-| A compressed noun phrase | A kept contig with no row at the anchor is found as in the sampled route. | Some chosen haplotypes skip the anchor node, and the reader finds them from the samples on the window's nodes. |
+| A fronted "So that" clause | So that the page loads faster, we added an index. | To make the page load faster, we added an index. |
+| A compressed noun phrase | The flush writes the dirty half of each page. | The flush writes the half of each page that has unsaved changes. |
 
 ### Openings and closings
 
-A reader who lands on a paragraph from a search hit has no antecedent for "it",
-"this", "both" or "that limit". Open every paragraph on its subject by name,
-even when the paragraph before named the same subject. The same reader gets
-nothing from an aphorism that sounds like a conclusion and carries no fact. A
-sentence that names an outcome ("the build stops") where the mechanism belongs,
-or an adverb such as "silently" standing in for what happens, leaves the reader
-without the fact they came for. Say what the machine does, name the actor, and
-end the section at its last fact.
+A paragraph opens on its subject by name, even when the paragraph before named
+it, and a section ends at its last fact. Aphorisms and outcome-only sentences
+leave out the mechanism the reader came for.
 
 | Pattern | Before | After |
 |---|---|---|
 | A pronoun opening a paragraph | It runs the same engine as the app. | The renderer runs the same engine as the app. |
-| "The same X" across a heading | The same track feeds the graph view. | The `hprc_lanes` track also feeds the graph view. |
+| "The same X" across a heading | The same track feeds the graph view. | The `coverage` track also feeds the graph view. |
 | A count standing in for its nouns | Click **Share**, or save the session to a file. *(video)* Both hold the same JSON. | The JSON from the Share dialog and the saved session file contain the same session. |
-| An aphorism opening a section | A phone GPU is still a phone GPU. | A phone GPU has much less headroom. |
+| An aphorism closing a section | The rate limit counts retries. A retry is still a request. | The rate limit counts retries as requests. |
 | A conclusion standing in for the mechanism | A marker that does not parse stops the build. | The generator exits with an error on a marker it cannot parse, so the build fails. |
-| Silently, quietly, invisibly | The second bug is the same class of wrong, quieter. | The second bug writes the wrong value and raises no error. |
+| Silently, quietly, invisibly | The second bug silently writes the wrong value. | The second bug writes the wrong value and raises no error. |
 
 ### Paragraph transitions
 
-A paragraph that introduces a new version, a redesign or a fix has two halves:
-what was wrong before, and what changed. Generated prose most often goes wrong
-at the step from one half to the other. Sometimes the first half is a plain
-description of the old version that leaves the reader to infer it was a
-problem. Sometimes the writer phrases the limitation in exactly the terms of the
-new version's feature list, so the whole paragraph reads as if it were written
-backwards from the solution. And sometimes the writer inserts a sentence about
-where the field has moved ("build tools have since shifted to incremental
-compilation") to motivate the change, with no citation or measurement behind
-it. Name the limitation as a limitation in one sentence, in general terms, and
-give the response a separate sentence.
+A paragraph that introduces a redesign states the limitation as a limitation in
+one sentence and the response in the next. A sentence about where the field has
+moved, with no citation behind it, adds nothing.
 
 | Pattern | Before | After |
 |---|---|---|
-| A description where a limitation belongs | Version 1 opens one file at a time. Version 2 opens several. | Version 1 is limited to one open file at a time. Version 2 removes that limit by opening files in tabs, so you can compare two files side by side. |
-| A problem sized to the solution | Version 1 cannot show a diff between two files. Version 2 shows diffs. | Version 1 is limited to one open file at a time. Version 2 opens files in tabs, so it can show a diff between two. |
+| A description where a limitation belongs | Version 1 opens one file at a time. Version 2 opens several, in tabs. | Version 1 is limited to one open file at a time. Version 2 removes that limit by opening several files in tabs. |
+| A problem sized to the solution | Version 1 cannot show a diff between two files. Version 2 opens files in tabs and shows diffs. | Version 1 is limited to one open file at a time. Version 2 opens files in tabs, so it shows diffs. |
 | A narrative bridge | Build tools have since moved toward incremental compilation. Our build recompiled every file on each change. We added a dependency graph, so it now recompiles only the files a change affects. | Our build recompiled every file on each change. We added a dependency graph, so it now recompiles only the files a change affects. |
-| The old tool as the subject | A browser that reads PAF downloads the whole file to draw any region. We created PIF, which `make-pif` generates from PAF. | To limit the data transferred to the alignments in view, we created PIF, a Tabix-indexed form of PAF. |
+| The old tool as the subject | A viewer that reads a log file downloads the whole file to show any line range. We created a chunked format, which `make-chunks` generates from a log file. | To limit the data transferred to the line range in view, we created a chunked format, which `make-chunks` generates from a log file. |
 
 ### Headings and labels
 
-Someone scanning for a subject reads a heading, and someone looking up one entry
-reads a flag table, so both have to name the thing plainly. A teaser heading
-withholds the subject to create interest, a phrase heading ("where the file
-goes") makes the reader parse a clause where a noun would do, a negative heading
-tells them what a section is not about, and a joke in a reference table makes
-them decode a label they only wanted to read. Name the subject in the heading,
-in sentence case, and give each flag a plain label. A bold lead on every bullet
-of an ordinary list is decoration from the same habit, and it belongs only where
-the bullet defines a term.
+A heading names its subject in sentence case, and a flag table gives each flag a
+plain label.
 
 | Pattern | Before | After |
 |---|---|---|
@@ -149,19 +102,12 @@ the bullet defines a term.
 | A phrase where a noun would do | Where the file goes | Output |
 | A heading that says what a thing is not | What it does not do | Limitations |
 | A heading that gives its subject agency | What a database answers | Contents and limitations |
-| Cute naming in a reference table | `--seed=<n>` \| the dice | `--seed=<n>` \| random seed; the same seed gives the same output |
+| Cute naming in a reference table | `--seed=<n>` \| the dice | `--seed=<n>` \| random seed |
 
 ### Comments and history
 
-A code comment describes the current behavior of the code beside it, and
-nothing else. A comment that recounts how the code got here ("used to leave the
-Cancel button showing") or argues for the choice at essay length is carrying
-material that belongs elsewhere: the history in the commit message, and the
-rationale in a design doc that the comment can point to. A document that reads
-as a changelog, with a paragraph explaining what the previous version did before
-saying what this one does, has the same fault at page scale. Write the
-constraint the code satisfies, with the measurement if there is one, and write
-emphasized words in lowercase.
+A code comment states what the code does now. History belongs in the commit
+message and rationale in a design doc.
 
 | Pattern | Before | After |
 |---|---|---|
@@ -171,50 +117,30 @@ emphasized words in lowercase.
 
 ### Register
 
-Four word-level patterns are distinctive to generated text. A verb cluster
-stacks "leverage", "utilize" and "ensure" where "use", "check" and "make" were
-meant. A participle clause draws a conclusion nobody is making ("highlighting
-how the two stages interact"). An invented label appears as if it were an
-established term. A cycle of synonyms for one thing makes the reader suspect
-three things.
-
-A single promotional adjective such as "robust" or "seamless", a
-borrowed-authority phrase such as "surveys show", or a sentence adverb such as
-"Additionally" is weak prose that people wrote long before LLMs existed. Fix
-those as well, because the plain verb and the stated relation carry more
-information than the filler did. Use the plain verb, delete the adjective, and
-use one term per thing throughout. An unqualified comparative such as "faster"
-is fine as it stands, and a measurement invented to replace it reads worse than
-the word did.
-
-The pitch register uses none of those words and sells the thing anyway. "WebGPU
-is the most modern GPU API in browsers, and it does more than draw" ranks the
-API and boasts a capability, and the reader can check neither claim. The same
-register produces the future-potential teaser ("they could do much more") and
-the priority claim ("an early use of compute shaders in a genome browser").
-Write what the thing does, give a superlative the measurement that ranks it, and
-give a priority claim the citation it comes before.
+Generated text favors a small set of words and moves: stacked verbs such as
+"leverage" and "ensure", participle clauses that draw a conclusion nobody is
+making, invented labels, and a pitch that sells the thing without describing it.
+Use the plain verb, one term per thing, and a measurement behind any
+superlative.
 
 | Pattern | Before | After |
 |---|---|---|
-| The verb cluster | The tool leverages a comprehensive set of heuristics to ensure correctness. | The tool checks each file against a set of heuristics. |
-| Present-participle synthesis | Scores drop after the tokenizer change, highlighting how the two stages interact. | Scores drop after the tokenizer change, because the tagger was trained on the old token boundaries. |
+| The verb cluster | The tool leverages a comprehensive set of heuristics to ensure correctness. | The tool uses a set of heuristics to check correctness. |
+| Present-participle synthesis | Scores drop after the tokenizer change because the tagger was trained on the old token boundaries, highlighting how the two stages interact. | Scores drop after the tokenizer change because the tagger was trained on the old token boundaries. |
 | A goal with no quantity | To optimize the rendering of alignments, we created an indexed format. | To limit the data transferred when drawing alignments to the region in view, we created an indexed format. |
 | A sentence adverb | Ultimately, the index is the bottleneck. | The index is the bottleneck. |
 | Small tics | The cache serves as the source of truth. | The cache is the source of truth. |
-| A code-internal verb | A query names walks by one of two routes. | A query identifies walks by one of two routes. |
-| The pitch register | WebGPU is the most modern GPU API in browsers, and it does more than draw. | A WebGPU compute shader runs general-purpose work on the GPU. |
+| A code-internal verb | The loader hydrates each record from the cache or the database. | The loader fills in each record from the cache or the database. |
+| The pitch register | The library is the most modern JSON toolkit, and it does more than parse: it validates against a schema. | The library parses JSON and validates it against a schema. |
 
 The skill also lists what a fix must preserve, and ships `scan.sh`, which greps
 a file or directory for the markers and labels each hit by section.
 
 The skill borrows from the [tropes.fyi directory](https://tropes.fyi/directory),
 the [Writing Whip](https://tropes.fyi/whip) and
-[Wikipedia's Signs of AI writing](https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing),
-and differs from them in three ways. It tells the writer to delete contrastive
-framing by default, it pairs every pattern with a rewrite, and it adds sections
-for technical prose: stance and agency, sentence shapes, openings and closings,
-paragraph transitions, headings and labels, comments and history, and register.
+[Wikipedia's Signs of AI writing](https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing).
+It differs in three ways: it deletes contrastive framing by default, it pairs
+every pattern with a rewrite, and it adds sections for technical prose.
 
 ## Install
 
@@ -256,4 +182,4 @@ it by name, e.g. "review README.md with the anti-ai-writing-tropes skill".
   promotional vocabulary, vague attribution and present-participle synthesis.
 - The writing guides in [videoskillet](https://github.com/cmdcolin/videoskillet/blob/main/docs/WRITING.md)
   and [react-msaview](https://github.com/GMOD/JBrowseMSA/blob/main/docs/WRITING.md),
-  where most of the technical-prose patterns and examples first appeared.
+  where most of the technical-prose patterns first appeared.
