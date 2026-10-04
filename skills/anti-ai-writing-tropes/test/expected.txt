@@ -28,3 +28,4 @@
 [number] 47:The graph holds 130,510 bubbles and the median is 0.873.
 [agency] 51:Each haplotype that carries the allele is blue.
 [agency] 52:The sort collects the inversion's carriers into a block.
+[float] 54:The tool was created for lightweight deployments and redraws every item after a zoom.

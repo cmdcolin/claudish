@@ -332,6 +332,26 @@ announcement and state the fact.
 > The key insight is that the index is sorted, which lets lookups use binary
 > search. → The index is sorted, so lookups can use binary search.
 
+**The floating fact.** A sentence states something true about a thing and
+draws no consequence, so the reader has to guess why it is there. The commonest
+form glues two facts with "and", one about where the thing came from and one
+about what it does, and the first explains nothing about the second.
+
+> The tool was created for lightweight deployments and redraws every item to a
+> canvas after a zoom. → The tool redraws every item to a canvas after a zoom,
+> so its redraw time grows with the number of items in view.
+
+Drop the fact that does no work, and end the sentence on the consequence. A
+fact the compared thing shares (both tools are lightweight) explains no
+difference between them, so it goes first.
+
+When the cause is the writer's own work, name it with "we" and "because". A
+generality in its place reads as evasion, not care.
+
+> The margin is widest at high coverage, where that work is largest. → The
+> margin is widest at high coverage, because we put our optimization work into
+> the parsers, and more reads mean more parsing.
+
 **Narrated deliberation.** The text describes its own thinking ("What that
 changes in the design is worth being precise about") or defends a minor point
 against an objection nobody raised ("We spell this out rather than changing it
@@ -612,6 +632,23 @@ A turn that opens on "that limit" or "this approach" only works for a reader
 who has the previous paragraph in mind. See [A pronoun opening a
 paragraph](#openings-and-closings).
 
+**The spliced insertion.** A clause or sentence pushed into an existing
+paragraph to keep the change small. The host paragraph's sentences were written
+to follow one another, and the insertion breaks that: a new subject arrives
+with no backward link, a three-item list gains an example on two items and not
+the third, a citation lands on the second mention of a name instead of the
+first. Moving a sentence verbatim does the same, and keeps every defect the
+sentence already had. When a paragraph needs a change, rewrite it as a unit,
+then read the rules against the whole.
+
+> There is a need to visualize cohorts such as Project A [1], comparisons, and
+> graphs such as Graph B [2]. Tool C draws a cohort of hundreds of samples [3].
+> Unfortunately, our earlier design ... → Researchers now need to inspect a
+> whole cohort or a set of genomes at once, such as Project A [1] or Graph B
+> [2]. Tool C draws such a cohort on the GPU from a specification [3], and its
+> authors set it apart from track-based browsers such as ours. Our earlier
+> design ...
+
 ## Headings and labels
 
 **A teaser heading.** A heading or title that withholds its subject to create
@@ -833,7 +870,7 @@ an alignment").
 plain-text files under a path for the markers above, and labels each hit by the
 section its marker comes from: `contrast`, `shape`, `agency`, `colon`,
 `apposition`, `opening`, `passive`, `history`, `register`, `pitch`, `claim`,
-`number`, `coldstart` and `staccato`. Read each hit in context. The `claim` label marks a
+`number`, `float`, `coldstart` and `staccato`. Read each hit in context. The `float` label marks an origin statement ("was created for") or a "where that work is largest" generality, the two common forms of a floating fact. The `claim` label marks a
 comparison to another tool ("in the same way", "similar to"), which needs
 checking against that tool's documentation. The `pitch` label marks a capability
 boast, a superlative, a potential teaser or a priority claim; a superlative that

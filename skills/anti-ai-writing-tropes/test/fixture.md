@@ -50,3 +50,5 @@ Open chr6:70,080,000-70,180,000 to see it.
 
 Each haplotype that carries the allele is blue.
 The sort collects the inversion's carriers into a block.
+
+The tool was created for lightweight deployments and redraws every item after a zoom.
