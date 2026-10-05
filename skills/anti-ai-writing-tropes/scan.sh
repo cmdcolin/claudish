@@ -44,7 +44,7 @@ scan aphorism   ''  ', not (who|what|where|when|how|which|why)\b|, not .*( and n
 scan shape      ''  '(^|\. )So that | — | -- |the (whole )?point|honest|payoff|worth (naming|noting|being)|key insight|the result\?'
 scan agency     ''  '\b(cannot|doesn.t|does not) know|says |exists to|earns|buys |load-bearing|one-way door|footgun|moves the needle|surfaces |for free|costs? nothing|stands? between|\b(its|their) own\b|\bcarr(y|ies|ied|ying|iage|iers?)\b'
 scan colon      ''  '[a-z]: [a-z]'
-scan apposition ''  ', (one|ones|a|an) (that|which|whose|where) |, (a|an) [a-z-]+ (that|which|whose) '
+scan apposition ''  ', (one|ones|a|an) (that|which|whose|where) |, (a|an) [a-z-]+ (that|which|whose) |, (its|their) [a-z-]+ (through|across|between|of) '
 scan opening    ''  '^(Nothing|No one|None) |not (the|its|our) job|silently|quietly|invisibly|\bhere.s (the|where)|let.s (break|dive|unpack)|think of it as|in summary|as we.ve seen|for (two|three) reasons|(two|three) things'
 scan passive    ''  '\b(is|are|was|were) ([a-z]+ed and [a-z]+ed|[a-z]+ed by|left unset)\b'
 scan history    ''  'used to |previous version|found while|\b(ONLY|NOT|NEVER|ALWAYS|MUST|CANNOT|EVERY|SAME|BOTH|EACH|ALL|ANY|BEFORE|AFTER|FIRST|EXACTLY|WHOLE|MORE|LESS|AND|IS|ARE|WAS|DOES|DON.T|DOESN.T|ISN.T|CAN.T|WON.T)\b'

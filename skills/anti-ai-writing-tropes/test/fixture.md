@@ -52,3 +52,5 @@ Each haplotype that carries the allele is blue.
 The sort collects the inversion's carriers into a block.
 
 The tool was created for lightweight deployments and redraws every item after a zoom.
+
+A graph stores each haplotype as a walk, its path through the nodes.

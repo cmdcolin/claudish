@@ -440,6 +440,16 @@ sentence.
 >
 > Version 1 opens one file, a design that cannot compare two → Version 1 opens
 > one file, so it cannot compare two
+>
+> A graph stores each haplotype as a walk, its path through the nodes → A graph
+> stores each haplotype as a walk that lists, in order, the nodes it passes
+> through
+
+The appositive can also open on a possessive ("a walk, its path through ...").
+Fold it into a relative clause that says what the noun contains. Writing "a walk
+which represents its path" swaps the pause for an abstract verb and leaves the
+term undefined. A comma gloss that names a new term for the first time ("Ribbons,
+the bands drawn between aligned regions, join ...") is fine.
 
 **A fronted "So that" clause.** "So that X happens, we did Y" puts the result
 before the actor and reads as translated. Open on "To" with the goal, or put
