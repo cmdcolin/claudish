@@ -24,33 +24,23 @@ before each arrow is the habit, and the text after it is the sentence to write.
   keep the rest as full sentences. Compressing every sentence yields a
   [staccato run](#sentence-shapes) or a
   [compressed noun phrase](#sentence-shapes).
-- Improving a document: start by cutting. Two passes that kept every paragraph
-  and fixed each sentence grew a docs set from 1,391 to 1,460 lines, and a pass
-  that cut brought it to 814. Keep the tables, numbers and examples a reader
-  looks up, and delete the prose that walks through them.
-- Rewording a paragraph: rewrite the whole paragraph and reflow it. A clause
-  spliced into the old line leaves two dependent ideas in one sentence with no
-  word to connect them.
-
-  > The process limit caps the batch size, where the server renders each
-  > report in a separate process because each report is an independent job →
-  > Each report is an independent job, so the server renders each one in a
-  > separate process. The operating system caps the processes per user, so a
-  > batch with more reports than that would exceed the cap
-
+- Improving a document: start by cutting. Fixing every sentence of a document
+  that keeps every paragraph makes it longer, because the fixes add clauses. Keep
+  the tables, numbers and examples a reader looks up, and delete the prose that
+  walks through them.
+- Rewording a paragraph: rewrite the whole paragraph and reflow it. See
+  [Rewrite the paragraph as a unit](#paragraph-transitions).
 - Answering in a chat: apply the same checklist. An explanation of a system
-  invites agency tropes ("the cache hands us every request's entry", "the cache
-  earns its place"). Make a program or a person the subject, and describe data
-  with contains, lists or records.
+  invites agency tropes ("the cache earns its place"), so make a program or a
+  person the subject and describe data with contains, lists or records.
 - Reviewing for someone else: report every instance, then triage. Write one
   line per finding: `file:line`, the trope name, the quoted phrase, the
   rewrite. Group lines by file and put the tropes that recur across the
   document at the top, because one habit fixed at the source clears many lines.
 - Delegating a review: name every section of this checklist in the brief with
-  one example each. Agents mostly return the sections `scan.sh` finds (clefts,
-  pronoun openings, "used to"), so run a second pass for the sections the scan
-  cannot find, such as Stance and agency, and quote misses from the files as
-  its examples. Read each returned diff for changed claims before accepting it.
+  one example each, then run a second pass for the sections `scan.sh` cannot
+  find, such as Stance and agency, quoting misses from the files as examples.
+  Read each returned diff for changed claims.
 - Instruction files: fix `CLAUDE.md`, `AGENTS.md` and similar files first,
   because agents copy their prose into everything they write. Write each style
   rule in the style it asks for, and pair it with the rewrite to copy: a model
@@ -69,12 +59,7 @@ against an alternative the reader never raised.
 > remembered. → CI runs the install command from the README, so the command is
 > tested.
 >
-> The overlay is drawn once instead of per page. → The overlay is drawn once.
->
 > It's not a cache. It's a log. → It is a log.
->
-> The question isn't speed. The question is correctness. → The question is
-> correctness.
 >
 > The CLI doesn't just fetch the page, it caches it. → The CLI fetches the page
 > and caches it.
@@ -111,7 +96,7 @@ Keep "only" where the restriction is the fact: "the pager reads only the 64 KiB
 blocks a query touches" answers a bandwidth question the reader has.
 
 **When a contrast stays.** Keep the negative half when a reader who never saw
-it would make a wrong choice or hold a wrong belief:
+it would choose wrongly or believe something false:
 
 - An option the reader would otherwise pick: "Use `--force-with-lease`, not
   `--force`" names the flag people type by mistake.
@@ -121,18 +106,14 @@ it would make a wrong choice or hold a wrong belief:
   purpose.
 
 Judge one sentence at a time, because a decision record or an API reference
-still contains contrasts written for rhythm. API documentation often holds the
-one behavior that separates two functions in the negative half: "The strict
-runner propagates a throw to the caller instead of logging it" is the whole
-difference between the strict and the plain runner. Keep that sentence, or
-write one positive statement per function. A plain sentence usually states a
-kept contrast better: "Latency is the median, because the mean is skewed by
-timeouts."
+still contains contrasts written for rhythm. "The strict runner propagates a
+throw to the caller instead of logging it" is the whole difference between two
+functions, so keep it or write one positive statement per function. A plain
+sentence usually states a kept contrast better: "Latency is the median, because
+the mean is skewed by timeouts."
 
-Two shapes get the plain rewrite even when the fact passes the test: the
-question-word clause ("not who has what", "not where it came from") and two
-contrasts stacked in one sentence. Give the absence its own sentence and say
-what is missing.
+Give a question-word clause ("not who has what") or two stacked contrasts its
+own sentence that says what is missing.
 
 > The manifest records what the build contains, not who requested it, because
 > the `owner` field is the build host and not the user. → The manifest records
@@ -179,14 +160,11 @@ component or person that acts the subject.
 
 > CD8A is carried by the CD8 rows → the CD8 rows have signal at CD8A
 >
-> every record carries the result as its `svType` field → each record's
-> `svType` field holds the result
->
 > the allele rose and carried its neighbours with it → the allele rose in
 > frequency, and its neighbouring variants rose with it
 
-In idioms, "carries on" becomes "continues", and "carries over" becomes "stays"
-or "applies".
+"Carries on" becomes "continues", and "carries over" becomes "stays" or
+"applies".
 
 **Describe an artifact by what it contains or does.** "The choice it exists to
 offer" and "the failure this layer exists to avoid" give a purpose or a will to
@@ -205,9 +183,6 @@ many there are per what. "Its own X" nearly always means one X per Y.
 >
 > each lane draws its own cluster genes → each lane draws the cluster genes
 > annotated in that genome
->
-> each haplotype on its own contig with its own gene models → one contig per
-> haplotype, with the gene models annotated on that contig
 >
 > each haplotype takes its own row → the display draws each haplotype in a
 > separate row
@@ -237,16 +212,11 @@ through a page ("doors", "walls") becomes a dead metaphor.
 | buys (room, time, safety) | saves, gives, allows |
 | for free, costs nothing | with no extra code, adds no request, takes no time |
 | stands between X and Y | prevents X from becoming Y |
-| pays for itself, pays double | costs less than it saves, is useful twice |
 | a dial / knob / lever | a parameter, an option |
 | load-bearing | required, depended on |
 | a one-way door | irreversible |
 | rots, drifts, goes stale | falls out of date when X changes |
-| fight over, compete for | both write, both read |
-| the edge, the frontier | the exception, the limit |
 | lives in, lands in, arrives | is defined in, is stored in, is loaded |
-| a second door, the front door | a second entry point, the main API |
-| reads loud / reads quiet | is high / is low |
 | the shape (of a problem, of data) | the structure, the format, the pattern |
 | surfaces (a problem) | reports, shows |
 | a footgun, a trap | an error-prone API; name the error |
@@ -259,8 +229,8 @@ deprecated") and a passive whose actor does not matter. Keep the passive when
 the actor is unknown too, because "the service keys requests" or "a cleanup
 step collapses the calls" invents a component the reader will look for.
 
-> The arena sizes itself up front → The record pass sizes the arena up front
-> (invents a component the reader will look for) → The arena is sized up front
+> The arena sizes itself up front → The arena is sized up front (the record
+> pass sizing it would be a component the reader goes looking for)
 
 ## Sentence shapes
 
@@ -311,9 +281,6 @@ generality in its place reads as evasion.
 > what it changes is worth being precise about → The change moves validation
 > from the client to the server.
 
-**The self-answered question.** "The result? A 3x speedup." becomes "The result
-is a 3x speedup."
-
 **Dramatic negation.** A sentence whose subject is "nothing", "no one" or
 "none", or a "not X's job", reads as a pronouncement. Say what does happen.
 
@@ -321,12 +288,6 @@ is a 3x speedup."
 > is.
 >
 > Producing the file is not the viewer's job → The CLI produces the file.
-
-**A which-ladder.** One relative clause per fact, with the chain split into
-sentences.
-
-> a different file, which is a new model, which React spells `key` → A new file
-> needs a new model, so change the component's `key`.
 
 **Two conclusions stacked on "so".** Give the second conclusion its own
 sentence.
@@ -363,9 +324,6 @@ short sentence for a single step or a standalone fact.
 > The key includes the path. A rename changes the key. The cache misses. → The
 > key includes the path, so a rename changes the key and misses the cache.
 
-**A false range.** "From parsing to rendering to export" becomes a list of the
-items, or the one that matters.
-
 **A colon lead-in.** Start on the facts. A colon that introduces a list or an
 example ("four sets of measurements: ...") is fine; a generalization before
 the colon with specifics after it makes the reader match the abstract half to
@@ -388,20 +346,16 @@ the appositive into a relative clause on the noun, or split the sentence.
 > stores each haplotype as a walk that lists, in order, the nodes it passes
 > through
 
-The appositive can open on a possessive ("a walk, its path through ..."). Fold
-it into a relative clause that says what the noun contains. "A walk which
-represents its path" swaps the pause for an abstract verb and leaves the term
-undefined. A comma gloss that names a new term for the first time ("Ribbons,
-the bands drawn between aligned regions, join ...") is fine.
+A possessive opener ("a walk, its path through ...") gets a relative clause
+that says what the noun contains. A comma gloss that names a new term for the
+first time ("Ribbons, the bands drawn between aligned regions, join ...") is
+fine.
 
 **A fronted "So that" clause.** Open on "To" with the goal, or put the purpose
 after the main clause.
 
 > So that the page loads faster, we added an index → To make the page load
 > faster, we added an index
-
-**A comma-clipped tail.** End the sentence at its last fact. "It rebuilds on
-every keystroke, every time" becomes "It rebuilds on every keystroke."
 
 **A compressed noun phrase.** A noun phrase packs a clause into its modifiers:
 an option or a verb becomes an adjective ("a dirty half", "the named half of
@@ -422,14 +376,10 @@ write the sentence, or delete it when the page can do without it.
 A term the page defines, or an API name in code font such as `keep`, is fine.
 See also [An invented concept label](#register).
 
-**Density.** Fixing the tropes above adds clauses, so after a pass split a
-sentence that states unrelated facts, and break a paragraph where the subject
-changes. Keep facts that depend on each other in one sentence.
-
-**Em-dash asides.** One per paragraph is punctuation, and three signal a writer
-avoiding sentence boundaries. A ` -- ` in a code comment is the same habit.
-Promote one aside to a sentence, demote another to a comma, and keep a dash
-around a parenthetical remark.
+**Em-dash asides.** One per paragraph is punctuation. For three, promote one
+aside to a sentence and demote another to a comma. A ` -- ` in a code comment
+follows the same rule. After a pass, split a sentence that states unrelated
+facts, and keep dependent facts together.
 
 ## Openings and closings
 
@@ -463,13 +413,7 @@ sentence after the announcer. A preview that names its parts is fine: "The
 design has two constraints: it must run offline and fit under 50MB."
 
 **The claim first.** Put the claim ahead of its evidence, start at the first
-observation, and stop a section at the last one. Premises before the claim, an
-opening that argues for the page's importance, and a wrong inference named only
-to refute it delay the content.
-
-**A term defined where it is introduced.** When an opening sentence mentions a
-feature in passing ("stores each record at two resolutions") and a later
-paragraph defines it, move the two together, or introduce the feature in the
+observation, and stop a section at the last one. Introduce a feature in the
 paragraph that defines it.
 
 **A closing that ends with the last fact.** "In summary", "As we've seen", a
@@ -477,10 +421,10 @@ paragraph restating each section, a tie-back to the opening question ("So, to
 answer the original question: yes") and a final sentence that stacks clause
 after clause all restate. A reference page ends when its last fact does.
 
-**Length matched to substance.** An overview that repeats the headings, a
-summary per section and a boilerplate "Future work" pad a document. A report or
-PR description leads with the outcome, meaning what changed or what was found,
-and puts supporting detail after it.
+**Length matched to substance.** A report or PR description leads with the
+outcome, meaning what changed or what was found, and puts supporting detail
+after it. A reference page needs no overview, per-section summary or
+boilerplate "Future work".
 
 **A subject named at the start of a paragraph.** A reader arriving by search hit
 or deep link has no antecedent for "It", "This", "That" or "that limit". Name
@@ -517,11 +461,17 @@ A paragraph that introduces a design or a project states the problem with the
 prior state in one sentence and gives the response in the next.
 
 **State the limitation as a limitation.** The pattern: *A is limited to X. B
-removes that limit by doing Y, so it can Z.*
+removes that limit by doing Y, so it can Z.* Word the limitation generally,
+because one that matches the new tool's headline features exactly reads as
+back-formed.
 
 > Version 1 opens one file at a time. Version 2 opens several, in tabs →
 > Version 1 is limited to one open file at a time. Version 2 removes that limit
 > by opening several files in tabs
+>
+> Version 1 cannot show a diff between two files. Version 2 opens files in tabs
+> and shows diffs → Version 1 is limited to one open file at a time. Version 2
+> opens files in tabs, so it shows diffs
 
 **Cite or cut the narrative bridge.** A sentence about how the field moved
 ("teams have since shifted to monorepos", "that design fit its era") written to
@@ -532,14 +482,6 @@ motivate the turn is a claim the reader will test. Start at the limitation.
 > recompiles only the files a change affects. → Our build recompiled every
 > file on each change. We added a dependency graph, so it now recompiles only
 > the files a change affects.
-
-**State the general limitation, then the features.** A limitation worded in
-exactly the terms of the new tool's headline features reads as back-formed. The
-features follow from the general limitation in the next sentence.
-
-> Version 1 cannot show a diff between two files. Version 2 opens files in tabs
-> and shows diffs → Version 1 is limited to one open file at a time. Version 2
-> opens files in tabs, so it shows diffs
 
 **Make the new thing the subject.** A paragraph introducing a new format or
 tool names it in the first sentence. Keep the old tool's limitation to a clause
@@ -558,13 +500,11 @@ three-item list gains an example on two items, a citation lands on the second
 mention of a name. Moving a sentence verbatim carries its old defects along.
 Rewrite the paragraph, then read the rules against the whole.
 
-> There is a need to visualize cohorts such as Project A [1], comparisons, and
-> graphs such as Graph B [2]. Tool C draws a cohort of hundreds of samples [3].
-> Unfortunately, our earlier design ... → Researchers now need to inspect a
-> whole cohort or a set of genomes at once, such as Project A [1] or Graph B
-> [2]. Tool C draws such a cohort on the GPU from a specification [3], and its
-> authors set it apart from track-based browsers such as ours. Our earlier
-> design ...
+> The process limit caps the batch size, where the server renders each
+> report in a separate process because each report is an independent job →
+> Each report is an independent job, so the server renders each one in a
+> separate process. The operating system caps the processes per user, so a
+> batch with more reports than that would exceed the cap
 
 ## Headings and labels
 
@@ -628,58 +568,48 @@ becomes "the only difference".
 
 ## Register
 
-**Match the register of the document.** Judge a word by the document it appears
-in. A plain unqualified comparative ("faster", "much smaller") is fine, because
-a made-up or overly precise number reads worse than the word it replaces.
+**Plain comparatives.** A plain unqualified comparative ("faster", "much
+smaller") is fine, because a made-up or overly precise number reads worse than
+the word it replaces.
 
 **Round numbers and checkable figures.** "130,510 rows", "ranked 50th of
 9,444" and "an index of 37,545 bytes against the old one's 20,622" claim an
 authority the page cannot back, and they go out of date when the data or code
-changes, with nothing to flag it. Say which way the result went, and point at a
-figure, a table or a script that shows how far. A round magnitude ("about a
-thousand"), a coordinate, an identifier and a published size name something and
-stay.
+changes. Say which way the result went, and point at a figure, a table or a
+script that shows how far. A round magnitude ("about a thousand"), a
+coordinate, an identifier and a published size stay.
 
 > The new index is 37,545 bytes against the old one's 20,622 → The new index is
 > nearly twice the size of the old one
 
-**A goal with a quantity.** "To optimize rendering", "to improve performance"
-and "to help with scale" name a direction. Name the quantity the design lowers
-or raises: bytes transferred, time to first draw, memory per track.
+**A goal with a quantity.** "To optimize rendering" names a direction. Name the
+quantity the design lowers or raises: bytes transferred, time to first draw,
+memory per track.
 
 > To optimize the rendering of alignments, we created an indexed format → To
 > limit the data transferred when drawing alignments to the region in view, we
 > created an indexed format
 
 **The verb a user of the tool would say.** A verb from the program's vocabulary
-or from the authors' private metaphors ("hydrates" a record, "resolves" a path,
-"names" a column) reads as translated. Use identify, label, look up or fill in,
-and keep the internal word in code font where it is an identifier.
+("hydrates" a record, "resolves" a path, "names" a column) reads as translated.
+Use identify, label, look up or fill in, and keep the internal word in code
+font where it is an identifier.
 
 > The loader hydrates each record from the cache or the database. → The loader
 > fills in each record from the cache or the database.
->
-> The router resolves a path to a handler. → The router looks up a handler for
-> a path.
 
-**An abbreviation glossed at first use.** Expand a format or tool name ("WAL",
-"BGZF") where a reader who does not know it will stop.
+**An abbreviation glossed at first use.**
 
 > The output is a WAL file → The output is a WAL file, the write-ahead log the
 > database appends each change to
 
-**The description in place of a pitch.** A pitch sells the thing's capability or
-standing, and its plain vocabulary slips past the promotional word list. The
-tell is a claim the reader cannot check. Its forms:
+**A description in place of a pitch.** A pitch sells the thing's capability or
+standing in plain vocabulary, and the tell is a claim the reader cannot check:
 
-- A capability boast: "does more than draw", "goes beyond rendering", "is not
-  limited to alignments".
-- An unquantified superlative: "the most modern GPU API", "state of the art",
-  "industry-leading".
-- A future-potential teaser: "they could do much more", "the possibilities are
-  broad".
-- A novelty or priority claim: "an early use of compute shaders in a map
-  viewer", "the first tool to index CSV".
+- A capability boast: "does more than draw", "is not limited to alignments".
+- An unquantified superlative: "the most modern GPU API", "state of the art".
+- A future-potential teaser: "they could do much more".
+- A novelty or priority claim: "the first tool to index CSV".
 
 Write what the thing does. A superlative needs the measurement that ranks it,
 and a priority claim needs the citation it comes before.
@@ -690,26 +620,21 @@ and a priority claim needs the citation it comes before.
 
 **Plain words for promotion and authority.** Replace `vibrant`,
 `groundbreaking`, `boasts`, `flagship`, `crisp`, `seamless`, `robust`, the
-`delve` / `tapestry` / `testament` / `showcase` / `pivotal` cluster, and "This
+`delve` / `tapestry` / `testament` / `showcase` / `pivotal` cluster and "This
 changes how we think about configuration" with what the thing does. Cite
-`industry reports`, `surveys show`, "a classic", "famously" and "the
-well-known", or drop the adjective.
+`industry reports`, `surveys show`, "a classic" and "famously", or drop them.
 
-**A transition that is a clause.** "Additionally", "Furthermore", "Moreover",
-"Notably", "Importantly", "Ultimately" and "Overall" at the head of a sentence
-say the sentence relates to the last without saying how. Delete the adverb, or
-write the relation as a clause.
+**Clauses for transitions.** "Additionally", "Furthermore", "Moreover",
+"Notably", "Importantly", "Ultimately" and "Overall" say a sentence relates to
+the last without saying how. Delete the adverb, or write the relation as a
+clause.
 
-> Additionally, the server clears the cache on restart. → The server clears
-> the cache on restart.
->
 > Ultimately, the index is the bottleneck. → The index is the bottleneck.
 
 **The plain verb.** Write use, simplify, let, check and make for `leverage`,
-`utilize`, `streamline`, `empower`, `unlock`, `ensure` and `enable`. Drop the
-filler adjectives `comprehensive`, `crucial`, `essential` and `key` and the
-quantifiers "a variety of" and "a range of". Supply the plain verb alone, with
-no added count or list.
+`utilize`, `streamline`, `empower`, `unlock`, `ensure` and `enable`. Drop
+`comprehensive`, `crucial`, `essential`, `key`, "a variety of" and "a range of",
+and add no count or list the original lacked.
 
 > The tool leverages a comprehensive set of heuristics to ensure correctness.
 > → The tool uses a set of heuristics to check correctness.
@@ -722,7 +647,7 @@ is a claim with nobody making it. Write it as a sentence or drop it.
 > after the tokenizer change because the tagger was trained on the old token
 > boundaries.
 
-**A description for an invented label.** "The staleness trap", "the dangerous
+**Descriptions for invented labels.** "The staleness trap", "the dangerous
 shape" and "config creep" read as established terms. Describe the thing the
 label stands for.
 
@@ -731,10 +656,8 @@ things. Pick the noun and repeat it, along with any distinctive word reused
 from earlier in the page ("quietly" in two sections).
 
 **"Is" for "serves as".** Write "is" for "serves as", "stands as" and
-"represents", and say the literal thing for "reads straight off", "tells a
-story", "shape" as an all-purpose noun, "counterpoint", "actually" and
-"genuinely". A circular sentence ("an alignment is an alignment") gets a
-definition.
+"represents", and the literal word for "reads straight off", "tells a story",
+"counterpoint", "actually" and "genuinely".
 
 > The cache serves as the source of truth → The cache is the source of truth
 
@@ -743,21 +666,16 @@ definition.
 - The claim. A rewrite that changes what a sentence asserts is worse however
   plain it reads.
 - Measurements. Numbers, identifiers, file paths and the names of mechanisms
-  are the content. A prose pass moves sentences around them. The exception is a
-  precise number the reader cannot check, covered under [Register](#register).
-  A rewrite can also add precision the original never claimed: "the absolute
-  heights survive the trip" becomes "the absolute heights round-trip exactly"
-  only when the code says so.
-- The mechanism. A rewrite that adds "in the same way as tool X", "each record
-  consists of" or "collapses into a single run" makes a new claim the spec may
-  contradict. Check the sentence against the spec or the code, or cut it.
-- Terms the tools use. The reader needs the word the manual uses for a flag or
-  a field.
-- An established idiom. A device an author uses deliberately and consistently
-  across a corpus stays, even when one instance gets flagged.
+  are the content. A rewrite adds precision the original never claimed when
+  "the absolute heights survive the trip" becomes "the absolute heights
+  round-trip exactly"; the code has to say so.
+- The mechanism. "In the same way as tool X", "each record consists of" and
+  "collapses into a single run" make new claims the spec may contradict. Check
+  the sentence against the spec or the code, or cut it.
+- Terms the tools use for a flag or a field.
+- An idiom an author uses deliberately and consistently across a corpus.
 - The author's voice in a README tagline or a personal note.
-- The distinctions a design record is about. A record that names the option it
-  declined needs both halves.
+- The option a design record declined, with both halves of the contrast.
 - Generated prose. Fix the generator, since an edit to the output lasts until
   the next build.
 
@@ -773,20 +691,16 @@ section: `contrast`, `negative`, `aphorism`, `shape`, `agency`, `colon`,
   is largest" generality.
 - `claim` marks a comparison to another tool ("in the same way", "similar to"),
   which needs checking against that tool's documentation.
-- `pitch` marks a capability boast, superlative, potential teaser or priority
-  claim. A superlative that reports a measurement is fine.
+- `pitch` marks boasts, superlatives, teasers and priority claims. A
+  superlative that reports a measurement is fine.
 - `number` marks a number grouped in thousands or with two or more decimal
-  places. A coordinate after a colon or a dash, a version and a DOI pass.
-- `coldstart` marks a paragraph whose first line opens on a pronoun, a
-  demonstrative, a count such as "Both" or "The two", or a sentence-initial
-  "So", "And" or "Hence". A paragraph that follows a list and opens on "These"
-  is usually fine.
+  places.
+- `coldstart` marks a paragraph that opens on a pronoun, a demonstrative, a
+  count such as "Both" or "The two", or a sentence-initial "So", "And" or
+  "Hence". A paragraph after a list that opens on "These" is usually fine.
 - `staccato` marks a paragraph or bullet with three sentences in a row of six
   words or fewer.
-- `history` matches ALL-CAPS emphasis words such as NOT, ONLY and SAME, and
-  passes acronyms such as BGZF or CIGAR.
-- `colon` and `apposition` mark the two sentence shapes that split a sentence
-  at its punctuation.
+- `history` matches ALL-CAPS emphasis words such as NOT, ONLY and SAME.
 
 ```sh
 # installed as a plugin
