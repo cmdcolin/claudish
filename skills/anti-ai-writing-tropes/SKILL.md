@@ -41,6 +41,9 @@ before each arrow is the habit, and the text after it is the sentence to write.
   one example each, then run a second pass for the sections `scan.sh` cannot
   find, such as Stance and agency, quoting misses from the files as examples.
   Read each returned diff for changed claims.
+- Auditing a user guide: run [user-guide-audit](../user-guide-audit/SKILL.md)
+  first, since it cuts and merges whole sections, then this checklist on what
+  is left.
 - Instruction files: fix `CLAUDE.md`, `AGENTS.md` and similar files first,
   because agents copy their prose into everything they write. Write each style
   rule in the style it asks for, and pair it with the rewrite to copy: a model

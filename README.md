@@ -5,9 +5,9 @@ Skills for Claude Code.
 | Skill | Use it for |
 |---|---|
 | [anti-ai-writing-tropes](skills/anti-ai-writing-tropes/SKILL.md) | Writing and reviewing docs, comments, captions, CLAUDE.md files and chat answers. A checklist of the habits that make prose read as generated, each with a rewrite. |
+| [user-guide-audit](skills/user-guide-audit/SKILL.md) | Cutting, merging and reordering a product's user guide, FAQ and feature pages, with screenshots in place of the paragraphs that describe the screen. |
 
-The checklist and its `scan.sh` script live in
-[SKILL.md](skills/anti-ai-writing-tropes/SKILL.md).
+Each skill's `SKILL.md` holds its checklist and the script beside it.
 
 ## Install
 
@@ -22,7 +22,7 @@ Or copy a skill into your personal skills directory:
 
 ```sh
 git clone https://github.com/cmdcolin/claudish
-cp -r claudish/skills/anti-ai-writing-tropes ~/.claude/skills/
+cp -r claudish/skills/anti-ai-writing-tropes claudish/skills/user-guide-audit ~/.claude/skills/
 ```
 
 Claude loads a skill when its description matches the task, or when you ask for

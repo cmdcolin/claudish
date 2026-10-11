@@ -1,0 +1,10 @@
+page                                              words figs
+fixture.md                                          201    1
+other.md                                              5    0
+
+[wall] fixture.md:5: 5 lines: One two three four five six seven eight nine ten eleven twel
+[wall] fixture.md:16: 5 lines: - One two three four five six seven eight nine ten eleven tw
+[bare] fixture.md:3: 183 words, no figure: ## Long section
+[alt] fixture.md:24: ![](img/a.png)
+[orphan] fixture.md
+[overlap] "limits": fixture.md, other.md

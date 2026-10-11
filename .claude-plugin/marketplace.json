@@ -10,10 +10,10 @@
     {
       "name": "claudish",
       "source": "./",
-      "description": "Skills for Claude Code, starting with a checklist of AI writing tropes and their rewrites",
-      "version": "0.2.0",
+      "description": "Skills for Claude Code: a checklist of AI writing tropes with their rewrites, and a user guide audit",
+      "version": "0.3.0",
       "strict": false,
-      "skills": ["./skills/anti-ai-writing-tropes"]
+      "skills": ["./skills/anti-ai-writing-tropes", "./skills/user-guide-audit"]
     }
   ]
 }
