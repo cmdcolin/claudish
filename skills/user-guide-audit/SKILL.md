@@ -23,8 +23,8 @@ read.
    See [Flow](#flow).
 5. **Show it.** Replace a paragraph that describes the screen with a picture
    of the screen. See [Screenshots](#screenshots).
-6. **Check claims.** Read every number, default, limit and shortcut against
-   the source. Correct a claim the source contradicts, and cut one it cannot
+6. **Check claims.** Read every number, default, limit, shortcut and button
+   label against the source. Correct a claim the source contradicts, and cut one it cannot
    back.
 7. **Scan the prose** with
    [anti-ai-writing-tropes](../anti-ai-writing-tropes/SKILL.md) and its
@@ -61,7 +61,8 @@ and why.
 - Cut a feature that does not exist yet, and the answer "not yet" padded to a
   paragraph.
 - Keep the surprise that has nothing in the interface to warn about it, even
-  when it is one sentence on a page you are cutting hard.
+  when it is one sentence on a page you are cutting hard. Reread the deleted
+  lines for one before committing a large cut.
 - Keep every keyboard shortcut, URL parameter and code span that leaves the
   page somewhere else, usually a reference table. Check the diff for any that
   vanished.
@@ -95,6 +96,12 @@ the figure.
 
 - A picture replaces the paragraph that described the screen. Delete that
   paragraph when the picture goes in.
+- Look for stills the project already makes, such as a landing page tour or a
+  store listing, before shooting new ones. Link the same files so the two
+  pages cannot drift apart, and compare their labels with the source first,
+  because a still can be a rename behind.
+- Rebase before retaking a shared still. Another branch may have retaken or
+  deleted it.
 - Shoot the whole window with a box round the subject. A tight crop of one
   panel reads as a screenshot of some other program, and the reader loses
   where the panel sits and what it does to the rest of the screen. Follow it
@@ -110,6 +117,8 @@ the figure.
 - Stamp each capture with the app version and fail a check when a shot with
   interface chrome falls a release behind. A shot of content alone, such as a
   rendered picture, does not date.
+- Read the built page at phone width. Three portrait stills in a row shrink
+  to thumbnails there, so the alt text has to carry the detail.
 - Use a short looping clip for anything that moves, with a poster frame so
   the page shows a frame before the clip loads.
 - A `[bare]` section is 150 words or more of prose with no figure. Either a
