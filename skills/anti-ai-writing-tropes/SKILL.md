@@ -552,7 +552,7 @@ it. Rename a heading that only gestures at a topic, and write the finding in
 its place; rearranging its words leaves it as vague as before.
 
 > What copying records costs → The cost of copying records (same heading) →
-> Trix copies the whole record onto every indexed word
+> `jbrowse text-index` copies the whole record onto every indexed word
 
 Rename a teaser, a heading built on a pronoun ("What it says"), and one in ALL
 CAPS or title case the same way.
