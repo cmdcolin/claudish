@@ -17,6 +17,7 @@ before each arrow is the habit, and the text after it is the sentence to write.
   is the same trope.
 - Reviewing a file or repo: run the `scan.sh` beside this file on the target,
   then read each hit in context. A hit is a lead, and some em-dashes are fine.
+  For many repos, `scan.sh --summary` counts the hits per file.
 - Fixing: keep every fact, number and claim. Reread the diff for a fact the
   rewrite deleted and for a detail it added to make a sentence concrete. See
   [Preserve](#preserve).
@@ -143,6 +144,10 @@ use a verb of description (marks, contains, shows, lists, is).
 > the cache sees the first request → the cache stores the first request
 >
 > signs that disagree → one end marked `+` and the other `-`
+>
+> Passing the cache as the filehandle collapses the reads to four fetches →
+> With the cache as the filehandle, the reader fetches the four chunks once and
+> answers every read from them
 
 **Describe having with "has", "contains", "lists" or "holds".** A sequence, a
 file, a record or a config has its contents. "Carry" casts that relation as an
@@ -222,6 +227,7 @@ through a page ("doors", "walls") becomes a dead metaphor.
 | lives in, lands in, arrives | is defined in, is stored in, is loaded |
 | the shape (of a problem, of data) | the structure, the format, the pattern |
 | surfaces (a problem) | reports, shows |
+| collapses (calls, requests) | merges, reduces to N |
 | a footgun, a trap | an error-prone API; name the error |
 | moves the needle | changes the measured result by N |
 
@@ -684,11 +690,21 @@ from earlier in the page ("quietly" in two sections).
 
 ## Quick scan
 
-`scan.sh` beside this file greps the Markdown, LaTeX, reStructuredText and
-plain-text files under a path for the markers above and labels each hit by its
-section: `contrast`, `negative`, `aphorism`, `shape`, `agency`, `colon`,
-`apposition`, `opening`, `passive`, `history`, `register`, `pitch`, `claim`,
-`number`, `float`, `coldstart` and `staccato`. Read each hit in context.
+`scan.sh` beside this file splits the Markdown, LaTeX, reStructuredText and
+plain-text files under a path into sentences, greps each sentence for the
+markers above and labels each hit by its section: `contrast`, `negative`,
+`aphorism`, `shape`, `agency`, `figure`, `gerund`, `colon`, `apposition`,
+`opening`, `passive`, `history`, `register`, `pitch`, `claim`, `number`,
+`float`, `coldstart` and `staccato`. Read each hit in context.
+
+- The scan skips fenced code, inline code, URLs and HTML comments, and prunes
+  `node_modules`, `dist`, `esm`, `build`, `.claude` and similar directories.
+- A hit prints the whole sentence with the line it starts on, so a pattern
+  that spans a line break still matches.
+- `figure` marks the figures in the [Literal](#stance-and-agency) table that
+  `agency` does not: lands in, lives in, collapses to, a knob.
+- `gerund` marks a sentence whose subject is an act ("Passing the cache
+  collapses the reads"), which then performs the verb.
 
 - `float` marks an origin statement ("was created for") or a "where that work
   is largest" generality.
@@ -710,6 +726,8 @@ section: `contrast`, `negative`, `aphorism`, `shape`, `agency`, `colon`,
 bash "$CLAUDE_PLUGIN_ROOT"/skills/anti-ai-writing-tropes/scan.sh docs/
 # copied into ~/.claude/skills
 bash ~/.claude/skills/anti-ai-writing-tropes/scan.sh docs/
+# hit counts per file and per label, across repos
+bash ~/.claude/skills/anti-ai-writing-tropes/scan.sh --summary ~/src/*/
 ```
 
 `test/run.sh` checks the patterns against a fixture after an edit.

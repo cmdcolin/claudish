@@ -54,3 +54,12 @@ The sort collects the inversion's carriers into a block.
 The tool was created for lightweight deployments and redraws every item after a zoom.
 
 A graph stores each haplotype as a walk, its path through the nodes.
+
+Passing the cache as the filehandle collapses them to four fetches, and all
+23 reads land inside four chunks.
+
+```js
+const x = { filehandle: new RemoteFile(url) } // robust — for free
+```
+
+Set `filehandle: new` in the options, e.g. Read the docs.
