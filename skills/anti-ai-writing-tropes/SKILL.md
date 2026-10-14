@@ -333,10 +333,26 @@ short sentence for a single step or a standalone fact.
 > The key includes the path. A rename changes the key. The cache misses. → The
 > key includes the path, so a rename changes the key and misses the cache.
 
+**A short verdict sentence.** A sentence of a few words that sums up its
+neighbours ("Those reads are small and clustered.", "The rest was
+structural.", "We rejected it.") reads as stilted, even alone among long
+sentences. It is often what is left of a colon lead-in split at the colon.
+Fold the verdict into the sentence that shows it, as a modifier or a clause,
+or delete it when that sentence makes the point. An instruction ("Commit the
+regenerated files.") is fine.
+
+> A query reads a few index nodes and the blocks they point at. Those reads are
+> small and clustered. Panning twenty windows issues 23 of them, and all 23 fall
+> inside four chunks. → A query reads a few index nodes and the blocks they
+> point at. Panning twenty windows issues 23 of these small reads, and all 23
+> fall inside four chunks.
+
 **A colon lead-in.** Start on the facts. A colon that introduces a list or an
 example ("four sets of measurements: ...") is fine; a generalization before
 the colon with specifics after it makes the reader match the abstract half to
-the concrete half.
+the concrete half. A full stop in place of the colon leaves the same
+generalization as a [short verdict sentence](#sentence-shapes); fold it into
+the specifics.
 
 > Each cache invalidates where a stale read costs most: the session cache
 > invalidates on logout → The session cache invalidates on logout
@@ -695,7 +711,7 @@ plain-text files under a path into sentences, greps each sentence for the
 markers above and labels each hit by its section: `contrast`, `negative`,
 `aphorism`, `shape`, `agency`, `figure`, `gerund`, `colon`, `apposition`,
 `opening`, `passive`, `history`, `register`, `pitch`, `claim`, `number`,
-`float`, `coldstart` and `staccato`. Read each hit in context.
+`float`, `coldstart`, `staccato` and `short`. Read each hit in context.
 
 - The scan skips fenced code, inline code, URLs and HTML comments, and prunes
   `node_modules`, `dist`, `esm`, `build`, `.claude` and similar directories.
@@ -719,6 +735,8 @@ markers above and labels each hit by its section: `contrast`, `negative`,
   "Hence". A paragraph after a list that opens on "These" is usually fine.
 - `staccato` marks a paragraph or bullet with three sentences in a row of six
   words or fewer.
+- `short` marks a sentence of seven words or fewer, with no code or link, in a
+  paragraph of two or more sentences: a candidate verdict sentence.
 - `history` matches ALL-CAPS emphasis words such as NOT, ONLY and SAME.
 
 ```sh

@@ -33,3 +33,5 @@
 [apposition] 56:A graph stores each haplotype as a walk, its path through the nodes.
 [figure] 58:Passing the cache as the filehandle collapses them to four fetches, and all 23 reads land inside four chunks.
 [gerund] 58:Passing the cache as the filehandle collapses them to four fetches, and all 23 reads land inside four chunks.
+[short] 67:Those reads are small and clustered.
+[short] 67:Panning twenty windows issues 23 of them.

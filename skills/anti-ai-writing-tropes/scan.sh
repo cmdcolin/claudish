@@ -53,14 +53,17 @@ function flush(  start, pos, e, piece, ns, i, run, words, w) {
   for (i = 1; i <= ns; i++) { print file "\t" sl[i] >> meta; print sent[i] >> text }
   if ((kind == "p" || kind == "q") && sent[1] ~ /^(\\[a-z]+\{)?(It|This|That|These|Those|Such|The same|So|And|Hence|Both|Neither|Either|The (two|three|four)|All (three|four)|Each of the) /)
     hit("coldstart", sl[1], sent[1])
-  if (kind != "h" && kind != "t") {
-    run = 0
+  run = 0
+  if (kind != "h" && kind != "t")
     for (i = 1; i <= ns; i++) {
       words = split(sent[i], w, " ")
       run = (words > 0 && words <= 6) ? run + 1 : 0
       if (run >= 3) { hit("staccato", sl[1], para); break }
     }
-  }
+  if (run < 3 && (kind == "p" || kind == "q" || kind == "li") && ns >= 2)
+    for (i = 1; i <= ns; i++)
+      if (split(sent[i], w, " ") <= 7 && sent[i] ~ /^[A-Z][^`\[]*[.!]$/ && sent[i] !~ /^(See|For example|Returns|Run|Use) /)
+        hit("short", sl[i], sent[i])
   para = ""
 }
 FNR == 1 { flush(); file = FILENAME; fence = 0; comment = 0 }
