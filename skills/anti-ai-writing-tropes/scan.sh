@@ -7,6 +7,7 @@ set -u
 summary=0
 if [ "${1:-}" = --summary ]; then summary=1; shift; fi
 targets=("${@:-.}")
+for t in "${targets[@]}"; do [ -e "$t" ] || echo "scan.sh: no such file or directory: $t" >&2; done
 tmp=$(mktemp -d)
 trap 'rm -rf "$tmp"' EXIT
 
