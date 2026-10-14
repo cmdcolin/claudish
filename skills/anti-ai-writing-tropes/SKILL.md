@@ -21,6 +21,10 @@ before each arrow is the habit, and the text after it is the sentence to write.
 - Fixing: keep every fact, number and claim. Reread the diff for a fact the
   rewrite deleted and for a detail it added to make a sentence concrete. See
   [Preserve](#preserve).
+- Changing: rewrite only a sentence with a trope from this checklist. A
+  rewrite that reorders the same words ("What copying records costs" → "The
+  cost of copying records") or swaps a term for a paraphrase gives the reader
+  nothing, and it hides the real fixes in the diff.
 - Shortening: delete the sentences and clauses the page can do without, and
   keep the rest as full sentences. Compressing every sentence yields a
   [staccato run](#sentence-shapes) or a
@@ -204,6 +208,11 @@ fix the sentence around it.
 
 > `useEffect` is eager to re-run → `useEffect` re-runs whenever a dependency
 > changes
+
+Keep the domain's own word, such as query, chunk or index, when you rewrite the
+sentence around it. A paraphrase is longer and vaguer: "each kind of search
+people ask for multiplies the file size" says less than "each kind of query
+multiplies the file size".
 
 **Write the literal word.** For each verb or noun that is not literally true of
 its subject, ask what literal word it stands for, and write that word. Keep a
@@ -537,12 +546,11 @@ Rewrite the paragraph, then read the rules against the whole.
 
 > The one setting nobody else has → Offline mode
 
-**Use a noun.** Keep a phrase only where the section answers a question the
-reader asks in those words, such as an FAQ entry or a `Why ...` section.
-
-> Where the file goes → Output
->
-> What you need before starting → Requirements
+**Leave a heading that names its subject.** A phrase heading ("What copying
+records costs") or a claim heading ("A hit needs the same chunk span, not just
+the same bytes") that names its subject stays as written; the claim heading
+also gives a scanning reader the finding. Rename a teaser, a heading built on a
+pronoun ("What it says"), and one in ALL CAPS or title case.
 
 **Name what the section contains.** A heading that gives its subject agency, or
 says what a thing is not, tells a scanning reader little.
