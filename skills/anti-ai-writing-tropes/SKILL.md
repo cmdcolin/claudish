@@ -22,9 +22,9 @@ before each arrow is the habit, and the text after it is the sentence to write.
   rewrite deleted and for a detail it added to make a sentence concrete. See
   [Preserve](#preserve).
 - Changing: rewrite only a sentence with a trope from this checklist. A
-  rewrite that reorders the same words ("What copying records costs" → "The
-  cost of copying records") or swaps a term for a paraphrase gives the reader
-  nothing, and it hides the real fixes in the diff.
+  rewrite that reorders the same words ("What decides it" → "The deciding
+  factor") or swaps a term for a paraphrase gives the reader nothing, and it
+  hides the real fixes in the diff.
 - Shortening: delete the sentences and clauses the page can do without, and
   keep the rest as full sentences. Compressing every sentence yields a
   [staccato run](#sentence-shapes) or a
@@ -546,11 +546,16 @@ Rewrite the paragraph, then read the rules against the whole.
 
 > The one setting nobody else has → Offline mode
 
-**Leave a heading that names its subject.** A phrase heading ("What copying
-records costs") or a claim heading ("A hit needs the same chunk span, not just
-the same bytes") that names its subject stays as written; the claim heading
-also gives a scanning reader the finding. Rename a teaser, a heading built on a
-pronoun ("What it says"), and one in ALL CAPS or title case.
+**State the finding.** A claim heading ("A hit needs the same chunk span, not
+just the same bytes") tells a scanning reader what the section shows, so keep
+it. Rename a heading that only gestures at a topic, and write the finding in
+its place; rearranging its words leaves it as vague as before.
+
+> What copying records costs → The cost of copying records (same heading) →
+> Trix copies the whole record onto every indexed word
+
+Rename a teaser, a heading built on a pronoun ("What it says"), and one in ALL
+CAPS or title case the same way.
 
 **Name what the section contains.** A heading that gives its subject agency, or
 says what a thing is not, tells a scanning reader little.
