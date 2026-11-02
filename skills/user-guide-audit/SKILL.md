@@ -134,13 +134,14 @@ the figure.
 
 ## walls.sh
 
-`walls.sh` reads the Markdown files under a path and prints a table of words
-and figures per page, then:
+`walls.sh` reads the Markdown files under a path, skipping frontmatter and
+fenced code, and prints a table of words and figures per page, then:
 
 - `[wall]` a paragraph or bullet over four lines
 - `[bare]` a section of 150 or more words of prose with no figure
-- `[alt]` an image with empty alt text
-- `[orphan]` a page no other page in the set links to
+- `[alt]` an image with empty alt text, or an `<img>` with no `alt`
+- `[orphan]` a page no other page in the set links to, by a relative or
+  site-root link; a file name mentioned in prose is not a link
 - `[overlap]` a heading on more than one page
 
 ```sh

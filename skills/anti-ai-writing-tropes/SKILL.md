@@ -726,8 +726,9 @@ markers above and labels each hit by its section: `contrast`, `negative`,
 `opening`, `passive`, `history`, `register`, `pitch`, `claim`, `number`,
 `float`, `coldstart`, `staccato` and `short`. Read each hit in context.
 
-- The scan skips fenced code, inline code, URLs and HTML comments, and prunes
-  `node_modules`, `dist`, `esm`, `build`, `.claude` and similar directories.
+- The scan skips YAML frontmatter, fenced code, inline code, URLs and HTML
+  comments, and prunes `node_modules`, `dist`, `esm`, `build`, `.claude` and
+  similar directories.
 - A hit prints the whole sentence with the line it starts on, so a pattern
   that spans a line break still matches.
 - `figure` marks the figures in the [Literal](#stance-and-agency) table that

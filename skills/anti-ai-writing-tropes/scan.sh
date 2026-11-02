@@ -7,11 +7,15 @@ set -u
 summary=0
 if [ "${1:-}" = --summary ]; then summary=1; shift; fi
 targets=("${@:-.}")
-for t in "${targets[@]}"; do [ -e "$t" ] || echo "scan.sh: no such file or directory: $t" >&2; done
+status=0
+for t in "${targets[@]}"; do
+  [ -e "$t" ] || { echo "scan.sh: no such file or directory: $t" >&2; status=1; }
+done
 tmp=$(mktemp -d)
 trap 'rm -rf "$tmp"' EXIT
 
-# Splits prose into sentences, dropping fenced code, inline code and URLs.
+# Splits prose into sentences, dropping YAML frontmatter, fenced code, inline
+# code and URLs.
 # Writes "file<TAB>line" to $meta and the sentence to $text, one pair per line,
 # and the paragraph-level coldstart and staccato hits to $hits.
 prose='
@@ -67,7 +71,9 @@ function flush(  start, pos, e, piece, ns, i, run, words, w) {
         hit("short", sl[i], sent[i])
   para = ""
 }
-FNR == 1 { flush(); file = FILENAME; fence = 0; comment = 0 }
+FNR == 1 { flush(); file = FILENAME; fence = 0; comment = 0; front = 0 }
+FNR == 1 && /^---[ \t]*$/ { front = 1; next }
+front { if (/^---[ \t]*$/) front = 0; next }
 /^[ \t]*(```|~~~)/ { flush(); fence = !fence; next }
 fence { next }
 comment { if (/-->/) comment = 0; next }
@@ -126,3 +132,4 @@ if [ "$summary" = 1 ]; then
 else
   sort -t "$(printf '\t')" -k1,1 -k2,2n -s "$tmp/hits" | awk -F'\t' '{ print "[" $3 "] " $1 ":" $2 ":" $4 }'
 fi
+exit "$status"

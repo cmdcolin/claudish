@@ -29,3 +29,17 @@ One two three four five six seven eight nine ten eleven twelve thirteen.
 ## Limits
 
 See [other](other.md).
+
+## Fences
+
+~~~
+## Fenced tilde
+~~~
+
+  ```
+  ## Fenced indented
+  ```
+
+![ ](img/b.png)
+<img src="img/c.png">
+<img src="img/d.png" alt="A described picture">
