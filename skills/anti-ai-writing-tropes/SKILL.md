@@ -35,9 +35,9 @@ before each arrow is the habit, and the text after it is the sentence to write.
   walks through them.
 - Rewording a paragraph: rewrite the whole paragraph and reflow it. See
   [Rewrite the paragraph as a unit](#paragraph-transitions).
-- Answering in a chat: apply the same checklist. An explanation of a system
-  invites agency tropes ("the cache earns its place"), so make a program or a
-  person the subject and describe data with contains, lists or records.
+- Answering in a chat: apply the same checklist. A writer explaining a system
+  slips into agency tropes ("the cache earns its place"), so make a program or
+  a person the subject and describe data with contains, lists or records.
 - Reviewing for someone else: report every instance, then triage. Write one
   line per finding: `file:line`, the trope name, the quoted phrase, the
   rewrite. Group lines by file and put the tropes that recur across the
@@ -57,7 +57,7 @@ before each arrow is the habit, and the text after it is the sentence to write.
 ## State what a thing is or does
 
 Describe a thing by what it is and does. The positive half of a sentence
-usually carries the whole fact, so delete the clause that defines the thing
+usually states the whole fact, so delete the clause that defines the thing
 against an alternative the reader never raised.
 
 > Each cache entry is stamped with an expiry time, not compared against the
@@ -74,9 +74,9 @@ against an alternative the reader never raised.
 >
 > Not X. Not Y. Just Z. → Z.
 
-The same fix covers "not because X but because Y", "is not X's job", "is not
-the point" and a negative question-word clause ("records what the build
-contains, not who requested it").
+Delete the contrast clause in the same way from "not because X but because
+Y", "is not X's job", "is not the point" and a negative question-word clause
+("records what the build contains, not who requested it").
 
 **A bare negative sentence.** Write the fact the negative points at, which is
 usually where the missing thing comes from, or delete the sentence. State a
@@ -735,7 +735,6 @@ markers above and labels each hit by its section: `contrast`, `negative`,
   `agency` does not: lands in, lives in, collapses to, a knob.
 - `gerund` marks a sentence whose subject is an act ("Passing the cache
   collapses the reads"), which then performs the verb.
-
 - `float` marks an origin statement ("was created for") or a "where that work
   is largest" generality.
 - `claim` marks a comparison to another tool ("in the same way", "similar to"),

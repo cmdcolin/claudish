@@ -7,7 +7,7 @@ Skills for Claude Code.
 | [anti-ai-writing-tropes](skills/anti-ai-writing-tropes/SKILL.md) | Writing and reviewing docs, comments, captions, CLAUDE.md files and chat answers. A checklist of the habits that make prose read as generated, each with a rewrite. |
 | [user-guide-audit](skills/user-guide-audit/SKILL.md) | Cutting, merging and reordering a product's user guide, FAQ and feature pages, with screenshots in place of the paragraphs that describe the screen. |
 
-Each skill's `SKILL.md` holds its checklist and the script beside it.
+Each skill's `SKILL.md` holds its checklist and documents the script beside it.
 
 ## Install
 

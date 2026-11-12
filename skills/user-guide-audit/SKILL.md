@@ -6,29 +6,28 @@ allowed-tools: Bash(bash *walls.sh*)
 
 # User guide audit
 
-A user guide follows a person through the product in the order they meet it,
-and lets screenshots do most of the explaining. An audit cuts first, then
+A user guide presents the product in the order a person meets it, and uses
+screenshots for most of the explanation. An audit cuts first, then
 merges pages, then adds the few sentences and pictures that make the flow
 read.
 
 ## Workflow
 
-1. **Map the pages.** Run `walls.sh` beside this file on the docs folder. It
-   prints words and figures per page, then the leads below. Write down who
-   each page is for and what question it answers.
-2. **Consolidate.** Give each reader question one page. See
-   [Consolidate](#consolidate).
-3. **Cut.** Delete what the interface already says. See [Cut](#cut).
-4. **Order the flow.** Arrange sections the way a newcomer uses the product.
-   See [Flow](#flow).
-5. **Show it.** Replace a paragraph that describes the screen with a picture
-   of the screen. See [Screenshots](#screenshots).
-6. **Check claims.** Read every number, default, limit, shortcut and button
-   label against the source. Correct a claim the source contradicts, and cut one it cannot
-   back.
-7. **Scan the prose** with
-   [anti-ai-writing-tropes](../anti-ai-writing-tropes/SKILL.md) and its
-   `scan.sh`.
+Work through these in order:
+
+- Run `walls.sh` beside this file on the docs folder. It prints words and
+  figures per page, then the leads below. Write down who each page is for and
+  what question it answers.
+- Give each reader question one page. See [Consolidate](#consolidate).
+- Delete what the interface already says. See [Cut](#cut).
+- Arrange sections the way a newcomer uses the product. See [Flow](#flow).
+- Replace a paragraph that describes the screen with a picture of the screen.
+  See [Screenshots](#screenshots).
+- Read every number, default, limit, shortcut and button label against the
+  source. Correct a claim the source contradicts, and cut one it cannot back.
+- Scan the prose with
+  [anti-ai-writing-tropes](../anti-ai-writing-tropes/SKILL.md) and its
+  `scan.sh`.
 
 Report word counts before and after in the commit message, with what went
 and why.
@@ -63,8 +62,8 @@ and why.
 - Keep the surprise that has nothing in the interface to warn about it, even
   when it is one sentence on a page you are cutting hard. Reread the deleted
   lines for one before committing a large cut.
-- Keep every keyboard shortcut, URL parameter and code span that leaves the
-  page somewhere else, usually a reference table. Check the diff for any that
+- When a cut removes a keyboard shortcut, URL parameter or code span, move it
+  to another page, usually a reference table. Check the diff for any that
   vanished.
 
 ## Flow
@@ -81,8 +80,8 @@ the figure.
   the figure.
 
   > This section describes the modulation system, which provides several
-  > ways to animate parameters. → **+ mod** on a row patches a slow drift onto
-  > that control.
+  > ways to animate parameters. → Click **+ mod** on a row to add a slow drift
+  > to that control.
 
 - Bridge two sections only where the reader needs to know why the next one
   follows, as in "The loops are the exception to working left to right". Cut
@@ -97,9 +96,9 @@ the figure.
 - A picture replaces the paragraph that described the screen. Delete that
   paragraph when the picture goes in.
 - Look for stills the project already makes, such as a landing page tour or a
-  store listing, before shooting new ones. Link the same files so the two
-  pages cannot drift apart, and compare their labels with the source first,
-  because a still can be a rename behind.
+  store listing, before shooting new ones. Link the same files so both pages
+  show the same image, and compare their labels with the source first,
+  because a still may predate a rename.
 - Rebase before retaking a shared still. Another branch may have retaken or
   deleted it.
 - Shoot the whole window with a box round the subject. A tight crop of one
@@ -107,7 +106,7 @@ the figure.
   where the panel sits and what it does to the rest of the screen. Follow it
   with a readable-size crop when the subject is small.
 - Put one sentence above the picture saying what to look at, and the detail
-  in the alt text: what is in frame, the labels it reads, the state it is in.
+  in the alt text: what is in frame, the labels in frame, the state it is in.
   The alt text is the caption for a reader who cannot see the image.
 - Shoot every picture in the same state, with the same sample data and the
   same window size, so the pages read as one session.
@@ -118,7 +117,7 @@ the figure.
   interface chrome falls a release behind. A shot of content alone, such as a
   rendered picture, does not date.
 - Read the built page at phone width. Three portrait stills in a row shrink
-  to thumbnails there, so the alt text has to carry the detail.
+  to thumbnails there, so the alt text has to hold the detail.
 - Use a short looping clip for anything that moves, with a poster frame so
   the page shows a frame before the clip loads.
 - A `[bare]` section is 150 words or more of prose with no figure. Either a
