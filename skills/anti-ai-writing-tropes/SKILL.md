@@ -1,6 +1,6 @@
 ---
 name: anti-ai-writing-tropes
-description: Checklist of prose habits that make technical writing read as generated, each with a before/after rewrite. Use when writing or editing docs, READMEs, tutorials, code comments, commit messages, PR descriptions, release notes, manuscripts, figure captions, agent instruction files (CLAUDE.md) or an explanation written in a chat, and when asked to review or clean up writing for AI tropes.
+description: Checklist of prose habits that make technical writing read as generated, each with a before/after rewrite. Use when writing or editing docs, READMEs, tutorials, code comments, commit messages, PR descriptions, release notes, manuscripts, figure captions, chart titles, axis labels and legends, agent instruction files (CLAUDE.md) or an explanation written in a chat, and when asked to review or clean up writing for AI tropes.
 allowed-tools: Bash(bash *scan.sh*)
 ---
 
@@ -46,6 +46,10 @@ before each arrow is the habit, and the text after it is the sentence to write.
   one example each, then run a second pass for the sections `scan.sh` cannot
   find, such as Stance and agency, quoting misses from the files as examples.
   Read each returned diff for changed claims.
+- Reviewing figures: `scan.sh` reads prose files, so grep the plotting code
+  and figure pages for their strings (titles, subtitles, axis labels, legends,
+  captions) and read them against [Figure text](#headings-and-labels). Then
+  regenerate the figure, because an image keeps the old text.
 - Auditing a user guide: run [user-guide-audit](../user-guide-audit/SKILL.md)
   first, since it cuts and merges whole sections, then this checklist on what
   is left.
@@ -570,6 +574,27 @@ says what a thing is not, tells a scanning reader little.
 one thing up.
 
 > `--seed=<n>` | the dice → `--seed=<n>` | random seed
+
+**Figure text.** A title, subtitle, axis label or legend entry names the
+quantity plotted, in the units on the axis. Labels get the same agency verbs,
+possessives and figures of speech as prose, and a title phrased as a
+clause about the subject ("where its partners touch it") leaves the reader to
+work out what is drawn.
+
+> PRPH2: where its predicted partners touch it, and the variants there →
+> PRPH2's predicted interface residues and ClinVar variants
+>
+> How much of the experimental interface the prediction finds → Share of each
+> experimental interface the prediction covers
+>
+> Interfaces more conserved than the median surface patch (over a bar of
+> percentages) → Share of complexes whose interface is more conserved than the
+> median surface patch
+>
+> With its own copy → With a copy of itself
+>
+> hover a row to run them up past the variants → hover a row to draw its
+> residues as columns through the variant rows
 
 **Plain bullets.** Bold marks a term being defined, as in a glossary. Keep a
 list, table or heading wherever the content has several parallel parts a reader
