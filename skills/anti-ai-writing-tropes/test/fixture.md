@@ -75,3 +75,7 @@ What a change costs depends on the renderer.
 - It runs the parser twice.
 
 - **Plain label.** The parser handles reads now.
+
+## Where the two viewers differ
+
+The renderer draws each track.

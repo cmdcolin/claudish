@@ -720,10 +720,12 @@ work out what is drawn.
 list, table or heading wherever the content has several parallel parts a reader
 will scan or look up.
 
-**A label that stands alone.** A reader skimming a list reads the bold
-prefaces and little else, so each one names its subject in full. "The same",
-"this", "these", "such", "other" or "the rest" in a label points at something
-the skimming reader never read. The first sentence of a list item follows the
+**A heading or label that stands alone.** A reader skimming the page reads
+headings and bold prefaces and little else, so each one names its subject in
+full. "The same", "both", "the two", "this", "these", "such", "other", "the
+rest", "it" or "them" in a heading or label points at something the skimming
+reader never read. In running text, the same words need their noun in the same
+sentence or the one before; otherwise name the noun again. The first sentence of a list item follows the
 same rule as a paragraph's (see [A subject named at the start of a
 paragraph](#openings-and-closings)): no "It", "This" or "So" with nothing before it.
 
@@ -731,6 +733,13 @@ paragraph](#openings-and-closings)): no "It", "This" or "So" with nothing before
 > alignments by region.**
 >
 > **Other views.** → **Synteny, dot plot and circular views.**
+>
+> ## Where the two viewers will differ → ## Where Seq\* and JBrowse will differ
+>
+> PIF … It indexes each alignment on both genomes, so a viewer fetches only
+> what's in view on either one. (a sentence after a clause about PAF) → PIF
+> indexes each alignment on both genomes, so a viewer fetches only the
+> alignments in view on either genome.
 
 **A bold preface the first sentence repeats.** Delete the repeat. A run of
 narrative cut into bullets with labels ("Test documents.", "Validation.",
@@ -941,8 +950,9 @@ markers above and labels each hit by its section: `contrast`, `negative`,
 - `coldstart` marks a paragraph or list item that opens on a pronoun, a demonstrative, a
   count such as "Both" or "The two", or a sentence-initial "So", "And" or
   "Hence". A paragraph after a list that opens on "These" is usually fine.
-- `label` marks a bold preface (`**…**` or `\textbf{…}`) with a word that points
-  outside it: same, this, these, such, other, rest, it or them.
+- `label` marks a heading or bold preface (`**…**`, `\textbf{…}`,
+  `\section{…}`) with a word that points outside it: same, both, the two,
+  this, these, such, other, rest, it, them or they.
 - `staccato` marks a paragraph or bullet with three sentences in a row of six
   words or fewer.
 - `short` marks a sentence of seven words or fewer, with no code or link, in a

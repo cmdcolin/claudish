@@ -58,6 +58,8 @@ function flush(  start, pos, e, piece, ns, i, run, words, w) {
   for (i = 1; i <= ns; i++) { print file "\t" sl[i] >> meta; print sent[i] >> text }
   if ((kind == "p" || kind == "q" || kind == "li") && sent[1] ~ /^(\\[a-z]+\{)?(It|This|That|These|Those|Such|The same|So|And|Hence|Both|Neither|Either|The (two|three|four)|All (three|four)|Each of the) /)
     hit("coldstart", sl[1], sent[1])
+  if (kind == "h" && sent[1] ~ /(^|[^A-Za-z])([Tt]he (same|two|three|other|rest)|[Bb]oth|[Tt]his|[Tt]hese|[Tt]hose|[Ss]uch|[Ii]t|[Tt]hem|[Tt]hey)([^A-Za-z]|$)/)
+    hit("label", sl[1], sent[1])
   run = 0
   if (kind != "h" && kind != "t")
     for (i = 1; i <= ns; i++) {
@@ -121,7 +123,7 @@ scan history    ''  'used to |previous version|found while|\b(ONLY|NOT|NEVER|ALW
 scan register   'i' 'serves as|stands as|delve|tapestry|testament|showcase|pivotal|vibrant|seamless|flagship|robust|groundbreaking|famously|a classic|well-known|leverage|utili[sz]e|streamline|empower|unlock|comprehensive|crucial|a (variety|range) of|^(additionally|furthermore|moreover|notably|importantly|ultimately|overall),|to (optimi[sz]e|improve|enhance|help with) '
 scan pitch      'i' '(does|do|is|are|goes|go) (more than|beyond)|more than just|not limited to|state.of.the.art|cutting.edge|industry.leading|best.in.class|next.generation|the most [a-z]+ |the first (tool|browser|library|system|format|program|to )|an early (use|example)|(could|can) do (much )?more|the possibilities'
 scan claim      ''  'in the same way|similar to|just like'
-scan label      'i' '(^|\\item )(\*\*|\\textbf\{)[^*}]{0,80}\b(same|this|these|those|such|above|below|other|rest|former|latter|it|them)\b'
+scan label      'i' '(^|\\item )(\*\*|\\textbf\{)[^*}]{0,80}\b(same|both|this|these|those|such|above|below|other|rest|former|latter|it|them|they)\b|\\(sub)*section\*?\{[^}]*\b(the (same|two|three|other|rest)|both|this|these|those|such|it|them|they)\b'
 scan float      ''  'was (created|built|designed|made|written) for |, where that [a-z]+ is (largest|smallest|greatest|highest|lowest)'
 scan number     ''  '(^|[^:0-9,./A-Za-z-])[0-9]{1,3}(,[0-9]{3})+\b|(^|[^:0-9,./A-Za-z-])[0-9]+\.[0-9]{2,}([^0-9./]|$)'
 scan agency     'i' '\b(documents?|files?|configs?|sessions?|specs?|formats?|manifests?|schemas?|tables?|layers?|sources?) (only |also |already )?(leaves?|left) [^.]*\bto\b'

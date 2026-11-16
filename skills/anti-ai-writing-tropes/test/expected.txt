@@ -40,3 +40,4 @@
 [figure] 71:What a change costs depends on the renderer.
 [label] 73:**The same fix for reads.** The parser handles reads now.
 [coldstart] 75:It runs the parser twice.
+[label] 79:Where the two viewers differ
