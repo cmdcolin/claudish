@@ -123,6 +123,7 @@ scan pitch      'i' '(does|do|is|are|goes|go) (more than|beyond)|more than just|
 scan claim      ''  'in the same way|similar to|just like'
 scan float      ''  'was (created|built|designed|made|written) for |, where that [a-z]+ is (largest|smallest|greatest|highest|lowest)'
 scan number     ''  '(^|[^:0-9,./A-Za-z-])[0-9]{1,3}(,[0-9]{3})+\b|(^|[^:0-9,./A-Za-z-])[0-9]+\.[0-9]{2,}([^0-9./]|$)'
+scan agency     'i' '\b(documents?|files?|configs?|sessions?|specs?|formats?|manifests?|schemas?|tables?|layers?|sources?) (only |also |already )?(leaves?|left) [^.]*\bto\b'
 
 if [ "$summary" = 1 ]; then
   awk -F'\t' '{ n[$1]++; c[$1 "\t" $3]++; t[$3]++ }

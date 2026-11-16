@@ -1,3 +1,4 @@
+[agency] agency.md:1:The file locations, which a document leaves to the host, come from a table.
 [contrast] 3:Staleness is stamped, not compared.
 [coldstart] 5:It runs the engine.
 [contrast] 7:Rounding is what buys the room — every time.

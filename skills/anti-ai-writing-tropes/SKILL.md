@@ -151,6 +151,9 @@ use a verb of description (marks, contains, shows, lists, is).
 >
 > the cache sees the first request → the cache stores the first request
 >
+> which a document leaves to the host → which the host supplies, since the
+> format has no field for it
+>
 > signs that disagree → one end marked `+` and the other `-`
 >
 > Passing the cache as the filehandle collapses the reads to four fetches →
@@ -788,7 +791,9 @@ markers above and labels each hit by its section: `contrast`, `negative`,
 - A hit prints the whole sentence with the line it starts on, so a pattern
   that spans a line break still matches.
 - `agency` also marks a patch, log, file, spec, schema or header that records,
-  describes, tells, expresses, encodes or captures.
+  describes, tells, expresses, encodes or captures, and a document, file,
+  config or other data object that leaves something to someone ("the document
+  leaves the URL to the host").
 - `figure` marks the figures in the [Literal](#stance-and-agency) table that
   `agency` does not: lands in, lives in, collapses to, a knob, and price words
   for work ("what a change costs", cheap, expensive, pays for).
