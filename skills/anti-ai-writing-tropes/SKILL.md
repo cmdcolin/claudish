@@ -46,6 +46,10 @@ before each arrow is the habit, and the text after it is the sentence to write.
   one example each, then run a second pass for the sections `scan.sh` cannot
   find, such as Stance and agency, quoting misses from the files as examples.
   Read each returned diff for changed claims.
+- Reviewing a website: scan the text of the built pages as well as the source,
+  because templates and code write most of the sentences a visitor reads. Fix
+  a hit in the code that generates it (see [Preserve](#preserve)), and rerun the
+  scan on the rebuilt pages. `scan.sh` reads `.mdx` posts directly.
 - Reviewing figures: `scan.sh` reads prose files, so grep the plotting code
   and figure pages for their strings (titles, subtitles, axis labels, legends,
   captions) and read them against [Figure text](#headings-and-labels). Then
@@ -151,6 +155,12 @@ use a verb of description (marks, contains, shows, lists, is).
 >
 > the cache sees the first request → the cache stores the first request
 >
+> GTEx's transcript estimates put APP695 in brain → In GTEx's transcript
+> estimates, APP695 is highest in brain
+>
+> the measures disagree → the isoform has a third of the gene by TPM and almost
+> no junction reads
+>
 > which a document leaves to the host → which the host supplies, since the
 > format has no field for it
 >
@@ -159,6 +169,12 @@ use a verb of description (marks, contains, shows, lists, is).
 > Passing the cache as the filehandle collapses the reads to four fetches →
 > With the cache as the filehandle, the reader fetches the four chunks once and
 > answers every read from them
+
+**Keep a subject that does act.** A person, a drug, an enzyme or a ribosome
+performs its verb, so the sentence needs no rewrite. Turning it into a noun
+phrase hides the claim.
+
+> A drug that changes splicing (keep) → An antisense drug for exon 7 (vaguer)
 
 **Describe having with "has", "contains", "lists" or "holds".** A sequence, a
 file, a record or a config has its contents. "Carry" casts that relation as an
@@ -277,6 +293,9 @@ through a page ("doors", "walls") becomes a dead metaphor.
 | collapses (calls, requests) | merges, reduces to N |
 | a footgun, a trap | an error-prone API; name the error |
 | moves the needle | changes the measured result by N |
+| restores (an exon, a function) | raises the share of transcripts that include it; name what was measured |
+| credits X with, puts X in (estimates as subject) | in the estimates, X has … |
+| falls, drops (a value per item) | has A in one and B in the other |
 
 **Name the actor in the active voice.** Write "The parser leaves the field
 unset" for "The field is left unset", and "We measured it and rejected it" for
@@ -669,6 +688,14 @@ Rewrite the paragraph, then read the rules against the whole.
 **Name the subject.** A teaser heading withholds it.
 
 > The one setting nobody else has → Offline mode
+>
+> Spinal muscular atrophy and the exon a drug restores → Spinal muscular
+> atrophy and exon 7 of SMN2
+
+A title built on a relative clause ("the exon a drug restores") breaks three
+rules at once: it withholds which exon and which drug, it packs a clause into a
+[compressed noun phrase](#sentence-shapes), and its verb is a figure (see
+[Write the literal word](#stance-and-agency)).
 
 **State the finding.** A claim heading ("A hit needs the same chunk span, not
 just the same bytes") tells a scanning reader what the section shows, so keep
@@ -918,8 +945,8 @@ repeats it.
 
 ## Quick scan
 
-`scan.sh` beside this file splits the Markdown, LaTeX, reStructuredText and
-plain-text files under a path into sentences, greps each sentence for the
+`scan.sh` beside this file splits the Markdown (including MDX), LaTeX,
+reStructuredText and plain-text files under a path into sentences, greps each sentence for the
 markers above and labels each hit by its section: `contrast`, `negative`,
 `aphorism`, `shape`, `agency`, `figure`, `gerund`, `colon`, `apposition`,
 `opening`, `passive`, `history`, `register`, `pitch`, `claim`, `number`,
@@ -927,7 +954,8 @@ markers above and labels each hit by its section: `contrast`, `negative`,
 
 - The scan skips YAML frontmatter, fenced code, inline code, URLs and HTML
   comments, and prunes `node_modules`, `dist`, `esm`, `build`, `.claude` and
-  similar directories.
+  similar directories. In MDX it also skips `import` and `export` lines and
+  the attributes of a JSX tag, and reads a `{…}` expression in text as `…`.
 - A hit prints the whole sentence with the line it starts on, so a pattern
   that spans a line break still matches.
 - `agency` also marks a patch, log, file, spec, schema or header that records,

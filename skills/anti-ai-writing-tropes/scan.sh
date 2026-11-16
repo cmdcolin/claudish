@@ -73,13 +73,18 @@ function flush(  start, pos, e, piece, ns, i, run, words, w) {
         hit("short", sl[i], sent[i])
   para = ""
 }
-FNR == 1 { flush(); file = FILENAME; fence = 0; comment = 0; front = 0 }
+FNR == 1 { flush(); file = FILENAME; fence = 0; comment = 0; front = 0; mdx = FILENAME ~ /\.mdx$/; esm = 0; jsx = 0 }
 FNR == 1 && /^---[ \t]*$/ { front = 1; next }
 front { if (/^---[ \t]*$/) front = 0; next }
 /^[ \t]*(```|~~~)/ { flush(); fence = !fence; next }
 fence { next }
 comment { if (/-->/) comment = 0; next }
 /^[ \t]*<!--/ { flush(); if (!/-->/) comment = 1; next }
+mdx && esm { if (/^[}\])]|from ["\047]/) esm = 0; next }
+mdx && /^(import|export) / { flush(); if (/[{(\[][ \t]*$/) esm = 1; next }
+mdx && jsx { if (/>[ \t]*$/) jsx = 0; next }
+mdx && /^[ \t]*<[A-Za-z]/ && !/>/ { flush(); jsx = 1; next }
+mdx { gsub(/\{\047 \047\}/, " "); gsub(/\{[^{}]*\}/, "…") }
 /^[ \t]*$/ { flush(); next }
 /^[ \t]*#/ { flush(); kind = "h"; s = $0; sub(/^[ \t]*#+[ \t]*/, "", s); add(clean(s)); flush(); next }
 /^[ \t]*\|/ {
@@ -96,7 +101,7 @@ END { flush() }
 find "${targets[@]}" \( -path '*/.git' -o -path '*/node_modules' -o -path '*/.claude' \
   -o -path '*/dist' -o -path '*/esm' -o -path '*/esm_branch[12]' -o -path '*/build' \
   -o -path '*/target' -o -path '*/coverage' -o -path '*/vendor' -o -path '*/.venv' \) -prune -o \
-  -type f \( -name '*.md' -o -name '*.tex' -o -name '*.txt' -o -name '*.rst' \) -print0 2>/dev/null |
+  -type f \( -name '*.md' -o -name '*.mdx' -o -name '*.tex' -o -name '*.txt' -o -name '*.rst' \) -print0 2>/dev/null |
   xargs -0 -r awk -v meta="$tmp/meta" -v text="$tmp/text" -v hits="$tmp/hits" "$prose"
 touch "$tmp/meta" "$tmp/text" "$tmp/hits"
 
@@ -112,6 +117,7 @@ scan aphorism   ''  ', not (who|what|where|when|how|which|why)\b|, not .*( and n
 scan shape      ''  '(^|\. )So that | — | -- |the (whole )?point|honest|payoff|worth (naming|noting|being)|key insight|the result\?'
 scan agency     ''  '\b(cannot|doesn.t|does not) know|says |exists to|earns|buys |load-bearing|one-way door|footgun|moves the needle|surfaces |for free|costs? nothing|stands? between|\b(its|their) own\b|\bcarr(y|ies|ied|ying|iage|iers?)\b'
 scan figure     ''  '\b(lands?|landed|landing) (in|inside|on|at)\b|\b(lives?|living) (in|on|under)\b|\bcollaps(e|es|ed|ing) (them |it |the [a-z]+ )?(in)?to\b|\b(rots?|rotting|goes stale|drifts?)\b|\b(dial|knob|lever)s?\b|\bthe shape of\b|\b(a|the) trap\b'
+scan agency     'i' '\b(estimates?|numbers?|counts?|reads?|measures?|values?|scores?) (also |still |both )?(credit|credits|put|puts|mislead|misleads|disagree|disagrees|splice|splices|restore|restores)\b'
 scan agency     'i' '\b(patch(es)?|logs?|files?|documents?|specs?|schemas?|headers?|changelogs?|manifests?) (already |also )?(records?|describes?|tells?|expresses?|encodes?|captures?)\b'
 scan figure     'i' 'what [a-z ]{1,40} costs\b|\b(cheap|cheaper|cheaply|expensive|costly)\b|\bpays? for\b|\bthe price of\b'
 scan gerund     ''  '^[A-Z][a-z]+ing\b[^,;:]* (collapses|makes|gives|lets|turns|serves|keeps|saves|buys|costs|means|avoids|stops|breaks|fixes|cuts|brings|forces|leaves|sends|takes|wins)\b'

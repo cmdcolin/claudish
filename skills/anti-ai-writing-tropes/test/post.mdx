@@ -1,0 +1,22 @@
+---
+title: 'A test post'
+---
+
+import Shot from '../components/Shot.astro'
+import {
+  share,
+  tissueShare,
+} from '../lib/expression.ts'
+
+export const s = story('NDUFC2', 'O95298-2')
+
+GTEx transcript estimates credit isoform {s.isoform.name} with a third of the{' '}
+gene.
+
+<Shot
+  src={geneView}
+  alt="The gene page."
+  href={s.href}
+>
+  The caption keeps its own sentence about the figure.
+</Shot>
