@@ -69,3 +69,9 @@ A query reads index nodes and the blocks they point at. Those reads are small an
 Patches already record what changed.
 
 What a change costs depends on the renderer.
+
+- **The same fix for reads.** The parser handles reads now.
+
+- It runs the parser twice.
+
+- **Plain label.** The parser handles reads now.

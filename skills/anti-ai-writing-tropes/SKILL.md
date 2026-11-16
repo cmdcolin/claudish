@@ -720,6 +720,18 @@ work out what is drawn.
 list, table or heading wherever the content has several parallel parts a reader
 will scan or look up.
 
+**A label that stands alone.** A reader skimming a list reads the bold
+prefaces and little else, so each one names its subject in full. "The same",
+"this", "these", "such", "other" or "the rest" in a label points at something
+the skimming reader never read. The first sentence of a list item follows the
+same rule as a paragraph's (see [A subject named at the start of a
+paragraph](#openings-and-closings)): no "It", "This" or "So" with nothing before it.
+
+> **PIF, our answer to the same problem.** → **PIF, which we created to read
+> alignments by region.**
+>
+> **Other views.** → **Synteny, dot plot and circular views.**
+
 **A bold preface the first sentence repeats.** Delete the repeat. A run of
 narrative cut into bullets with labels ("Test documents.", "Validation.",
 "Details.") reads as a form, so write it as a paragraph and keep labeled
@@ -902,7 +914,7 @@ plain-text files under a path into sentences, greps each sentence for the
 markers above and labels each hit by its section: `contrast`, `negative`,
 `aphorism`, `shape`, `agency`, `figure`, `gerund`, `colon`, `apposition`,
 `opening`, `passive`, `history`, `register`, `pitch`, `claim`, `number`,
-`float`, `coldstart`, `staccato` and `short`. Read each hit in context.
+`float`, `coldstart`, `label`, `staccato` and `short`. Read each hit in context.
 
 - The scan skips YAML frontmatter, fenced code, inline code, URLs and HTML
   comments, and prunes `node_modules`, `dist`, `esm`, `build`, `.claude` and
@@ -926,9 +938,11 @@ markers above and labels each hit by its section: `contrast`, `negative`,
   superlative that reports a measurement is fine.
 - `number` marks a number grouped in thousands or with two or more decimal
   places.
-- `coldstart` marks a paragraph that opens on a pronoun, a demonstrative, a
+- `coldstart` marks a paragraph or list item that opens on a pronoun, a demonstrative, a
   count such as "Both" or "The two", or a sentence-initial "So", "And" or
   "Hence". A paragraph after a list that opens on "These" is usually fine.
+- `label` marks a bold preface (`**…**` or `\textbf{…}`) with a word that points
+  outside it: same, this, these, such, other, rest, it or them.
 - `staccato` marks a paragraph or bullet with three sentences in a row of six
   words or fewer.
 - `short` marks a sentence of seven words or fewer, with no code or link, in a
