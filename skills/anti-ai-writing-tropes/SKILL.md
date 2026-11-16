@@ -498,6 +498,19 @@ outcome, meaning what changed or what was found, and puts supporting detail
 after it. A reference page needs no overview, per-section summary or
 boilerplate "Future work".
 
+**Short paragraphs.** A paragraph or bullet over about four lines on the page
+reads as a wall of text. Split it into a short lead and a few bullets with a
+bold preface each, or into two paragraphs, and cut the sentences that restate
+a table or list nearby. For Markdown,
+[user-guide-audit's `walls.sh`](../user-guide-audit/SKILL.md#wallssh) marks
+paragraphs and bullets over four lines.
+
+> I read your question as whether X could open Y, so I tried it. I wrote a
+> loader and ran it on a set of documents. The short answer is yes, once
+> something supplies the file locations. The spec made this easy because…
+> Below, a reader is… → The question and the short answer in two sentences,
+> then a bullet for how I checked and a bullet for why it was easy.
+
 **A subject named at the start of a paragraph.** A reader arriving by search hit
 or deep link has no antecedent for "It", "This", "That" or "that limit". Name
 the subject, even when the previous paragraph named it.
@@ -751,6 +764,18 @@ label stands for.
 **One noun per referent.** A track called a lane, then a layer, suggests three
 things. Pick the noun and repeat it, along with any distinctive word reused
 from earlier in the page ("quietly" in two sections).
+
+**Name the kind of thing.** On a page about two formats or two programs, a
+bare "a document", "a config" or "the file" leaves the reader to guess which
+one. Name the kind at first use, and define the short form once if the page
+repeats it.
+
+> A document holds only an id for each file. (in a reply comparing SeqViewSpec
+> documents with JBrowse configs) → A SeqViewSpec document holds only an id
+> for each file.
+>
+> Below, a *document* is a SeqViewSpec document, and a *reader* is any program
+> that opens one.
 
 **"Is" for "serves as".** Write "is" for "serves as", "stands as" and
 "represents", and the literal word for "reads straight off", "tells a story",
