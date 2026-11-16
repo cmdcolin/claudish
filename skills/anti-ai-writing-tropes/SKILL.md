@@ -448,6 +448,52 @@ write the sentence, or delete it when the page can do without it.
 A term the page defines, or an API name in code font such as `keep`, is fine.
 See also [An invented concept label](#register).
 
+**A verb dropped from the second clause.** A clause that borrows its verb from
+the clause before ("and B the rest") reads as a list until the reader backs up
+to find the verb. Write the verb in each clause.
+
+> The strand became a reversed region, and `positions` the four exons end to
+> end. → The strand became a reversed region, and `positions` laid the four
+> exons end to end.
+>
+> The old viewer draws one lane a gene and the new one each transcript. → The
+> old viewer draws one lane per gene, and the new one draws one per transcript.
+
+**A list the reader joins wrongly.** When the first item of a list can also
+end the clause before it, the reader parses the wrong list: "a patch sets
+params or inserts" reads as setting params or inserts. Move that item to the
+end of the list. Two "and"s in one list ("aliases and label and category
+columns") put one list inside another, so split them with a comma and "the".
+
+> A patch sets params or inserts, removes or moves nodes. → A patch inserts,
+> removes or moves nodes, or sets their params.
+>
+> the format, URL, index, aliases and label and category columns → the format,
+> URL, index and aliases, and the label and category columns
+
+**A subject held apart from its verb.** Examples, parentheses and modifiers
+between a long subject and its verb make the reader hold the subject until the
+verb arrives. State the claim on a short subject, then give the examples.
+
+> Data in two dimensions, such as genotypes per sample (a `matrix`), contacts
+> per pair of positions (a `grid`) or links between sites (`pairs`), arrives
+> whole. → Two-dimensional data arrives whole, whether it is a `matrix` of
+> genotypes per sample, a `grid` of contacts per pair of positions or `pairs`
+> of linked sites.
+>
+> List-palette colors and value ranges left to the data over coverage computed
+> from reads could differ. → Two things could differ: the colors a list palette
+> gives, and the y range of coverage computed from reads.
+
+**"And" joining a contrast.** "And" tells the reader the second clause
+continues the first. Join two clauses that pull against each other with "but"
+or "though".
+
+> Keeping the URLs in host code works for an app that shares the code, and any
+> other program needs them from elsewhere. → Keeping the URLs in host code
+> works for an app that shares the code, but any other program needs them from
+> elsewhere.
+
 **Em-dash asides.** One per paragraph is punctuation. For three, promote one
 aside to a sentence and demote another to a comma. A ` -- ` in a code comment
 follows the same rule. After a pass, split a sentence that states unrelated
@@ -488,6 +534,15 @@ design has two constraints: it must run offline and fit under 50MB."
 observation, and stop a section at the last one. Introduce a feature in the
 paragraph that defines it.
 
+**The list before the question about it.** "These", "the following" or a
+question about "them", written before the list it refers to, sends the reader
+ahead to the list and back again. Put the list first, then the question or the
+claim about it. A colon that introduces the list is fine.
+
+> Any second reader would need these. Would they fit as kernel fields? (a list
+> follows) → Any second reader would need: (the list) Would these fit as
+> kernel fields?
+
 **A closing that ends with the last fact.** "In summary", "As we've seen", a
 paragraph restating each section, a tie-back to the opening question ("So, to
 answer the original question: yes") and a final sentence that stacks clause
@@ -497,6 +552,24 @@ after clause all restate. A reference page ends when its last fact does.
 outcome, meaning what changed or what was found, and puts supporting detail
 after it. A reference page needs no overview, per-section summary or
 boilerplate "Future work".
+
+**An overview that repeats each section.** In a long report, an overview
+bullet that restates its section in full, followed by the section and then a
+closing list of questions, gives each finding three times. Give each overview
+bullet one sentence and a pointer to its section, and keep the detail in the
+section. A closing list of questions or actions is fine, because the reader
+acts on it.
+
+> **Streaming.** Both viewers fetch one region at a time. A stream also has a
+> manifest, and the adapters have none, so list-palette colors and value
+> ranges left to the data over coverage could differ (section 5). →
+> **Streaming.** Both viewers fetch one region at a time, so streamed sources
+> fit, though a few colors and value ranges could differ (section 5).
+
+**The strongest request in a table cell.** A reader looks a reference table up
+row by row, so a request or a judgment inside a cell ("for our users, this is
+a big reason to open the view") goes unread. State it in the prose, and add it
+to the list of questions when the page has one.
 
 **Short paragraphs.** A paragraph or bullet over about four lines on the page
 reads as a wall of text. Split it into a short lead and a few bullets with a
@@ -647,6 +720,20 @@ work out what is drawn.
 list, table or heading wherever the content has several parallel parts a reader
 will scan or look up.
 
+**A bold preface the first sentence repeats.** Delete the repeat. A run of
+narrative cut into bullets with labels ("Test documents.", "Validation.",
+"Details.") reads as a form, so write it as a paragraph and keep labeled
+bullets for parallel items.
+
+> **With the GPU off.** We also measured the viewer with the GPU off. On
+> short-read BAM, cold loads took as long with Canvas2D as with WebGL2. →
+> **With the GPU off.** On short-read BAM, cold loads took as long with
+> Canvas2D as with WebGL2.
+
+**Table notes in the caption.** Bullets that explain a table's columns ("The
+middle column has what the config sets") belong in the caption or the column
+headers, where a reader looking at the table finds them.
+
 ## Comments and history
 
 **A comment states the constraint the code satisfies,** with the measurement if
@@ -764,6 +851,13 @@ label stands for.
 **One noun per referent.** A track called a lane, then a layer, suggests three
 things. Pick the noun and repeat it, along with any distinctive word reused
 from earlier in the page ("quietly" in two sections).
+
+**One referent per noun.** The reverse misleads too: "item" for a fetched
+record, then two sentences later for an entry in the list below. Give the
+second thing a second noun.
+
+> Seq* gives an item its lane when its region arrives. Each item below depends
+> on everything in view. → … Each value below depends on everything in view.
 
 **Name the kind of thing.** On a page about two formats or two programs, a
 bare "a document", "a config" or "the file" leaves the reader to guess which
