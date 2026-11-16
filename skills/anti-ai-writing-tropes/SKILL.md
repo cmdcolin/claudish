@@ -37,7 +37,7 @@ before each arrow is the habit, and the text after it is the sentence to write.
   [Rewrite the paragraph as a unit](#paragraph-transitions).
 - Answering in a chat: apply the same checklist. A writer explaining a system
   slips into agency tropes ("the cache earns its place"), so make a program or
-  a person the subject and describe data with contains, lists or records.
+  a person the subject and describe data with contains, lists or holds.
 - Reviewing for someone else: report every instance, then triage. Write one
   line per finding: `file:line`, the trope name, the quoted phrase, the
   rewrite. Group lines by file and put the tropes that recur across the
@@ -174,6 +174,35 @@ Pick a verb of description, because "names", "shows", "takes", "keeps", "sends"
 and "stores" leave the same inanimate actor. Where no such verb fits, make the
 component or person that acts the subject.
 
+**A patch, log, file or spec as the one who records.** "Records", "describes",
+"tells", "expresses", "encodes" and "captures" make a data object the author of
+its own contents. A patch does not record anything; a program wrote it, and a
+program reads it. Say what the object contains, then say what the reader can do
+with that. Keep the verb a spec defines for a field, such as a renderer that
+declares `stable`.
+
+> Patches already record what changed. → A patch contains the ref of each node it
+> changes, so the viewer can tell which nodes to update.
+>
+> The changelog tells you what broke. → The changelog lists each breaking
+> change.
+>
+> The header encodes the byte order. → The header holds a byte-order flag.
+
+**A price word for work.** "What a change costs", "cheap", "expensive", "pays
+for", "the price of" and "a tax" give a file, a change or a function a budget.
+Name the quantity that differs: time, bytes, memory, requests, or the work the
+program does. Keep "cost" in a term the field uses ("cost function", "cost
+model") and where the page defines it as a measured quantity.
+
+> What a change costs depends on the renderer. → Whether a change only redraws
+> or also rebuilds geometry depends on the renderer.
+>
+> Cheap updates, such as a color change → Updates that redraw without preparing
+> the renderer again, such as a color change
+>
+> A zoom is expensive → A zoom rebuilds the geometry of every track in view
+
 > CD8A is carried by the CD8 rows → the CD8 rows have signal at CD8A
 >
 > the allele rose and carried its neighbours with it → the allele rose in
@@ -232,6 +261,8 @@ through a page ("doors", "walls") becomes a dead metaphor.
 | earns its keep, earns its place | is needed, is used |
 | buys (room, time, safety) | saves, gives, allows |
 | for free, costs nothing | with no extra code, adds no request, takes no time |
+| costs, cheap, expensive, pays for | takes N ms, reads N bytes, redraws without preparing again |
+| records, tells, encodes (a data object as subject) | contains, lists, holds |
 | stands between X and Y | prevents X from becoming Y |
 | a dial / knob / lever | a parameter, an option |
 | load-bearing | required, depended on |
@@ -266,8 +297,8 @@ step collapses the calls" invents a component the reader will look for.
 After removing "is what", check the verb against
 [Stance and agency](#stance-and-agency).
 
-> What each accessor costs is what says which are worth tuning → The cost of
-> each accessor on first access shows which are worth tuning
+> What each accessor costs is what says which are worth tuning → The time each
+> accessor takes on first access shows which are worth tuning
 
 **The significance announcement.** "The point", "the whole point", "the honest
 answer", "the payoff", "the key insight" and "worth naming" announce a fact
@@ -756,8 +787,11 @@ markers above and labels each hit by its section: `contrast`, `negative`,
   similar directories.
 - A hit prints the whole sentence with the line it starts on, so a pattern
   that spans a line break still matches.
+- `agency` also marks a patch, log, file, spec, schema or header that records,
+  describes, tells, expresses, encodes or captures.
 - `figure` marks the figures in the [Literal](#stance-and-agency) table that
-  `agency` does not: lands in, lives in, collapses to, a knob.
+  `agency` does not: lands in, lives in, collapses to, a knob, and price words
+  for work ("what a change costs", cheap, expensive, pays for).
 - `gerund` marks a sentence whose subject is an act ("Passing the cache
   collapses the reads"), which then performs the verb.
 - `float` marks an origin statement ("was created for") or a "where that work

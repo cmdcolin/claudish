@@ -110,6 +110,8 @@ scan aphorism   ''  ', not (who|what|where|when|how|which|why)\b|, not .*( and n
 scan shape      ''  '(^|\. )So that | — | -- |the (whole )?point|honest|payoff|worth (naming|noting|being)|key insight|the result\?'
 scan agency     ''  '\b(cannot|doesn.t|does not) know|says |exists to|earns|buys |load-bearing|one-way door|footgun|moves the needle|surfaces |for free|costs? nothing|stands? between|\b(its|their) own\b|\bcarr(y|ies|ied|ying|iage|iers?)\b'
 scan figure     ''  '\b(lands?|landed|landing) (in|inside|on|at)\b|\b(lives?|living) (in|on|under)\b|\bcollaps(e|es|ed|ing) (them |it |the [a-z]+ )?(in)?to\b|\b(rots?|rotting|goes stale|drifts?)\b|\b(dial|knob|lever)s?\b|\bthe shape of\b|\b(a|the) trap\b'
+scan agency     'i' '\b(patch(es)?|logs?|files?|documents?|specs?|schemas?|headers?|changelogs?|manifests?) (already |also )?(records?|describes?|tells?|expresses?|encodes?|captures?)\b'
+scan figure     'i' 'what [a-z ]{1,40} costs\b|\b(cheap|cheaper|cheaply|expensive|costly)\b|\bpays? for\b|\bthe price of\b'
 scan gerund     ''  '^[A-Z][a-z]+ing\b[^,;:]* (collapses|makes|gives|lets|turns|serves|keeps|saves|buys|costs|means|avoids|stops|breaks|fixes|cuts|brings|forces|leaves|sends|takes|wins)\b'
 scan colon      ''  '[a-z]: [a-z]'
 scan apposition ''  ', (one|ones|a|an) (that|which|whose|where) |, (a|an) [a-z-]+ (that|which|whose) |, (its|their) [a-z-]+ (through|across|between|of) '

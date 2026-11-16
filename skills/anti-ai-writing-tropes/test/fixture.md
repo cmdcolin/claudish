@@ -65,3 +65,7 @@ const x = { filehandle: new RemoteFile(url) } // robust — for free
 Set `filehandle: new` in the options, e.g. Read the docs.
 
 A query reads index nodes and the blocks they point at. Those reads are small and clustered. Panning twenty windows issues 23 of them.
+
+Patches already record what changed.
+
+What a change costs depends on the renderer.
