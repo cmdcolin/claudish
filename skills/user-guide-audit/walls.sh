@@ -2,7 +2,7 @@
 # Usage: walls.sh <dir-or-file>...
 # Maps a set of Markdown guide pages: words and figures per page, then the
 # leads an audit reads in context.
-#   [wall]    a paragraph or bullet over 4 lines
+#   [wall]    a paragraph or bullet over 4 lines, at 100 characters a line
 #   [bare]    a section of 150+ words of prose with no figure
 #   [alt]     an image with empty or missing alt text
 #   [orphan]  a page no other page in the set links to
@@ -55,21 +55,21 @@ awk '
 '"$markdown"'
   skip { flush(); next }
   /^#/ { flush(); section(); sstart = FNR; shead = $0; next }
-  /!\[[ \t]*\]\(/ || (/<img/ && !/alt="[^"]/) { print "[alt] " FILENAME ":" FNR ": " $0 }
+  /!\[[ \t]*\]\(/ || (/<img/ && !/alt=["\047][^"\047]/) { print "[alt] " FILENAME ":" FNR ": " $0 }
   /!\[|<img|<video/ { sfigs++ }
   !/^[[:space:]]*\|/ { swords += NF }
   /^[[:space:]]*$/ { flush(); next }
   /^[[:space:]]*[>|<]/ { flush(); next }
   /^[[:space:]]*([-*+]|[0-9]+\.) / { flush() }
-  { if (plines == 0) { pstart = FNR; pfirst = $0 } plines++ }
+  { if (plines == 0) { pstart = FNR; pfirst = $0 } plines += length($0) > 100 ? int((length($0) + 99) / 100) : 1 }
   END { flush(); section() }
 ' "${files[@]}"
 
-# A page is linked when another page has a Markdown or HTML link whose target
-# resolves to it, relative to the linking page. A target without an extension
-# also matches target.md, target/README.md and target/index.md, and a
-# site-root target (/docs/x) matches a page whose path, less .md, shares
-# its trailing path segments.
+# A page is linked when another page has a Markdown or HTML link, inline or
+# by reference, whose target resolves to it, relative to the linking page. A
+# target without an extension also matches target.md, target/README.md and
+# target/index.md, and a site-root target (/docs/x) matches a page whose path,
+# less .md, shares its trailing path segments.
 awk "$markdown"'
   function norm(p,  n, i, k, seg, out) {
     n = split(p, seg, "/"); k = 0
@@ -98,6 +98,7 @@ awk "$markdown"'
     s = $0
     gsub(/`[^`]*`/, "", s)
     while (match(s, /\]\([^) ]+/)) { link(FILENAME, substr(s, RSTART + 2, RLENGTH - 2)); s = substr(s, RSTART + RLENGTH) }
+    if (match(s, /^[ \t]*\[[^]]+\]:[ \t]*<?[^ \t>]+/)) { t = substr(s, RSTART, RLENGTH); sub(/^[^]]*\]:[ \t]*<?/, "", t); link(FILENAME, t) }
     while (match(s, /href="[^"]+"/)) { link(FILENAME, substr(s, RSTART + 6, RLENGTH - 7)); s = substr(s, RSTART + RLENGTH) }
   }
   END {
@@ -115,7 +116,7 @@ awk "$markdown"'
 
 awk "$markdown"'
   skip { next }
-  /^##+ / { h = tolower($0); sub(/^#+ +/, "", h); if (!index(seen[h], FILENAME)) seen[h] = seen[h] (seen[h] ? ", " : "") FILENAME }
+  /^##+ / { h = tolower($0); sub(/^#+ +/, "", h); if (!((h, FILENAME) in on)) { on[h, FILENAME] = 1; seen[h] = seen[h] (seen[h] ? ", " : "") FILENAME } }
   END { for (h in seen) if (index(seen[h], ", ")) print "[overlap] \"" h "\": " seen[h] }
 ' "${files[@]}" | sort
 exit "$status"

@@ -4,4 +4,6 @@
 
 ## Fenced indented
 
+## Install
+
 Back to [other](../other.md).

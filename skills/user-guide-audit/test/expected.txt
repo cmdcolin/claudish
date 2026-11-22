@@ -1,9 +1,10 @@
 page                                              words figs
-fixture.md                                          212    4
+fixture.md                                          298    5
 guide.md                                             15    0
 other.md                                             11    0
-rooted.md                                             7    0
-sub/user-guide.md                                    12    0
+rooted.md                                            13    0
+sub/user-guide.md                                    14    0
+user-guide.md                                        11    0
 
 [wall] fixture.md:5: 5 lines: One two three four five six seven eight nine ten eleven twel
 [wall] fixture.md:16: 5 lines: - One two three four five six seven eight nine ten eleven tw
@@ -11,6 +12,8 @@ sub/user-guide.md                                    12    0
 [alt] fixture.md:24: ![](img/a.png)
 [alt] fixture.md:43: ![ ](img/b.png)
 [alt] fixture.md:44: <img src="img/c.png">
+[wall] fixture.md:50: 5 lines: One two three four five six seven eight nine ten eleven twel
 [orphan] fixture.md
 [orphan] guide.md
+[overlap] "install": sub/user-guide.md, user-guide.md
 [overlap] "limits": fixture.md, other.md
