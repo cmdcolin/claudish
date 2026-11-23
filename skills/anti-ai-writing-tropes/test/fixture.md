@@ -92,3 +92,15 @@ Install Python 3.10 or later and Node 22.11 before the build.
   [A disease-associated gene desert](https://doi.org/10.1038/s41586-024-07501-1)
 
 Python 3.10 reads 0.873 of the files.
+
+## Initials, menu labels and abbreviations
+
+The pangenome reference is Li H. Minigraph builds the graph from the assemblies.
+
+Untick **Y axis... → Clip extreme outliers** on the difference row, because the default clipping flattens the gain. The track keeps the height it had before the change.
+
+In T-ALL the gene is switched on in a lineage where it should be silent. Leukemia cells from those patients show it at high levels.
+
+## Loading the tracks {#loading-both-tracks}
+
+The adapter reads the file.

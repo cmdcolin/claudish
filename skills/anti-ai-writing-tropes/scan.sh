@@ -50,7 +50,7 @@ function flush(  start, pos, e, piece, ns, i, run, words, w) {
     piece = substr(para, start, e - start + 1)
     sub(/ +$/, "", piece)
     pos = e + 1
-    if (piece ~ /(^|[ (])(e\.g|i\.e|vs|cf|approx|Fig|et al)\.$/) continue
+    if (piece ~ /(^|[ (])(e\.g|i\.e|vs|cf|approx|Fig|et al)\.$/ || piece ~ /( [A-Z]|\.\.)\.$/) continue
     sent[++ns] = piece; sl[ns] = lineof(start - 1); start = pos
   }
   piece = substr(para, start); sub(/ +$/, "", piece)
@@ -58,6 +58,7 @@ function flush(  start, pos, e, piece, ns, i, run, words, w) {
   for (i = 1; i <= ns; i++) { print file "\t" sl[i] >> meta; print sent[i] >> text }
   if ((kind == "p" || kind == "q" || kind == "li") && sent[1] ~ /^(\\[a-z]+\{)?(It|This|That|These|Those|Such|The same|So|And|Hence|Both|Neither|Either|The (two|three|four)|All (three|four)|Each of the) /)
     hit("coldstart", sl[1], sent[1])
+  if (kind == "h") sub(/[ \t]*\{#[^}]*\}[ \t]*$/, "", sent[1])
   if (kind == "h" && sent[1] ~ /(^|[^A-Za-z])([Tt]he (same|two|three|other|rest)|[Bb]oth|[Tt]his|[Tt]hese|[Tt]hose|[Ss]uch|[Ii]t|[Tt]hem|[Tt]hey)([^A-Za-z]|$)/)
     hit("label", sl[1], sent[1])
   if (kind == "h" && sent[1] ~ /^What /)
@@ -130,7 +131,7 @@ scan colon      ''  '[a-z]: [a-z]'
 scan apposition ''  ', (one|ones|a|an) (that|which|whose|where) |, (a|an) [a-z-]+ (that|which|whose) |, (its|their) [a-z-]+ (through|across|between|of) '
 scan opening    ''  '^(Nothing|No one|None) |not (the|its|our) job|silently|quietly|invisibly|\bhere.s (the|where)|let.s (break|dive|unpack)|think of it as|in summary|as we.ve seen|for (two|three) reasons|(two|three) things'
 scan passive    ''  '\b(is|are|was|were) ([a-z]+ed and [a-z]+ed|[a-z]+ed by|left unset)\b'
-scan history    ''  'used to |previous version|found while|\b(ONLY|NOT|NEVER|ALWAYS|MUST|CANNOT|EVERY|SAME|BOTH|EACH|ALL|ANY|BEFORE|AFTER|FIRST|EXACTLY|WHOLE|MORE|LESS|AND|IS|ARE|WAS|DOES|DON.T|DOESN.T|ISN.T|CAN.T|WON.T)\b'
+scan history    ''  'used to |previous version|found while|(^|[^-A-Za-z])(ONLY|NOT|NEVER|ALWAYS|MUST|CANNOT|EVERY|SAME|BOTH|EACH|ALL|ANY|BEFORE|AFTER|FIRST|EXACTLY|WHOLE|MORE|LESS|AND|IS|ARE|WAS|DOES|DON.T|DOESN.T|ISN.T|CAN.T|WON.T)([^-A-Za-z]|$)'
 scan register   'i' 'serves as|stands as|delve|tapestry|testament|showcase|pivotal|vibrant|seamless|flagship|robust|groundbreaking|famously|a classic|well-known|leverage|utili[sz]e|streamline|empower|unlock|comprehensive|crucial|a (variety|range) of|^(additionally|furthermore|moreover|notably|importantly|ultimately|overall),|to (optimi[sz]e|improve|enhance|help with) '
 scan pitch      'i' '(does|do|is|are|goes|go) (more than|beyond)|more than just|not limited to|state.of.the.art|cutting.edge|industry.leading|best.in.class|next.generation|the most [a-z]+ |the first (tool|browser|library|system|format|program|to )|an early (use|example)|(could|can) do (much )?more|the possibilities'
 scan claim      ''  'in the same way|similar to|just like'

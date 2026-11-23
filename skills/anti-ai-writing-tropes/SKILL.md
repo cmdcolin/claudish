@@ -980,15 +980,18 @@ markers above and labels each hit by its section: `contrast`, `negative`,
 - `coldstart` marks a paragraph or list item that opens on a pronoun, a demonstrative, a
   count such as "Both" or "The two", or a sentence-initial "So", "And" or
   "Hence". A paragraph after a list that opens on "These" is usually fine.
-- `label` marks a heading or bold preface (`**…**`, `\textbf{…}`,
+- `label` ignores a heading's `{#anchor}` id. It marks a heading or bold preface (`**…**`, `\textbf{…}`,
   `\section{…}`) with a word that points outside it: same, both, the two,
   this, these, such, other, rest, it, them or they.
 - `staccato` marks a paragraph or bullet with three sentences in a row of six
   words or fewer.
 - `short` marks a sentence of seven words or fewer, with no code or link, in a
   paragraph of two or more sentences: a candidate verdict sentence. A citation
-  ending in a year ("Stankey et al. (2024).") is skipped.
-- `history` matches ALL-CAPS emphasis words such as NOT, ONLY and SAME.
+  ending in a year ("Stankey et al. (2024).") is skipped, and a sentence does
+  not end at an author's initial ("Li H.") or a menu label's ellipsis
+  ("**Y axis... → Clip**").
+- `history` matches ALL-CAPS emphasis words such as NOT, ONLY and SAME, but
+  not inside a hyphenated abbreviation ("T-ALL").
 
 ```sh
 # installed as a plugin
