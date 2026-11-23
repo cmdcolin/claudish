@@ -138,7 +138,8 @@ fenced code, and prints a table of words and figures per page, then:
 
 - `[wall]` a paragraph or bullet over four lines, counting a line as 100
   characters
-- `[bare]` a section of 150 or more words of prose with no figure
+- `[bare]` a section of 150 or more words of prose with no figure (an image,
+  `<img>`, `<video>` or an MDX component with a `src`, such as `<Figure>`)
 - `[alt]` an image with empty alt text, or an `<img>` with no `alt` or an
   empty one
 - `[orphan]` a page no other page in the set links to, by a relative or

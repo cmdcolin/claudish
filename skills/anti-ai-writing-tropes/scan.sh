@@ -71,7 +71,7 @@ function flush(  start, pos, e, piece, ns, i, run, words, w) {
     }
   if (run < 3 && (kind == "p" || kind == "q" || kind == "li") && ns >= 2)
     for (i = 1; i <= ns; i++)
-      if (split(sent[i], w, " ") <= 7 && sent[i] ~ /^[A-Z][^`\[]*[.!]$/ && sent[i] !~ /^(See|For example|Returns|Run|Use) /)
+      if (split(sent[i], w, " ") <= 7 && sent[i] ~ /^[A-Z][^`\[]*[.!]$/ && sent[i] !~ /^(See|For example|Returns|Run|Use) / && sent[i] !~ /\([0-9]{4}[a-z]?\)\.$/)
         hit("short", sl[i], sent[i])
   para = ""
 }
@@ -108,8 +108,11 @@ find "${targets[@]}" \( -path '*/.git' -o -path '*/node_modules' -o -path '*/.cl
 touch "$tmp/meta" "$tmp/text" "$tmp/hits"
 
 scan() {
-  local label=$1 flags=$2 pattern=$3
+  local label=$1 flags=$2 pattern=$3 version=${4:-}
   grep -n"$flags" -E "$pattern" "$tmp/text" |
+    if [ -n "$version" ]; then
+      awk -v v="$version" -v p="$pattern" '{ s = $0; gsub(v, "", s); if (s ~ p) print }'
+    else cat; fi |
     awk -v label="$label" 'NR == FNR { m[FNR] = $0; next }
       { i = index($0, ":"); print m[substr($0, 1, i - 1)] "\t" label "\t" substr($0, i + 1) }' "$tmp/meta" - >> "$tmp/hits"
 }
@@ -133,7 +136,9 @@ scan pitch      'i' '(does|do|is|are|goes|go) (more than|beyond)|more than just|
 scan claim      ''  'in the same way|similar to|just like'
 scan label      'i' '(^|\\item )(\*\*|\\textbf\{)[^*}]{0,80}\b(same|both|this|these|those|such|above|below|other|rest|former|latter|it|them|they)\b|\\(sub)*section\*?\{[^}]*\b(the (same|two|three|other|rest)|both|this|these|those|such|it|them|they)\b'
 scan float      ''  'was (created|built|designed|made|written) for |, where that [a-z]+ is (largest|smallest|greatest|highest|lowest)'
-scan number     ''  '(^|[^:0-9,./A-Za-z-])[0-9]{1,3}(,[0-9]{3})+\b|(^|[^:0-9,./A-Za-z-])[0-9]+\.[0-9]{2,}([^0-9./]|$)'
+scan number     ''  '(^|[^:0-9,./A-Za-z-])[0-9]{1,3}(,[0-9]{3})+\b'
+scan number     ''  '(^|[^:0-9,./A-Za-z-])[0-9]+[.][0-9]{2,}([^0-9./]|$)' \
+  '(^|[^A-Za-z])(Python|Node|Node[.]js|Java|Ruby|Perl|Go|R|GCC|version|release|v) [0-9]+[.][0-9]{2,}'
 scan agency     'i' '\b(documents?|files?|configs?|sessions?|specs?|formats?|manifests?|schemas?|tables?|layers?|sources?) (only |also |already )?(leaves?|left) [^.]*\bto\b'
 
 if [ "$summary" = 1 ]; then

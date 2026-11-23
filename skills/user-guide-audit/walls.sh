@@ -35,7 +35,7 @@ awk '
   FNR == 1 { if (f) out(); f = FILENAME; words = 0; figs = 0 }
 '"$markdown"'
   skip { next }
-  /!\[|<img|<video/ { figs++ }
+  /!\[|<img|<video|<[A-Z][A-Za-z]*[^>]*[ \t]src=/ { figs++ }
   { words += NF }
   function out() { printf "%-48s %6d %4d\n", f, words, figs }
   END { out() }
@@ -56,7 +56,7 @@ awk '
   skip { flush(); next }
   /^#/ { flush(); section(); sstart = FNR; shead = $0; next }
   /!\[[ \t]*\]\(/ || (/<img/ && !/alt=["\047][^"\047]/) { print "[alt] " FILENAME ":" FNR ": " $0 }
-  /!\[|<img|<video/ { sfigs++ }
+  /!\[|<img|<video|<[A-Z][A-Za-z]*[^>]*[ \t]src=/ { sfigs++ }
   !/^[[:space:]]*\|/ { swords += NF }
   /^[[:space:]]*$/ { flush(); next }
   /^[[:space:]]*[>|<]/ { flush(); next }

@@ -1,5 +1,5 @@
 page                                              words figs
-fixture.md                                          298    5
+fixture.md                                          467    6
 guide.md                                             15    0
 other.md                                             11    0
 rooted.md                                            13    0

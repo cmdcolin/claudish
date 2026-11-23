@@ -976,7 +976,7 @@ markers above and labels each hit by its section: `contrast`, `negative`,
 - `pitch` marks boasts, superlatives, teasers and priority claims. A
   superlative that reports a measurement is fine.
 - `number` marks a number grouped in thousands or with two or more decimal
-  places.
+  places, but not a version after a tool name ("Python 3.10").
 - `coldstart` marks a paragraph or list item that opens on a pronoun, a demonstrative, a
   count such as "Both" or "The two", or a sentence-initial "So", "And" or
   "Hence". A paragraph after a list that opens on "These" is usually fine.
@@ -986,7 +986,8 @@ markers above and labels each hit by its section: `contrast`, `negative`,
 - `staccato` marks a paragraph or bullet with three sentences in a row of six
   words or fewer.
 - `short` marks a sentence of seven words or fewer, with no code or link, in a
-  paragraph of two or more sentences: a candidate verdict sentence.
+  paragraph of two or more sentences: a candidate verdict sentence. A citation
+  ending in a year ("Stankey et al. (2024).") is skipped.
 - `history` matches ALL-CAPS emphasis words such as NOT, ONLY and SAME.
 
 ```sh

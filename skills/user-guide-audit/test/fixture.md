@@ -48,3 +48,24 @@ See [other](other.md).
 ## One line
 
 One two three four five six seven eight nine ten eleven twelve thirteen. One two three four five six seven eight nine ten eleven twelve thirteen. One two three four five six seven eight nine ten eleven twelve thirteen. One two three four five six seven eight nine ten eleven twelve thirteen. One two three four five six seven eight nine ten eleven twelve thirteen. One two three four five six seven eight nine ten eleven twelve thirteen.
+
+
+## MDX figure
+
+One two three four five six seven eight nine ten eleven twelve thirteen fourteen fifteen sixteen seventeen eighteen nineteen twenty.
+
+One two three four five six seven eight nine ten eleven twelve thirteen fourteen fifteen sixteen seventeen eighteen nineteen twenty.
+
+One two three four five six seven eight nine ten eleven twelve thirteen fourteen fifteen sixteen seventeen eighteen nineteen twenty.
+
+One two three four five six seven eight nine ten eleven twelve thirteen fourteen fifteen sixteen seventeen eighteen nineteen twenty.
+
+One two three four five six seven eight nine ten eleven twelve thirteen fourteen fifteen sixteen seventeen eighteen nineteen twenty.
+
+One two three four five six seven eight nine ten eleven twelve thirteen fourteen fifteen sixteen seventeen eighteen nineteen twenty.
+
+One two three four five six seven eight nine ten eleven twelve thirteen fourteen fifteen sixteen seventeen eighteen nineteen twenty.
+
+One two three four five six seven eight nine ten eleven twelve thirteen fourteen fifteen sixteen seventeen eighteen nineteen twenty.
+
+<Figure caption="A labelled chart" src="/img/chart.png" />

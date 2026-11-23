@@ -83,3 +83,12 @@ The renderer draws each track.
 ## What a card holds
 
 The card shows the reads.
+
+## Versions and citations
+
+Install Python 3.10 or later and Node 22.11 before the build.
+
+- Stankey et al. (2024).
+  [A disease-associated gene desert](https://doi.org/10.1038/s41586-024-07501-1)
+
+Python 3.10 reads 0.873 of the files.
