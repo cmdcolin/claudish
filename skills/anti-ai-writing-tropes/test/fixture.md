@@ -79,3 +79,7 @@ What a change costs depends on the renderer.
 ## Where the two viewers differ
 
 The renderer draws each track.
+
+## What a card holds
+
+The card shows the reads.

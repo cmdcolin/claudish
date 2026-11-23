@@ -713,6 +713,8 @@ says what a thing is not, tells a scanning reader little.
 
 > What a database answers → Contents and limitations
 >
+> What a card holds → Card contents
+>
 > What it does not do → Limitations
 
 **Sentence case.** Capitalize the first word and proper nouns.

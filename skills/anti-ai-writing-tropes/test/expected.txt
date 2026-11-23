@@ -43,3 +43,4 @@
 [label] 79:Where the two viewers differ
 [agency] post.mdx:13:GTEx transcript estimates credit isoform … with a third of the gene.
 [agency] post.mdx:21:The caption keeps its own sentence about the figure.
+[label] 83:What a card holds

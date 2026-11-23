@@ -60,6 +60,8 @@ function flush(  start, pos, e, piece, ns, i, run, words, w) {
     hit("coldstart", sl[1], sent[1])
   if (kind == "h" && sent[1] ~ /(^|[^A-Za-z])([Tt]he (same|two|three|other|rest)|[Bb]oth|[Tt]his|[Tt]hese|[Tt]hose|[Ss]uch|[Ii]t|[Tt]hem|[Tt]hey)([^A-Za-z]|$)/)
     hit("label", sl[1], sent[1])
+  if (kind == "h" && sent[1] ~ /^What /)
+    hit("label", sl[1], sent[1])
   run = 0
   if (kind != "h" && kind != "t")
     for (i = 1; i <= ns; i++) {
